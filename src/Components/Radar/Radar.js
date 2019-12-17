@@ -6,7 +6,7 @@ const output = require('image-output');
 
 class Radar extends Component {
     constructor(props) {
-        Math.fract = (num) => num - Math.trunc(num)
+        Math.fract = (num) => num - Math.trunc(num);
         super(props);
         this.state = {
             relBoatPos: { x: 255, y: 255 }
@@ -14,12 +14,12 @@ class Radar extends Component {
         console.log(props);
     }
 
-    pixelDataToHeight = (r, g, b) => ((r * 256 + g + b / 256) - 32768)
+    pixelDataToHeight = (r, g, b) => ((r * 256 + g + b / 256) - 32768);
 
     zxyToImageUrl = ({ z, x, y }) => "https://tile.nextzen.org/tilezen/terrain/v1/256/terrarium/" + z + "/" + x + "/" + y + ".png?api_key=rSE_grk_QHGf-QgaYe5bNA"
 
     referenceMapUrl() {
-        let zxy = this.lonLatZoomToZXY(this.props.radarCenter)
+        let zxy = this.lonLatZoomToZXY(this.props.radarCenter);
         return "https://maps.wikimedia.org/osm-intl/" + zxy.z + "/" + zxy.x + "/" + zxy.y + ".png"
     }
 
@@ -29,7 +29,7 @@ class Radar extends Component {
     //And when the boatposition or radar settings change, these only require a redraw of the radar image.
     componentDidUpdate() {
         //let img = document.getElementById("map");
-        let zxy = this.lonLatZoomToZXY(this.props.radarCenter)
+        let zxy = this.lonLatZoomToZXY(this.props.radarCenter);
         let imageUrl = this.zxyToImageUrl(zxy);
         pixels(imageUrl).then((obj) => {
             this.state.relBoatPos = { x: zxy.xRem * obj.width, y: zxy.yRem * obj.height };
@@ -56,7 +56,7 @@ class Radar extends Component {
             obj.data[boatIndex++] = 255;
             obj.data[boatIndex++] = 0;
             obj.data[boatIndex++] = 0;
-            output(obj, cnv)
+            output(obj, cnv);
             let newPixelData = this.processImage(obj, this.state.relBoatPos)
             output(newPixelData, cnv)
         })
@@ -107,19 +107,19 @@ class Radar extends Component {
         while (nextPos.x > 0 && nextPos.y > 0 && nextPos.x < image.width && nextPos.y < image.height && !isHit) {
             let pixelAtPos = this.pixelDataAt(Math.floor(nextPos.x), Math.floor(nextPos.y), image.width, image.data).g;
             min = pixelAtPos >= min ? pixelAtPos : min;
-            nextPos = { x: nextPos.x + dir.x, y: nextPos.y + dir.y }
+            nextPos = { x: nextPos.x + dir.x, y: nextPos.y + dir.y };
             if (pixelAtPos === min) {
                 image.newPixelData[this.indexFromPos(nextPos.x, nextPos.y, image.width) + 1] = pixelAtPos;
                 //Approximation of errors due to beamwidth
                 let bpdeltax = nextPos.x-bp.x;
                 let bpdeltay = nextPos.y-bp.y;
-                let distanceFromOrigin = Math.sqrt(bpdeltax*bpdeltax + bpdeltay*bpdeltay)
+                let distanceFromOrigin = Math.sqrt(bpdeltax*bpdeltax + bpdeltay*bpdeltay);
                 //let totalCircumference = Math.PI * distanceFromOrigin*2;
                 //let errorLength = totalCircumference / this.degToRad(this.props.radarSettings.beamwidth);
-                let errorLength = distanceFromOrigin * this.degToRad(this.props.radarSettings.beamwidth)
+                let errorLength = distanceFromOrigin * this.degToRad(this.props.radarSettings.beamwidth);
                 let mat = [0,-1,1,0];
                 let errorDir = {x: dir.x*mat[0] + dir.y*mat[2],
-                    y: (dir.x*mat[1] + dir.y*mat[3])}
+                    y: (dir.x*mat[1] + dir.y*mat[3])};
                 let nextErrLocation = {...nextPos};
                 let errTraced = 0;
                 while (errTraced < errorLength){
@@ -148,7 +148,7 @@ class Radar extends Component {
             this.state.relBoatPos = {
                 x: this.state.relBoatPos.x + 1,
                 y: this.state.relBoatPos.y + 1,
-            }
+            };
             let cnv = document.getElementById("canvas");
             if (this.state.currentHeightmap !== undefined)
                 output(this.processImage(this.state.currentHeightmap, this.state.relBoatPos), cnv)
@@ -175,6 +175,11 @@ class Radar extends Component {
     render() {
         return (
             <div className="radar-container">
+                <div className="latlong-container">
+                    <p>Current location: <span>Lat goes here</span>, <span>Long goes here</span></p>
+                </div>
+
+
                 <div className="minimap-container">
                     <img src={this.referenceMapUrl()} style={{ width: 256, height: 256 }} id="map" alt="logo" />
                 </div>
@@ -182,7 +187,10 @@ class Radar extends Component {
                 <div className="canvas-container">
                     <canvas id="canvas" alt="radar" />
                 </div>
-                <button onClick={() => { this.onButton({ x: 50, y: 50 }) }} >Click</button>
+
+                <div className="temporary-button">
+                    <button onClick={() => { this.onButton({ x: 50, y: 50 }) }} >Click</button>
+                </div>
             </div>
         )
     }

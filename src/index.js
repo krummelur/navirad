@@ -20,7 +20,7 @@ function radarCenter(state = { lon: 18, lat: 59 }, action) {
 function radarSettingsReducer(state = {}, action) {
     switch (action.type) {
         case "SET_RADAR_BEAMWIDTH":
-            return { ...state, beamwidth: action.payload }
+            return { ...state, beamwidth: action.payload };
         default:
             return state;
     }
@@ -37,13 +37,13 @@ const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window
 store.dispatch({
     type: "SET_RADAR_CENTER",
     payload: { lon: 18.5, lat: 59.17 }
-})
+});
 
 
 store.dispatch({
     type: "SET_RADAR_BEAMWIDTH",
     payload:  2
-})
+});
 
 ReactDOM.render(
     <Provider store={store}>

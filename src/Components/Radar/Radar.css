@@ -3,14 +3,26 @@
     background-color: mediumpurple;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
-    grid-template-rows:
+    grid-template-rows: 10% 90%;
 
+}
+
+.latlong-container {
+    grid-column: 2 / span 4;
+    grid-row: 1;
 }
 
 .minimap-container {
     grid-column: 2;
+    grid-row: 2;
 }
 
 .canvas-container {
     grid-column: 4;
+    grid-row: 2;
+}
+
+.temporary-button {
+    grid-column: 3;
+    grid-row: 2;
 }

@@ -2,38 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/About/About.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Header/Header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Map/Map.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Map/Map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Radar/Radar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Radar/Radar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Radar/RadarContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Start/Start.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Start/Start.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/AboutView/AboutView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/AboutView/AboutView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/MapView/MapView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/MapView/MapView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/RadarView/RadarView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/RadarView/RadarView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/StartView/StartView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/StartView/StartView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/RadarModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Radar/Radar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Radar/Radar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Radar/Radar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Radar/Radar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,12 +97,24 @@
       <workItem from="1576491447888" duration="9649000" />
       <workItem from="1576528292432" duration="9000" />
       <workItem from="1576573703616" duration="1020000" />
-      <workItem from="1576574891016" duration="701000" />
+      <workItem from="1576574891016" duration="2112000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <created>1576575716135</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576575716135</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="80" y="277" key="#ESLint" timestamp="1576440348578">
@@ -141,6 +125,10 @@
       <screen x="0" y="23" width="1366" height="745" />
     </state>
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
+    <state x="478" y="214" key="CommitChangelistDialog2" timestamp="1576575715414">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1576575715414" />
     <state width="939" height="328" key="GridCell.Tab.0.bottom" timestamp="1576574723311">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -157,5 +145,9 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state width="939" height="328" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1576574723309" />
+    <state x="560" y="351" key="Vcs.Push.Dialog.v2" timestamp="1576575761460">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1576575761460" />
   </component>
 </project>
