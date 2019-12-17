@@ -1,0 +1,16 @@
+.radar-container {
+    grid-column: 2;
+    background-color: mediumpurple;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+    grid-template-rows:
+
+}
+
+.minimap-container {
+    grid-column: 2;
+}
+
+.canvas-container {
+    grid-column: 4;
+}
