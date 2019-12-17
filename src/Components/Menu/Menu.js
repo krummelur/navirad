@@ -3,9 +3,10 @@ import { slide as Menu } from "react-burger-menu";
 import "./Menu.css";
 import {Link} from "react-router-dom";
 
+// Source: https://negomi.github.io/react-burger-menu/
+
 export default props => {
     return (
-        // Pass on our props
         <Menu {...props}>
 
             <Link className="menu-item" to="/">

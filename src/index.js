@@ -42,7 +42,7 @@ store.dispatch({
 
 store.dispatch({
     type: "SET_RADAR_BEAMWIDTH",
-    payload:  2
+    payload:  6
 });
 
 ReactDOM.render(
