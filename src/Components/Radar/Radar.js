@@ -182,6 +182,7 @@ class Radar extends Component {
 
                 <div className="minimap-container">
                     <img src={this.referenceMapUrl()} style={{ width: 256, height: 256 }} id="map" alt="logo" />
+                    <p>Left arrow, Go back to full map</p>
                 </div>
 
                 <div className="canvas-container">
