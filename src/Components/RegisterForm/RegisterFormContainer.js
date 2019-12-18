@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import RegisterForm from "./registerForm";
+import RegisterForm from "./RegisterForm";
 import {setStartupToggle} from "../../data/actions/toggleStartupActions";
 import {userActions} from "../../data/actions/userActions";
 

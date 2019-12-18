@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import LoginForm from "./loginForm";
+import LoginForm from "./LoginForm";
 import {setStartupToggle} from "../../data/actions/toggleStartupActions";
 
 const mapStateToProps = state => ({

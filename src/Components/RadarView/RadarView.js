@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "../../Components/Header/Header";
 import RadarContainer from "../../Components/Radar/RadarContainer";
-import SmallMapContainer from "../../Components/smallMap/SmallMapContainer";
+import SmallMapContainer from "../../Components/SmallMap/SmallMapContainer";
 import RadarMenuContainer from "../../Components/RadarMenu/RadarMenuContainer";
 
 import "./RadarView.css";
@@ -16,8 +16,8 @@ class RadarView extends Component {
                 <div className="RadarView">
                     <Header />
                     <div className="previewContainer">
+                    <SmallMapContainer/>
                     <RadarContainer />
-                    <SmallMapContainer />
                     </div>
                     <RadarMenuContainer />
                 </div>

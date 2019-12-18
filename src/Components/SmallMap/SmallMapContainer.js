@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import SmallMap from './SmallMap'
 
 const mapStateToProps = state => ({
-    radarCenter: state.radarCenter
+    radarCenter: state.radarSettings.radarCenter
 });
 
 const mapDispatchToProps = () => {};
