@@ -4,8 +4,8 @@ import "../SmallMap/SmallMapContainer";
 import { isEqual } from 'lodash';
 import SmallMapContainer from "../SmallMap/SmallMapContainer";
 const assert = require('assert');
-const pixels = require('image-pixels')
-const output = require('image-output')
+const pixels = require('image-pixels');
+const output = require('image-output');
 
 class Radar extends Component {
     constructor(props) {

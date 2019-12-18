@@ -1,15 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import "./RadarMenu.css";
 
-class RadarMenu extends Component {
+RadarMenu.propTypes = {
+    setBeamWidth: PropTypes.func.isRequired,
+    getBeamWidth: PropTypes.func.isRequired,
+};
 
-    render() {
+/*
+    boats: PropTypes.func.isRequired,
+    rain: PropTypes.func.isRequired,
+    interference: PropTypes.func.isRequired,
+ */
+
+function RadarMenu(props){
         return (
             <div className="radarmenu-container">
                 <div className="large-text">Radar Controls</div>
                 <div className="slider-outer">
-                    <p className="medium-text">Lobe width: <span>Here goes the value of the slider</span></p>
-                    <input className="slider" type="range" min="1" max="15" step="1"/>
+                    <p className="medium-text">Lobe width: <span>{props.getBeamWidth}</span></p>
+                    <input className="slider" type="range" min="1" max="15" step="1" onChange={evt => props.setBeamWidth(evt.target.value)}/>
                 </div>
 
                 <div className="slider-outer">
@@ -29,7 +39,7 @@ class RadarMenu extends Component {
                         </li>
                         <li>
                             <input type="checkbox" id="checkboxThree"/>
-                            <label htmlFor="checkboxThree">Radar overlay</label>
+                            <label htmlFor="checkboxThree">Radar/map overlay</label>
                         </li>
                     </ul>
                 </div>
@@ -37,7 +47,6 @@ class RadarMenu extends Component {
 
             </div>
         );
-    }
 }
 
 export default RadarMenu;

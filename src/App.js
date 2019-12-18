@@ -38,8 +38,8 @@ class App extends Component {
             <div className="App">
                 <Switch>
                     <Route
-                        exact path="/"
-                        component={StartView}
+                        exact path="/map"
+                        render={() => <MapView />}
                     />
 
                     <Route
@@ -55,6 +55,11 @@ class App extends Component {
                     <Route
                         exact path="/radar"
                         render={() => <RadarView />}
+                    />
+
+                    <Route
+                        exact path="/"
+                        render={() => <StartView />}
                     />
 
                     <Route

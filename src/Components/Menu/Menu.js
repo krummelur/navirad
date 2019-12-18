@@ -9,8 +9,8 @@ export default props => {
     return (
         <Menu {...props}>
 
-            <Link className="menu-item" to="/">
-                <p>Home</p>
+            <Link className="menu-item" to="/map">
+                <p>Map</p>
             </Link>
 
             <Link className="menu-item" to="/about">
@@ -21,7 +21,7 @@ export default props => {
                 <p>Map</p>
             </Link>
 
-            <Link className="menu-item" to="/logout">
+            <Link className="menu-item" to="/">
                 <p>Logout</p>
             </Link>
 

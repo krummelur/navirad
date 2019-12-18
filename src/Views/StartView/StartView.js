@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../Components/Header/Header";
-import Start from "../../Components/Start/Start";
+import StartContainer from "../../Components/Start/StartContainer";
 import "./StartView.css";
 
 class StartView extends Component {
@@ -8,7 +8,7 @@ class StartView extends Component {
         return (
             <div className="StartView">
                 <Header/>
-                <Start />
+                <StartContainer />
             </div>
         );
     }

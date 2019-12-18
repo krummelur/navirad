@@ -1,3 +1,39 @@
 .App-link {
   color: #61dafb;
 }
+
+/* Palette color codes */
+/* Palette URL: http://paletton.com/#uid=13w0u0kllllaFw0g0qFqFg0w0aF */
+/* As hex codes */
+
+.color-primary-0 { color: #29516D }
+.color-primary-1 { color: #708EA4 }
+.color-primary-2 { color: #486E88 }
+.color-primary-3 { color: #123752 }
+.color-primary-4 { color: #032136 }
+
+/* As RGBa codes */
+
+.rgba-primary-0 { color: rgba( 41, 81,109,1) }
+.rgba-primary-1 { color: rgba(112,142,164,1) }
+.rgba-primary-2 { color: rgba( 72,110,136,1) }
+.rgba-primary-3 { color: rgba( 18, 55, 82,1) }
+.rgba-primary-4 { color: rgba(  3, 33, 54,1) }
+
+/* Palette color codes */
+/* Palette URL: http://paletton.com/#uid=13w0u0kfYsl6hLlb0zmkMngpwiz */
+/* As hex codes */
+
+.color-primary-0 { color: #4D7591 }
+.color-primary-1 { color: #ACC2D2 }
+.color-primary-2 { color: #7596AD }
+.color-primary-3 { color: #2F5977 }
+.color-primary-4 { color: #18415F }
+
+/* As RGBa codes */
+
+.rgba-primary-0 { color: rgba( 77,117,145,1) }
+.rgba-primary-1 { color: rgba(172,194,210,1) }
+.rgba-primary-2 { color: rgba(117,150,173,1) }
+.rgba-primary-3 { color: rgba( 47, 89,119,1) }
+.rgba-primary-4 { color: rgba( 24, 65, 95,1) }
