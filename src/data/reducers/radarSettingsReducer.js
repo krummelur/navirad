@@ -1,11 +1,16 @@
 import {constants} from "../actions/radarActions";
 
-export function radarSettingsReducer(state = {}, action) {
+const defaultState = {
+    radarCenter: undefined,
+    beamwidth: 4,
+    rainInterference: false,
+    radarInterference: false
+}
+
+export function radarSettingsReducer(state = defaultState, action) {
     switch (action.type) {
         case constants.SET_RADAR_BEAMWIDTH:
             return { ...state, beamwidth: action.payload };
-        case constants.GET_RADAR_BEAMWIDTH:
-            return state.radarSettings.beamwidth;
         case constants.SET_RAIN_INTERFERENCE:
             return {...state, rainInterference: action.payload};
         case constants.SET_RADAR_INTERFERENCE:

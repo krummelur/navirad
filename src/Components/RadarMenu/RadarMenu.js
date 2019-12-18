@@ -4,7 +4,7 @@ import "./RadarMenu.css";
 
 RadarMenu.propTypes = {
     setBeamWidth: PropTypes.func.isRequired,
-    getBeamWidth: PropTypes.func.isRequired,
+    beamWidth: PropTypes.number.isRequired
 };
 
 /*
@@ -14,12 +14,15 @@ RadarMenu.propTypes = {
  */
 
 function RadarMenu(props){
+    console.log(props.beamWidth)
         return (
             <div className="radarmenu-container">
                 <div className="large-text">Radar Controls</div>
                 <div className="slider-outer">
-                    <p className="medium-text">Lobe width: <span>{props.getBeamWidth}</span></p>
-                    <input className="slider" type="range" min="1" max="15" step="1" onChange={evt => props.setBeamWidth(evt.target.value)}/>
+                    <p className="medium-text">Lobe width: <span>{props.beamWidth}</span></p>
+                    <input className="slider" type="range" min="1" max="15" step="1" 
+                    value={props.beamWidth}
+                    onChange={evt => props.setBeamWidth(evt.target.value)}/>
                 </div>
 
                 <div className="slider-outer">
@@ -34,12 +37,18 @@ function RadarMenu(props){
                             <label htmlFor="checkboxOne">Other boats</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="checkboxTwo"/>
+                            <input type="checkbox" id="checkboxTwo"
+                            onChange={evt => {props.setRainInterference(evt.target.checked)}}/>
                             <label htmlFor="checkboxTwo">Rain clutter</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="checkboxThree"/>
-                            <label htmlFor="checkboxThree">Radar/map overlay</label>
+                            <input type="checkbox" id="checkboxThree"
+                            onChange={evt => {props.setRadarInterference(evt.target.checked)}}/>
+                            <label htmlFor="checkboxThree">Radio interference</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkboxFour"/>
+                            <label htmlFor="checkboxFour">Radar/map overlay</label>
                         </li>
                     </ul>
                 </div>

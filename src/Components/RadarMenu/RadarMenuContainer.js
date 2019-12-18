@@ -1,15 +1,16 @@
 import { connect } from 'react-redux'
 import RadarMenu from './RadarMenu'
-import {getBeamWidth, setBeamWidth} from "../../data/actions/radarActions";
+import {setBeamWidth, setInterference, setRain} from "../../data/actions/radarActions";
 
 const mapStateToProps = state => ({
-    beam: state.radarSettings.beamwidth,
+    beamWidth: state.radarSettings.beamwidth,
 });
 
 const mapDispatchToProps = dispatch => {
     return {
         setBeamWidth: num => dispatch(setBeamWidth(num)),
-        getBeamWidth: num => dispatch(getBeamWidth(num))
+        setRainInterference: shouldRain => dispatch(setRain(shouldRain)),
+        setRadarInterference: shouldInterfere => dispatch(setInterference(shouldInterfere))
     }
 };
 

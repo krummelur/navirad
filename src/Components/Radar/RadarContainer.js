@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Radar from './Radar'
 
 const mapStateToProps = state => ({
-    radarCenter: state.radarCenter,
+    radarCenter: state.radarSettings.radarCenter,
     radarSettings: state.radarSettings
 });
 
