@@ -9,12 +9,13 @@
     "google-maps-react": "^2.0.2",
     "image-output": "^2.4.1",
     "image-pixels": "^2.2.2",
+    "lodash": "^4.17.15",
     "react": "^16.12.0",
     "react-burger-menu": "^2.6.13",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0",
+    "react-scripts": "^3.3.0",
     "redux": "^4.0.4",
-    "lodash": "latest"
+    "validator": "^12.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

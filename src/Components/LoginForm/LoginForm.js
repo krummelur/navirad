@@ -1,59 +1,69 @@
 import React, { Component } from 'react';
-import "./LoginForm.css";
+import Input from "../Input/input";
+import Message from "../Message/message";
+import validateInput from "../../validateInput";
+import { Link } from "react-router-dom";
+import "./form.css";
 
 class LoginForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            userID: "",
-            password: "",
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      userID: "",
+      password: "",
+      login: "",
+      eMail: "",
+      isValid: true,
+      errors: {},
+      loginForm: true
     }
+  }
 
-    handleIDChange(event) {
-        event.preventDefault();
-        this.setState({
-            userID: event.target.value
-        });
-    }
+  handleLogin(event) {
+    event.preventDefault();
+    if (this.isValid())
+      window.location = "/map";
+  }
 
-    handlePasswordChange(event) {
-        event.preventDefault();
-        this.setState({
-            password: event.target.value
-        });
-    }
+  isValid() {
+    const { errors, isValid } = validateInput(this.state);
+    this.setState({ errors, isValid });
+    return isValid;
+  }
 
-    handleLogin(event) {
-        event.preventDefault();
-    }
+  getData(data) {
+    this.setState({
+      [data.ID]: data.value
+    });
+  }
 
-    loginToggle(event) {
-        event.preventDefault();
-        console.log("toggles");
-        this.setState({
-            userID: "",
-            password: "",
-            email: "",
-            toggle: !this.state.toggle
-        });
-    }
+  render() {
 
-    render() {
+    return (
 
-        return (
-            <div className="login-page">
-                <div className="form">
-                    <form className="login-form">
-                        <input type="text" placeholder="username" autoComplete="on" value={this.state.userID} onChange={this.handleIDChange.bind(this)} />
-                        <input type="password" placeholder="password" autoComplete="on" value={this.state.password} onChange={this.handlePasswordChange.bind(this)} />
-                        <button type="button" onClick={this.handleLogin.bind(this)}>login</button>
-                        <p className="message">Not registered? <span onClick={() => this.props.setStartupToggle(!this.props.toggleStartup)} >Create an account</span></p>
-                    </form>
-                </div>
-            </div>
-        );
-    }
+      <div className="login-page">
+        <div className="form">
+          <form className="login-form">
+            <Input
+              type="text"
+              placeholder="userID"
+              sendData={this.getData.bind(this)}
+            />
+            <Input
+              type="password"
+              placeholder="password"
+              sendData={this.getData.bind(this)}
+            />
+            <Message usermessage={this.state.errors.login} />
+            <Link to="/map">
+              <button type="button" link="/map" onClick={this.handleLogin.bind(this)}>login</button>
+            </Link>
+            <p className="message">Not registered? <span onClick={() => this.props.setStartupToggle(!this.props.toggleStartup)} >Create an account</span></p>
+          </form>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default LoginForm;

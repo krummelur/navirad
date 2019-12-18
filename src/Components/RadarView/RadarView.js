@@ -3,8 +3,9 @@ import Header from "../../Components/Header/Header";
 import RadarContainer from "../../Components/Radar/RadarContainer";
 import SmallMapContainer from "../../Components/smallMap/SmallMapContainer";
 import RadarMenuContainer from "../../Components/RadarMenu/RadarMenuContainer";
+
 import "./RadarView.css";
-import Menu from "../../Components/Menu/Menu";
+import Menu from "../Menu/Menu";
 
 class RadarView extends Component {
     render() {
