@@ -2,7 +2,7 @@ import {combineReducers} from "redux";
 import {toggleStartupReducer} from "./toggleStartupReducer";
 import {userReducer} from "./userReducer";
 import {radarCenterReducer} from "./radarCenterReducer";
-import {radarSettingsReducer} from "./radarSettingsReducer"
+import {radarSettingsReducer} from "./radarSettingsReducer";
 
 const combinedReducers = combineReducers({
     users: userReducer,

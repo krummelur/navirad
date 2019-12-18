@@ -6,7 +6,7 @@
 .form {
     position: relative;
     z-index: 1;
-    background: #FFFFFF;
+    background: #ACC2D2;
     max-width: 360px;
     margin: 0 auto 100px;
     padding: 45px;
@@ -16,7 +16,7 @@
 .form input {
     font-family: "Roboto", sans-serif;
     outline: 0;
-    background: #f2f2f2;
+    background: #7596AD;
     width: 100%;
     border: 0;
     margin: 0 0 15px;
@@ -28,7 +28,7 @@
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: blue;
+    background: #123752;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -39,16 +39,16 @@
     cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-    background: gray;
+    background: #486D88;
 }
 .form .message {
     margin: 15px 0 0;
-    color: #b3b3b3;
+    color: #123752;
     font-size: 12px;
 }
 .form .message span {
-    color: blue;
-    text-decoration: none;
+    color: #032136;
+    text-decoration: underline;
 }
 
 body {

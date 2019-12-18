@@ -11,6 +11,10 @@ class Start extends Component {
     render() {
         return (
             <div className="login-container">
+                <div className="login-text">
+                    Welcome to NaviRad, a marine radar simulator.<p/>
+                    To use this app, you must first login.<br/> If you don't have an account, you can register for free.
+                </div>
                 {this.props.toggleStartup&&<LoginForm />}
                 {!this.props.toggleStartup&&<RegisterForm/>}
             </div>
