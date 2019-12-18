@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/About/About.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Map/MapBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Map/Map.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/Map.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Map/Map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Menu/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Menu/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/AboutView/AboutView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/AboutView/AboutView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/AboutView/AboutView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/AboutView/AboutView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/MapView/MapView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MapView/MapView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/MapView/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MapView/MapView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/RadarView/RadarView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RadarView/RadarView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +97,8 @@
       <workItem from="1576573703616" duration="1020000" />
       <workItem from="1576574891016" duration="2112000" />
       <workItem from="1576582151454" duration="5965000" />
-      <workItem from="1576589356978" duration="4743000" />
+      <workItem from="1576589356978" duration="4824000" />
+      <workItem from="1576658282114" duration="3645000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -129,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576584170431</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="menu working">
+      <created>1576617384174</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576617384174</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,10 +141,10 @@
       <screen x="0" y="23" width="1366" height="745" />
     </state>
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="478" y="214" key="CommitChangelistDialog2" timestamp="1576584168996">
+    <state x="478" y="214" key="CommitChangelistDialog2" timestamp="1576617383731">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1576584168996" />
+    <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1576617383731" />
     <state width="939" height="328" key="GridCell.Tab.0.bottom" timestamp="1576574723311">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -169,13 +161,17 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state width="939" height="328" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1576574723309" />
-    <state x="560" y="351" key="Vcs.Push.Dialog.v2" timestamp="1576584173517">
+    <state x="560" y="351" key="Vcs.Push.Dialog.v2" timestamp="1576617387339">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1576584173517" />
-    <state x="625" y="288" width="670" height="676" key="search.everywhere.popup" timestamp="1576615286011">
+    <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1576617387339" />
+    <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1576661168132">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="625" y="288" width="670" height="676" key="search.everywhere.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1576615286011" />
+    <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1576661168132" />
+    <state x="625" y="288" width="670" height="676" key="search.everywhere.popup" timestamp="1576659860165">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="625" y="288" width="670" height="676" key="search.everywhere.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1576659860165" />
   </component>
 </project>
