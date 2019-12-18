@@ -19,7 +19,7 @@ class Radar extends Component {
 
   pixelDataToHeight = (r, g, b) => ((r * 256 + g + b / 256) - 32768)
 
-  zxyToImageUrl = ({ z, x, y }) => "https://tile.nextzen.org/tilezen/terrain/v1/256/terrarium/" + z + "/" + x + "/" + y + ".png?api_key=rSE_grk_QHGf-QgaYe5bNA"
+  zxyToImageUrl = ({ z, x, y }) => "https://tile.nextzen.org/tilezen/terrain/v1/512/terrarium/" + z + "/" + x + "/" + y + ".png?api_key=rSE_grk_QHGf-QgaYe5bNA"
 
   getSnapshotBeforeUpdate(prevProps) {
     
