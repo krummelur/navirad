@@ -5,6 +5,13 @@ export const constants = {
     SET_RADAR_CENTER: "SET_RADAR_CENTER",
 };
 
+export function setRadarCenter(newCenter) {
+    return {
+        type: constants.SET_RADAR_CENTER,
+        payload: newCenter
+    }
+}
+
 export function setBeamWidth(num) {
     return {
         type: constants.SET_RADAR_BEAMWIDTH,

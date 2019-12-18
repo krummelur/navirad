@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import Radar from './Radar'
+import { setRadarCenter } from '../../data/actions/radarActions'
+
 
 const mapStateToProps = state => ({
     radarCenter: state.radarSettings.radarCenter,
@@ -8,7 +10,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
     return {
-        setRadarCenter: newCenter => dispatch({type: "SET_RADAR_CENTER", payload: newCenter})
+        setRadarCenter: newCenter => dispatch(setRadarCenter(newCenter))
     }
 };
 

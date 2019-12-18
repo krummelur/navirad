@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import "./Map.css";
-import MapEmbedder from "./MapEmbedder";
 import {Link} from "react-router-dom";
+import MapEmbedderContainer from "./MapEmbedderContainer";
 
 class MapBox extends Component {
 
     render() {
-
         return (
             <div className="map-container">
 
@@ -16,7 +15,7 @@ class MapBox extends Component {
                 </div>
 
                 <div className="mapbox">
-                    <MapEmbedder/>
+                    <MapEmbedderContainer/>
                 </div>
             </div>
         );

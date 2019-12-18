@@ -10,7 +10,10 @@ class Radar extends Component {
   constructor(props) {
     super(props);
     //This is not part of the state becuase it should not prompt an update.
-    this.currentHeightmap = undefined;
+    this.state = {
+      isPreparingHeightmap: false,
+      currentHeightmap: undefined
+    }
     this.relBoatPos = undefined;
   }
 
@@ -19,6 +22,7 @@ class Radar extends Component {
   zxyToImageUrl = ({ z, x, y }) => "https://tile.nextzen.org/tilezen/terrain/v1/256/terrarium/" + z + "/" + x + "/" + y + ".png?api_key=rSE_grk_QHGf-QgaYe5bNA"
 
   getSnapshotBeforeUpdate(prevProps) {
+    
     console.log("isequal: " + isEqual(prevProps.radarCenter, this.props.radarCenter))
     if (isEqual(prevProps.radarCenter, this.props.radarCenter))
       return { repositionMap: false }
@@ -26,18 +30,22 @@ class Radar extends Component {
       return { repositionMap: true }
   }
 
-  //Will be called whenever one of the props changes.
-  //However, needs to implemented that there are 2 different updates
-  //When the center position is changed, this requires fetching new images and calculating a heightmap
-  //And when the boatposition or radar settings change, these only require a redraw of the radar image.
-  componentDidUpdate(prevProps, state, snapshot) {
-    console.log(this.props)
-    let cnv = document.getElementById("canvas");
-    if (snapshot.repositionMap || !this.currentHeightmap) {
-      console.log(this.props.radarCenter);
-      console.log(lonLatZoomToZXY)
-      let zxy = lonLatZoomToZXY(this.props.radarCenter)
-      let imageUrl = this.zxyToImageUrl(zxy);
+  componentDidMount() {
+    
+    console.log("DIDMOUNT")
+    //this.setState({...this.state, isPreparingHeightmap: true})
+    this.prepareForDrawing().then((heightmap) => {
+      console.log("SETTING STATE")
+      this.setState({...this.state, currentHeightmap: heightmap})
+    })
+  }
+
+  prepareForDrawing() {
+    console.log(this.props.radarCenter);
+    console.log(lonLatZoomToZXY)
+    let zxy = lonLatZoomToZXY(this.props.radarCenter)
+    let imageUrl = this.zxyToImageUrl(zxy);
+    return new Promise(function (resolve, reject) {
       pixels(imageUrl).then((obj) => {
         this.relBoatPos = { x: zxy.xRem * obj.width, y: zxy.yRem * obj.height };
         let y = 0;
@@ -45,7 +53,7 @@ class Radar extends Component {
           let x = 0;
           while (x < obj.width) {
             let pix = this.pixelDataAt(x, y, obj.width, obj.data)
-            let height = Math.max(this.pixelDataToHeight(pix.r, pix.g, pix.b), 0) * 5;
+            let height = Math.max(this.pixelDataToHeight(pix.r, pix.g, pix.b), 0) * 10;
             (this.pixelDataToHeight(pix.r, pix.g, pix.b) > 8) || (height = 0)
             let index = this.indexFromPos(x, y, obj.width);
             obj.data[index] = height;
@@ -55,16 +63,28 @@ class Radar extends Component {
           }
           y++;
         }
-        this.currentHeightmap = obj;
-        return null;
-      }).then(() => {
-        let newPixelData = this.processImage(this.currentHeightmap)
-        output(newPixelData, cnv)
+        resolve(obj);
+      })
+    }.bind(this));
+  }
+
+  //Will be called whenever one of the props changes.
+  //However, needs to implemented that there are 2 different updates
+  //When the center position is changed, this requires fetching new images and calculating a heightmap
+  //And when the boatposition or radar settings change, these only require a redraw of the radar image.
+  componentDidUpdate(prevProps, state, snapshot) {
+    console.log("SNAPSHOT")
+    console.log(snapshot)
+    console.log("========")
+    let cnv = document.getElementById("canvas");
+    if (snapshot.repositionMap) {
+      this.prepareForDrawing().then((heightmap) => {
+        this.state.currentHeightmap = heightmap;
+        this.startContinousOutput();
       })
     }
     else {
-      let newPixelData = this.processImage(this.currentHeightmap)
-      output(newPixelData, cnv)
+      this.startContinousOutput();
     }
   }
 
@@ -164,33 +184,28 @@ class Radar extends Component {
           nextErrLocation.y += errorDir.y;
           errTraced++;
         }
-      } else if (pixelAtPos < min - 30) //approximation of the radar "seeing over" things.
+      } else if (pixelAtPos < min - 50) //approximation of the radar "seeing over" things.
         isHit = true;
     }
     return isHit;
   }
 
-  onButton() {
-    this.props.setRadarCenter({ lon: 18.68283705, lat: 59.24407017 })
-    //this.props.setRadarCenter({ lon: 18.59539415, lat: 59.16455698 })
-    //this.props.setRadarCenter({ lon: 18.92678799, lat: 59.52635936 })
-    //this.props.setRadarCenter({ lon: 18.82464508, lat: 59.53819451 })
-    //this.props.setRadarCenter({ lon: 18.58111341, lat: 59.0926094 })
-    let testAnimation = false;
-    testAnimation &&
-      (this.intervalReference = setInterval(() => {
-        this.relBoatPos.x += 1
-        this.relBoatPos.y += 1
-        let cnv = document.getElementById("canvas");
-        let startTime = Date.now();
-        let newPixelData = this.processImage(this.currentHeightmap)
-        let totalTime = Date.now() - startTime;
+  startContinousOutput() {
+    clearInterval(this.intervalReference);
+    (this.intervalReference = setInterval(() => {
+        this.relBoatPos.x += 0.0
+        this.relBoatPos.y += 0.0
+        let cnv = document.getElementById("canvas")
+        //let startTime = Date.now()
+        let newPixelData = this.processImage(this.state.currentHeightmap)
+        //let totalTime = Date.now() - startTime
+        //console.log("Render Time: " + totalTime)
         output(newPixelData, cnv)
-        console.log("Drawing took: " + totalTime + "ms.")
-      }, 50))
+      }, 20))
   }
 
   componentWillUnmount() {
+    console.log("UNMOUNTING, STOPPING ANIMATION")
     clearInterval(this.intervalReference)
   }
 
@@ -204,7 +219,7 @@ class Radar extends Component {
         <img src={this.referenceMapUrl()} style={{ width: 256, height: 256 }} id="map" alt="logo" />
         */}
         <canvas id="canvas" alt="radar" />
-        <button onClick={() => { this.onButton({ x: 50, y: 50 }) }} >Click</button>
+
       </div>
     )
   }

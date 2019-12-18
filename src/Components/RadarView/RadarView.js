@@ -12,7 +12,6 @@ class RadarView extends Component {
         return (
             <div id="outer">
                 <Menu pageWrapId={"RadarView"} outerContainerId={"outer"}/>
-
                 <div className="RadarView">
                     <Header />
                     <div className="previewContainer">

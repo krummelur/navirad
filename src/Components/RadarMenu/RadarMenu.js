@@ -20,9 +20,9 @@ function RadarMenu(props){
                 <div className="large-text">Radar Controls</div>
                 <div className="slider-outer">
                     <p className="medium-text">Lobe width: <span>{props.beamWidth}</span></p>
-                    <input className="slider" type="range" min="1" max="15" step="1" 
+                    <input className="slider" type="range" min="0.5" max="15" step="0.5" 
                     value={props.beamWidth}
-                    onChange={evt => props.setBeamWidth(evt.target.value)}/>
+                    onChange={evt => props.setBeamWidth(parseFloat(evt.target.value))}/>
                 </div>
 
                 <div className="slider-outer">

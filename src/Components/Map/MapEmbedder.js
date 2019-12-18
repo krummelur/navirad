@@ -4,7 +4,12 @@ import "./Map.css";
 import * as Constants from "../../data/apiConfig";
 
 class MapEmbedder extends Component {
-        render() {
+    render() {
+
+            
+            console.log("THIS IS PROPS")
+            console.log(this.props)
+
         if(!this.props.loaded) {
             return <div>Loading...</div>
         }
@@ -16,8 +21,8 @@ class MapEmbedder extends Component {
                  gestureHandling={'none'}
                  style={{width: '78.75%', height: '75%'}}
                  onClick={(t, map, c) => {
-                     console.log(c.latLng.lat());
-                     console.log(c.latLng.lng())
+                    this.props.setRadarCenter({ lon: c.latLng.lng(), lat: c.latLng.lat() })
+                    console.log("Set new Center")
                  }}/>
         );
     }
