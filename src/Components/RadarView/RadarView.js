@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Header from "../../Components/Header/Header";
-import RadarContainer from "../../Components/Radar/RadarContainer";
-import RadarMenuContainer from "../../Components/RadarMenu/RadarMenuContainer";
+import Header from "../Header/Header";
+import RadarContainer from "../Radar/RadarContainer";
+import RadarMenuContainer from "../RadarMenu/RadarMenuContainer";
 import "./RadarView.css";
-import Menu from "../../Components/Menu/Menu";
+import Menu from "../Menu/Menu";
 
 class RadarView extends Component {
     render() {

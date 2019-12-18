@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import {Route, Switch} from "react-router-dom";
 import "./App.css";
-import StartView from "./Views/StartView/StartView";
-import AboutView from "./Views/AboutView/AboutView";
-import MapView from "./Views/MapView/MapView";
-import RadarView from "./Views/RadarView/RadarView";
+import StartView from "./Components/StartView/StartView";
+import AboutView from "./Components/AboutView/AboutView";
+import MapView from "./Components/MapView/MapView";
+import RadarView from "./Components/RadarView/RadarView";
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import {userActions} from "./data/actions/userActions";
 

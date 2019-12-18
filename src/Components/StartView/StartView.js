@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Header from "../../Components/Header/Header";
-import StartContainer from "../../Components/Start/StartContainer";
+import Header from "../Header/Header";
+import StartContainer from "../Start/StartContainer";
 import "./StartView.css";
 
 class StartView extends Component {
