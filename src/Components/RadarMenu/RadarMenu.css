@@ -1,6 +1,6 @@
 .radarmenu-container {
     grid-column: 3;
-    background-color: teal;
+    background-color: #032136;
 }
 
 .large-text {
@@ -25,7 +25,7 @@
     margin-left: 10%;
     height: 15px;
     border-radius: 5px;
-    background: turquoise;
+    background: #708EA4;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
@@ -37,7 +37,7 @@
     width: 15px;
     height: 15px;
     border-radius: 5px;
-    background: yellow;
+    background: white;
     cursor: pointer;
 }
 
@@ -45,7 +45,7 @@
     width: 15px;
     height: 15px;
     border-radius: 5px;
-    background: yellow;
+    background: white;
     cursor: pointer;
 }
 
@@ -62,9 +62,9 @@ ul.ks-cboxtags li{
 }
 ul.ks-cboxtags li label{
     display: inline-block;
-    background-color: rgba(255, 255, 255, .9);
+    background-color: #708EA4;
     border: 2px solid rgba(139, 139, 139, .3);
-    color: #adadad;
+    color: lightgray;
     border-radius: 25px;
     white-space: nowrap;
     margin: 3px 0;
@@ -83,8 +83,8 @@ ul.ks-cboxtags li label {
 }
 
 ul.ks-cboxtags li input[type="checkbox"]:checked + label {
-    border: 2px solid #1bdbf8;
-    background-color: #12bbd4;
+    border: 2px solid #708EA4;
+    background-color: #2E5977;
     color: #fff;
     transition: all .2s;
 }

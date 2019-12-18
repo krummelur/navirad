@@ -15,7 +15,7 @@ class About extends Component {
 
                 <div className="text">
                     NaviRad is an interactive radar simulator intended for training. The intended audience is those interested in learning
-                    how a radar's view differs from reality and a chart.
+                    how a radar's view differs from reality and a chart.<p/>
 
                     The radar view is created with a 2D raytracer and height maps from Tilezen. This method has the potential to create very
                     accurate charts, but to mimic an actual radar some limitations have been added; lobe width, constructive interference,
@@ -27,11 +27,11 @@ class About extends Component {
                 </div>
 
                 <div className="text">
-                    NaviRad was created as a team project at Royal Institute of Technology in the course Interaction Programming DH2642.
-                    The team consists of:
-                    Magnus Fredriksson
-                    Adam Liliemark
-                    Fredrik Öberg
+                    NaviRad is created as a team project at Royal Institute of Technology in the course Interaction Programming DH2642.<p/>
+                    The team consists of:<br/>
+                    Magnus Fredriksson<br/>
+                    Adam Liliemark<br/>
+                    Fredrik Öberg<br/>
                 </div>
 
                 <div className="subheading">

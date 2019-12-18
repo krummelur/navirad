@@ -10,12 +10,12 @@ class MapBox extends Component {
         return (
             <div className="map-container">
 
-                <div className="title">Map title</div>
+                <div className="map-title">Click anywhere to render a radar view</div>
                 <div className="temp-button">
                     <Link to="/radar"><p>Temporary link to radar</p></Link>
                 </div>
 
-                <div className="mapbox" ref="map">
+                <div className="mapbox">
                     <MapEmbedder/>
                 </div>
             </div>

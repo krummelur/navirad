@@ -1,10 +1,10 @@
 .radar-container {
-    grid-column: 2;
-    background-color: mediumpurple;
+    grid-column: 1 / span 2;
+    background-color: #123752;
+    color: lightgray;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
     grid-template-rows: 10% 90%;
-
 }
 
 .latlong-container {

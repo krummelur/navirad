@@ -1,5 +1,28 @@
 .about-container {
-    grid-column: 2 / span 4;
+    grid-column: 1 / span 4;
     grid-row: 2;
-    background-color: rosybrown;
+    background-color: #123752;
+    color: lightgray;
+    padding-left: 10%;
 }
+
+.title {
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-top: 5%;
+    margin-left: 0 !important;
+    width: 50%;
+}
+
+.subheading {
+    font-size: x-large;
+    margin-top: 3%;
+    width: 50%;
+}
+
+.text {
+    font-size: medium;
+    margin-top: 2%;
+    width: 50%;
+}
+
