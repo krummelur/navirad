@@ -7,7 +7,6 @@ import { BrowserRouter } from "react-router-dom";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 
-
 function radarCenter(state = { lon: 18, lat: 59 }, action) {
     switch (action.type) {
         case "SET_RADAR_CENTER":
@@ -20,7 +19,11 @@ function radarCenter(state = { lon: 18, lat: 59 }, action) {
 function radarSettingsReducer(state = {}, action) {
     switch (action.type) {
         case "SET_RADAR_BEAMWIDTH":
-            return { ...state, beamwidth: action.payload };
+            return { ...state, beamwidth: action.payload }
+        case "SET_RAIN_INTERFERENCE":
+            return {...state, rainInterference: action.payload}
+        case "SET_RADAR_INTERFERENCE":
+            return {...state, radarInterference: action.payload}
         default:
             return state;
     }
@@ -39,10 +42,19 @@ store.dispatch({
     payload: { lon: 18.5, lat: 59.17 }
 });
 
+store.dispatch({
+    type: "SET_RAIN_INTERFERENCE",
+    payload: true
+});
+
+store.dispatch({
+    type: "SET_RADAR_INTERFERENCE",
+    payload: true
+});
 
 store.dispatch({
     type: "SET_RADAR_BEAMWIDTH",
-    payload:  6
+    payload:  3
 });
 
 ReactDOM.render(
@@ -53,4 +65,5 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+
 

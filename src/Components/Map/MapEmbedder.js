@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import {Map, Marker, GoogleApiWrapper } from "google-maps-react";
+import {Map, GoogleApiWrapper } from "google-maps-react";
 import "./Map.css";
 import * as Constants from "../../data/apiConfig";
 
 class MapEmbedder extends Component {
+
     componentDidMount() {
-        this.props.google.maps.event.addDomListener(window, 'click', (event) => {alert()});
+        //this.props.google.maps.event.addDomListener(window, 'click', (event) => {alert()});
     }
 
     componentWillUnmount() {

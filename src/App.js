@@ -8,7 +8,6 @@ import RadarView from "./Views/RadarView/RadarView";
 
 
 class App extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
