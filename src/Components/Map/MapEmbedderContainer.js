@@ -12,4 +12,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(null, mapDispatchToProps)(MapEmbedder);
+export default connect(mapStateToProps, mapDispatchToProps)(MapEmbedder);

@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import {Map, GoogleApiWrapper } from "google-maps-react";
+import {Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import "./Map.css";
 import * as Constants from "../../data/apiConfig";
 
 class MapEmbedder extends Component {
-    render() {
+    centerMarker() {
+        if(this.props.radarCenter)
+            return (<Marker key="Marker" position={{lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon}} />) 
+    }
 
-            
+    render() {
             console.log("THIS IS PROPS")
             console.log(this.props)
 
@@ -22,12 +25,13 @@ class MapEmbedder extends Component {
                  style={{width: '78.75%', height: '75%'}}
                  onClick={(t, map, c) => {
                     this.props.setRadarCenter({ lon: c.latLng.lng(), lat: c.latLng.lat() })
-                    console.log("Set new Center")
-                 }}/>
+                 }}>
+                {this.centerMarker()}
+            </Map>
         );
     }
 }
 
 export default GoogleApiWrapper({
-    apiKey: (Constants.GOOGLE_API_KEY)
+    apiKey: Constants.GOOGLE_API_KEY
     })(MapEmbedder);
