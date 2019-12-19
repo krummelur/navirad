@@ -6,7 +6,6 @@ import * as Constants from "../../data/apiConfig";
 class MapEmbedder extends Component {
     constructor(props) {
         super(props);
-        console.log(this.mapOptions)
         this.mapOptions = this.mapOptions.bind(this);
     }
 
