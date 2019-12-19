@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { isEqual } from 'lodash';
 import { lonLatZoomToZXY, degToRad } from '../../helpers/mapHelpers'
+import "./Radar.css";
 
 const assert = require('assert');
-const pixels = require('image-pixels')
-const output = require('image-output')
+const pixels = require('image-pixels');
+const output = require('image-output');
 
 class Radar extends Component {
   constructor(props) {
@@ -214,12 +215,8 @@ class Radar extends Component {
 
   render() {
     return (
-      <div>
-        {/*
-        <img src={this.referenceMapUrl()} style={{ width: 256, height: 256 }} id="map" alt="logo" />
-        */}
-        <canvas id="canvas" alt="radar" />
-
+      <div className="canvas-container">
+        <canvas id="canvas" alt="radar"/>
       </div>
     )
   }

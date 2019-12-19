@@ -1,25 +1,21 @@
-.radar-container {
-    grid-column: 1 / span 2;
-    background-color: #123752;
-    color: lightgray;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
-    grid-template-rows: 10% 90%;
-}
-
 .latlong-container {
     grid-column: 2 / span 4;
     grid-row: 1;
 }
 
-.minimap-container {
-    grid-column: 2;
+.smallmap-container {
+    grid-column: 1;
     grid-row: 2;
 }
 
 .canvas-container {
-    grid-column: 4;
+    grid-column: 3;
     grid-row: 2;
+}
+
+#canvas {
+    width: 512px;
+    height: 512px;
 }
 
 .temporary-button {
