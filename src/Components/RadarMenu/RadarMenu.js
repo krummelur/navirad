@@ -7,12 +7,6 @@ RadarMenu.propTypes = {
     beamWidth: PropTypes.number.isRequired
 };
 
-/*
-    boats: PropTypes.func.isRequired,
-    rain: PropTypes.func.isRequired,
-    interference: PropTypes.func.isRequired,
- */
-
 function RadarMenu(props){
     console.log(props.beamWidth)
         return (

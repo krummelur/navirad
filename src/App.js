@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import {Route, Switch} from "react-router-dom";
 import "./App.css";
-import StartView from "./Components/StartView/StartView";
-import AboutView from "./Components/AboutView/AboutView";
-import MapView from "./Components/MapView/MapView";
-import RadarView from "./Components/RadarView/RadarView";
+import StartView from "./Components/Views/StartView/StartView";
+import AboutView from "./Components/Views/AboutView/AboutView";
+import MapView from "./Components/Views/MapView/MapView";
+import RadarView from "./Components/Views/RadarView/RadarView";
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import {userActions} from "./data/actions/userActions";
 
@@ -38,7 +38,7 @@ class App extends Component {
             <div className="App">
                 <Switch>
                     <Route
-                        exact path="/map"
+                        exact path="/home"
                         render={() => <MapView />}
                     />
 
