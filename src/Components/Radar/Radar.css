@@ -1,8 +1,3 @@
-.latlong-container {
-    grid-column: 2 / span 4;
-    grid-row: 1;
-}
-
 .smallmap-container {
     grid-column: 1;
     grid-row: 2;

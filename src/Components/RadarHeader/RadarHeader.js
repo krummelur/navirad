@@ -1,10 +1,10 @@
 import React from "react";
+import "../Views/RadarView/RadarView.css";
 
 function RadarHeader(props){
-    console.log("rc: " + props.radarCenter);
     return (
-        <div className="radarheader">
-            <p>Current position: <span>{props.radarCenter}</span></p>
+        <div>Current position:
+            <span>Lat {props.radarCenter.lat}, long {props.radarCenter.lon}</span>
         </div>
     );
 }

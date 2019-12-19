@@ -1,7 +1,7 @@
 .RadarView {
     display: grid;
     grid-template-columns: 4.5fr 1fr;
-    grid-template-rows: 9vh 91vh;
+    grid-template-rows: 9vh 6vh 85vh;
 
 }
 
@@ -11,6 +11,15 @@
     color: lightgray;
     display: grid;
     grid-template-columns: 1fr 0.2fr 1fr;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 5% 95%;
     padding-left: 10%;
+}
+
+.radarheader {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    background-color: #123752;
+    color: lightgray;
+    padding-left: 10%;
+    padding-top: 2%;
 }
