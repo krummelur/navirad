@@ -4,15 +4,24 @@ import "./Map.css";
 import * as Constants from "../../data/apiConfig";
 
 class MapEmbedder extends Component {
+    constructor(props) {
+        super(props);
+        console.log(this.mapOptions)
+        this.mapOptions = this.mapOptions.bind(this);
+    }
+
     centerMarker() {
         if(this.props.radarCenter)
             return (<Marker key="Marker" position={{lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon}} />) 
     }
 
-    render() {
-            console.log("THIS IS PROPS")
-            console.log(this.props)
+    mapOptions(mapProps, map) {
+        map.setOptions({
+            draggableCursor: "crosshair",
+        });
+    }
 
+    render() {
         if(!this.props.loaded) {
             return <div>Loading...</div>
         }
@@ -22,6 +31,8 @@ class MapEmbedder extends Component {
                  initialCenter={{lat:59.440503, lng:18.734038}}
                  disableDoubleClickZoom={true}
                  gestureHandling={'none'}
+                 disableDefaultUI={true}
+                 onReady={this.mapOptions}
                  style={{width: '78.75%', height: '75%'}}
                  onClick={(t, map, c) => {
                     this.props.setRadarCenter({ lon: c.latLng.lng(), lat: c.latLng.lat() })

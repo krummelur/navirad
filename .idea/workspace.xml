@@ -2,19 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenuContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/actions/radarActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Views/MapView/MapView.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Views/MapView/MapView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Views/StartView/StartView.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Views/StartView/StartView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AboutView/AboutView.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AboutView/AboutView.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MapView/MapView.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MapView/MapView.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Menu/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Menu/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Radar/Radar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Radar/Radar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/RadarView/RadarView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RadarView/RadarView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/StartView/StartView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/StartView/StartView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/reducers/radarSettingsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/reducers/radarSettingsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RadarView/RadarView.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RadarView/RadarView.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/StartView/StartView.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/StartView/StartView.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +40,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1UwCsax9K8iQrZE28433MVY7okW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -57,6 +67,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Views" />
       <recent name="$PROJECT_DIR$/src/Views" />
       <recent name="$PROJECT_DIR$/src/Components/Start" />
     </key>
@@ -112,6 +123,8 @@
       <workItem from="1576658282114" duration="11555000" />
       <workItem from="1576673906480" duration="399000" />
       <workItem from="1576674468424" duration="7000000" />
+      <workItem from="1576695892729" duration="885000" />
+      <workItem from="1576740742064" duration="1868000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -198,22 +211,22 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1576675530879" />
-    <state width="939" height="328" key="GridCell.Tab.0.bottom" timestamp="1576574723311">
+    <state width="1899" height="328" key="GridCell.Tab.0.bottom" timestamp="1576695953729">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="939" height="328" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1576574723311" />
-    <state width="939" height="328" key="GridCell.Tab.0.center" timestamp="1576574723308">
+    <state width="1899" height="328" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1576695953729" />
+    <state width="1899" height="328" key="GridCell.Tab.0.center" timestamp="1576695953727">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="939" height="328" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1576574723308" />
-    <state width="939" height="328" key="GridCell.Tab.0.left" timestamp="1576574723307">
+    <state width="1899" height="328" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1576695953727" />
+    <state width="1899" height="328" key="GridCell.Tab.0.left" timestamp="1576695953726">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="939" height="328" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1576574723307" />
-    <state width="939" height="328" key="GridCell.Tab.0.right" timestamp="1576574723309">
+    <state width="1899" height="328" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1576695953726" />
+    <state width="1899" height="328" key="GridCell.Tab.0.right" timestamp="1576695953728">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="939" height="328" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1576574723309" />
+    <state width="1899" height="328" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1576695953728" />
     <state x="560" y="351" key="Vcs.Push.Dialog.v2" timestamp="1576675533897">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -222,6 +235,10 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1576661168132" />
+    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576740963661">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1177@0.23.1920.1177" timestamp="1576740963661" />
     <state x="625" y="288" width="670" height="676" key="search.everywhere.popup" timestamp="1576680752608">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>

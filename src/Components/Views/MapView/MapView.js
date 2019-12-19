@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./MapView.css";
-import Header from "../Header/Header";
-import MapBox from "../Map/MapBox";
-import Menu from "../Menu/Menu";
+import Header from "../../Header/Header";
+import MapBox from "../../Map/MapBox";
+import Menu from "../../Menu/Menu";
 
 
 class MapView extends Component {
