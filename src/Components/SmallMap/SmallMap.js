@@ -7,7 +7,7 @@ class SmallMap extends Component {
 
     render() {
         return (
-            <div className="smallmap-container">
+            <div>
                 <Map google={this.props.google}
                      zoom={13}
                      initialCenter={{lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon}}
