@@ -3,7 +3,7 @@ import { isEqual } from 'lodash';
 import { lonLatZoomToZXY, degToRad } from '../../helpers/mapHelpers'
 import "./Radar.css";
 
-const assert = require('assert');
+//const assert = require('assert');
 const pixels = require('image-pixels');
 const output = require('image-output');
 
@@ -14,13 +14,13 @@ class Radar extends Component {
     this.state = {
       isPreparingHeightmap: false,
       currentHeightmap: undefined
-    }
+    };
     this.relBoatPos = undefined;
   }
 
-  pixelDataToHeight = (r, g, b) => ((r * 256 + g + b / 256) - 32768)
+  pixelDataToHeight = (r, g, b) => ((r * 256 + g + b / 256) - 32768);
 
-  zxyToImageUrl = ({ z, x, y }) => "https://tile.nextzen.org/tilezen/terrain/v1/512/terrarium/" + z + "/" + x + "/" + y + ".png?api_key=rSE_grk_QHGf-QgaYe5bNA"
+  zxyToImageUrl = ({ z, x, y }) => "https://tile.nextzen.org/tilezen/terrain/v1/512/terrarium/" + z + "/" + x + "/" + y + ".png?api_key=rSE_grk_QHGf-QgaYe5bNA";
 
   getSnapshotBeforeUpdate(prevProps) {
     if (isEqual(prevProps.radarCenter, this.props.radarCenter))
@@ -60,7 +60,8 @@ class Radar extends Component {
   componentDidUpdate(prevProps, state, snapshot) {
     if (snapshot.repositionMap) {
       this.prepareForDrawing().then((heightmap) => {
-        this.state.currentHeightmap = heightmap;
+        this.setState({...this.state, currentHeightmap: heightmap});
+        //this.state.currentHeightmap = heightmap;
         this.startContinousOutput();
       })
     } else {
