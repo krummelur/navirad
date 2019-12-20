@@ -180,7 +180,7 @@ class Radar extends Component {
         //let totalTime = Date.now() - startTime
         //console.log("Render Time: " + totalTime)
         output(newPixelData, cnv)
-      }, 20))
+      }, 100))
   }
 
   componentWillUnmount() {
@@ -194,7 +194,9 @@ class Radar extends Component {
   render() {
     return (
       <div className="canvas-container">
+        <div className="loader">
         <canvas id="canvas" alt="radar"/>
+        </div>
       </div>
     )
   }

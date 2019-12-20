@@ -23,3 +23,13 @@
     grid-column: 3;
     grid-row: 2;
 }
+.loader {
+    width: 512px;
+    height: 512px;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.loading-text {
+    align-content: center;
+    position: absolute;
+}
