@@ -28,3 +28,6 @@
     grid-column: 3;
 }
 
+.center-aligned-element {
+    text-align: center;
+}

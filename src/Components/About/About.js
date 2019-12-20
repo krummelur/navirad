@@ -5,6 +5,7 @@ class About extends Component {
     render() {
         return (
             <div className="about-container">
+                <button type="button" onClick={() => {console.log("should navigate to radarview")}}>Go to radar view</button>
                 <div className="title">
                     About NaviRad
                 </div>
