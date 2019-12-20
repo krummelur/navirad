@@ -19,7 +19,9 @@ class About extends Component {
 
                     The radar view is created with a 2D raytracer and height maps from Tilezen. This method has the potential to create very
                     accurate charts, but to mimic an actual radar some limitations have been added; lobe width, constructive interference,
-                    rain clutter.
+                    rain clutter.<p/>
+
+                    The map view is an embedded Google Map with custom marker behaviour and infowindow.
                 </div>
 
                 <div className="subheading">
@@ -40,7 +42,7 @@ class About extends Component {
 
                 <div className="text">
                     The code is released under GNU General Public License 3.0.
-                    The complete source code for this project can be found at: Link to final repo
+                    The complete source code for this project can be found at our <a style={{color: 'lightgray'}} href="https://gits-15.sys.kth.se/adamlil/dh2642-proj">git repository</a>
                 </div>
 
 

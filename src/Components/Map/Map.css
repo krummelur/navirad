@@ -24,10 +24,6 @@
     grid-column: 1 / span 2;
 }
 
-.temp-button {
-    grid-column: 3;
-}
-
 .center-aligned-element {
     text-align: center;
 }
