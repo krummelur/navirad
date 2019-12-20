@@ -6,9 +6,9 @@ This deployment serves as a submission for the mid-project review which is neede
 
 The project developers are:
 
-Magnus Fredriksson
-Adam Liliemark
-Fredrik Öberg
+- Magnus Fredriksson
+- Adam Liliemark
+- Fredrik Öberg
 
 
 ## About
