@@ -1,3 +1,4 @@
+**# Project: NaviRad**
 
 This project is being developed as a part of the course DH2642 – “Interactive Programming and the dynamic web” which is run as part of the activities of the Royal Institute of Technology in Stockholm, Sweden.
 
