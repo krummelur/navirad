@@ -71,7 +71,6 @@ class MapEmbedder extends Component {
                     zoom={12}
                     initialCenter={{ lat: 59.440503, lng: 18.734038 }}
                     disableDoubleClickZoom={true}
-                    gestureHandling={'none'}
                     disableDefaultUI={true}
                     onReady={this.mapOptions}
                     style={{ width: '78.75%', height: '75%' }}

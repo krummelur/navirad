@@ -4,6 +4,7 @@ import * as Constants from "../../data/apiConfig";
 import "../Radar/Radar.css"
 
 class SmallMap extends Component {
+
     render() {
         return (
             <div>
