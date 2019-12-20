@@ -1,4 +1,4 @@
-**# Project: NaviRad**
+# Project: NaviRad
 
 This project is being developed as a part of the course DH2642 – “Interactive Programming and the dynamic web” which is run as part of the activities of the Royal Institute of Technology in Stockholm, Sweden.
 
@@ -11,7 +11,7 @@ Adam Liliemark
 Fredrik Öberg
 
 
-**# About**
+## About
 
 The project NaviRad is an interactive radar simulator intended for introductory radar training and is aimed at people interested in learning how the view of a radar differs from the reality and a chart.
 
@@ -23,7 +23,7 @@ The start view of the application has a foundation for a register and login serv
 The radar view renders a simulated image of the surface elevation above sea level around the on the map specified point. With that it displays roughly the same image that a real radar would show if being put at the previously chosen location.
 The About view gives a short description of the app as well as the participating developers.
 
-**## Plans**
+## Plans
 
 The login/register function will be implemented through firebase authorization service and the group is aiming at using firebase database to store user created content.
 
@@ -33,7 +33,7 @@ Other boats will be visualized on the map through an automatic identification sy
 This as well as some design updates is what the group has in 
 for the project’s final submission.
 
-**## File Structure**
+## File Structure
 
 The project is developed using the framework React as well as the state container Redux. The application is initiated from the file index.js located at the base location of the “src “ folder. There you can also find different utility files such as app.js - which serves as the router of the application - and the validateInput file which validates the input from the login as well as the register components.
 
