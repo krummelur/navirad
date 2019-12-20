@@ -50,7 +50,6 @@
     cursor: pointer;
 }
 
-
 /* Source for checkbox style: https://codepen.io/quinlo/pen/ReMRXz?editors=1100#0 */
 ul.ks-cboxtags {
     list-style: none;
@@ -91,8 +90,11 @@ ul.ks-cboxtags li input[type="checkbox"]:checked + label {
 }
 
 ul.ks-cboxtags li input[type="checkbox"] {
-
+    position: absolute;
+    opacity: 0;
+    z-index: 1000;
 }
+
 ul.ks-cboxtags li input[type="checkbox"] {
     position: absolute;
     opacity: 0;
