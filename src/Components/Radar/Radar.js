@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { isEqual } from 'lodash';
 import { lonLatZoomToZXY, degToRad } from '../../helpers/mapHelpers'
 import "./Radar.css";
+import { tsObjectKeyword } from '@babel/types';
 
 const assert = require('assert');
 const pixels = require('image-pixels');
@@ -23,8 +24,6 @@ class Radar extends Component {
   zxyToImageUrl = ({ z, x, y }) => "https://tile.nextzen.org/tilezen/terrain/v1/512/terrarium/" + z + "/" + x + "/" + y + ".png?api_key=rSE_grk_QHGf-QgaYe5bNA"
 
   getSnapshotBeforeUpdate(prevProps) {
-    
-    console.log("isequal: " + isEqual(prevProps.radarCenter, this.props.radarCenter))
     if (isEqual(prevProps.radarCenter, this.props.radarCenter))
       return { repositionMap: false }
     else
@@ -32,39 +31,27 @@ class Radar extends Component {
   }
 
   componentDidMount() {
-    
-    console.log("DIDMOUNT")
     //this.setState({...this.state, isPreparingHeightmap: true})
     this.prepareForDrawing().then((heightmap) => {
-      console.log("SETTING STATE")
       this.setState({...this.state, currentHeightmap: heightmap})
     })
   }
 
   prepareForDrawing() {
-    console.log(this.props.radarCenter);
-    console.log(lonLatZoomToZXY)
     let zxy = lonLatZoomToZXY(this.props.radarCenter)
     let imageUrl = this.zxyToImageUrl(zxy);
     return new Promise(function (resolve, reject) {
       pixels(imageUrl).then((obj) => {
         this.relBoatPos = { x: zxy.xRem * obj.width, y: zxy.yRem * obj.height };
-        let y = 0;
-        while (y < obj.height) {
-          let x = 0;
-          while (x < obj.width) {
-            let pix = this.pixelDataAt(x, y, obj.width, obj.data)
-            let height = Math.max(this.pixelDataToHeight(pix.r, pix.g, pix.b), 0) * 10;
-            (this.pixelDataToHeight(pix.r, pix.g, pix.b) > 8) || (height = 0)
-            let index = this.indexFromPos(x, y, obj.width);
-            obj.data[index] = height;
-            obj.data[index + 1] = height;
-            obj.data[index + 2] = height;
-            x++;
-          }
-          y++;
-        }
-        resolve(obj);
+
+        let newData = obj.data.map((c, i) => {
+          if((i + 1) % 4 === 0) return c;
+          let cRedIndex = Math.floor(i/4)*4;
+          let height = Math.max(this.pixelDataToHeight(obj.data[cRedIndex++], obj.data[cRedIndex++], obj.data[cRedIndex++]),0)
+          return height > 8 ? height*10 : 0 
+        })
+        
+        resolve({data: newData, width: obj.width, height: obj.height});
       })
     }.bind(this));
   }
@@ -74,9 +61,6 @@ class Radar extends Component {
   //When the center position is changed, this requires fetching new images and calculating a heightmap
   //And when the boatposition or radar settings change, these only require a redraw of the radar image.
   componentDidUpdate(prevProps, state, snapshot) {
-    console.log("SNAPSHOT")
-    console.log(snapshot)
-    console.log("========")
     let cnv = document.getElementById("canvas");
     if (snapshot.repositionMap) {
       this.prepareForDrawing().then((heightmap) => {
@@ -106,7 +90,8 @@ class Radar extends Component {
   }
 
   processImage({ data, width, height }) {
-    let newPixelData = new Uint8ClampedArray(width * height * 4);
+    console.log("Hmmm")
+    let newPixelData = data.map((c, i) => {return (i + 1) % 4 === 0 ? 255 : 0})
     let i = 0;
     while (i < width * height * 4) {
       newPixelData[i++] = 0;
@@ -201,7 +186,7 @@ class Radar extends Component {
         let newPixelData = this.processImage(this.state.currentHeightmap)
         //let totalTime = Date.now() - startTime
         //console.log("Render Time: " + totalTime)
-        output(newPixelData, cnv)
+        output(this.state.currentHeightmap, cnv)
       }, 20))
   }
 
