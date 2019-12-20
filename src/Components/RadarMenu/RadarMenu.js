@@ -20,16 +20,12 @@ function RadarMenu(props){
                 </div>
 
                 <div className="slider-outer">
-                    <p className="medium-text">Clutter dampening: <span>Here goes the amount of dampening</span></p>
+                    <p className="medium-text">Clutter dampening: <span>To be implemented</span></p>
                     <input className="slider" type="range" min="1" max="100" step="1"/>
                 </div>
 
                 <div className="medium-text">Other properties:
                     <ul className="ks-cboxtags">
-                        <li>
-                            <input type="checkbox" id="checkboxOne"/>
-                            <label htmlFor="checkboxOne">Other boats</label>
-                        </li>
                         <li>
                             <input type="checkbox" id="checkboxTwo"
                             onChange={evt => {props.setRainInterference(evt.target.checked)}}/>
@@ -42,7 +38,11 @@ function RadarMenu(props){
                         </li>
                         <li>
                             <input type="checkbox" id="checkboxFour"/>
-                            <label htmlFor="checkboxFour">Radar/map overlay</label>
+                            <label htmlFor="checkboxFour">Radar/map overlay (to be implemented)</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkboxOne"/>
+                            <label htmlFor="checkboxOne">Other boats (to be implemented)</label>
                         </li>
                     </ul>
                 </div>

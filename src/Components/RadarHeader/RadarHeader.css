@@ -1,0 +1,10 @@
+.btn {
+    color: lightgray;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn:hover {
+    color: #ACC2D2;
+}
