@@ -9,10 +9,6 @@ export default props => {
     return (
         <Menu {...props}>
 
-            <Link className="menu-item" to="/home">
-                <p>Home</p>
-            </Link>
-
             <Link className="menu-item" to="/about">
                 <p>About</p>
             </Link>

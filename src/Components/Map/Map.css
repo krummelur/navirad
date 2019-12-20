@@ -31,3 +31,7 @@
 .center-aligned-element {
     text-align: center;
 }
+
+.infowindow-text {
+    color: black;
+}

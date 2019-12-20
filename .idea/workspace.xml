@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Radar/Radar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Radar/Radar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Map/Map.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/Map.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Menu/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Menu/Menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/RadarHeader/RadarHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarHeader/RadarHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RadarHeader/RadarHeaderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarHeader/RadarHeaderContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SmallMap/SmallMapContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SmallMap/SmallMapContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +110,8 @@
       <workItem from="1576673906480" duration="399000" />
       <workItem from="1576674468424" duration="7000000" />
       <workItem from="1576695892729" duration="885000" />
-      <workItem from="1576740742064" duration="8405000" />
+      <workItem from="1576740742064" duration="9000000" />
+      <workItem from="1576772340522" duration="4280000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -180,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576763466302</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="radarheader fixed">
+      <created>1576764662342</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1576764662342</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +206,8 @@
     <MESSAGE value="styling of loginpage" />
     <MESSAGE value="cursor on map, reorganizing files" />
     <MESSAGE value="radarheader problems" />
-    <option name="LAST_COMMIT_MESSAGE" value="radarheader problems" />
+    <MESSAGE value="radarheader fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="radarheader fixed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="80" y="277" key="#ESLint" timestamp="1576440348578">
@@ -207,10 +218,10 @@
       <screen x="0" y="23" width="1366" height="745" />
     </state>
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="478" y="214" key="CommitChangelistDialog2" timestamp="1576763465920">
+    <state x="478" y="214" key="CommitChangelistDialog2" timestamp="1576764662005">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1576763465920" />
+    <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1576764662005" />
     <state width="1899" height="328" key="GridCell.Tab.0.bottom" timestamp="1576695953729">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -227,18 +238,22 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state width="1899" height="328" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1576695953728" />
-    <state x="560" y="351" key="Vcs.Push.Dialog.v2" timestamp="1576763468231">
+    <state x="676" y="334" key="MultipleFileMergeDialog" timestamp="1576826885444">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1576763468231" />
+    <state x="676" y="334" key="MultipleFileMergeDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1576826885444" />
+    <state x="560" y="351" key="Vcs.Push.Dialog.v2" timestamp="1576764665528">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1576764665528" />
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1576661168132">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1576661168132" />
-    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576762721662">
+    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576826862014">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1177@0.23.1920.1177" timestamp="1576762721662" />
+    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1177@0.23.1920.1177" timestamp="1576826862014" />
     <state x="625" y="288" width="670" height="676" key="search.everywhere.popup" timestamp="1576680752608">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>

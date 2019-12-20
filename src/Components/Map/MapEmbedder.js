@@ -32,9 +32,11 @@ class MapEmbedder extends Component {
                     position={{ lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon }}
                     onClose={() => { this.setState({ displayMarkerInfo: false }) }}>
                     <div>
-                        <p>Open radar view at this position?</p>
-                        <p>Longitude: {this.props.radarCenter.lon.toFixed(4)}</p>
-                        <p>Latitude: {this.props.radarCenter.lat.toFixed(4)}</p>
+                        <div className="infowindow-text">
+                            <p>Open radar view at this position?</p>
+                            <p>Longitude: {this.props.radarCenter.lon.toFixed(4)}</p>
+                            <p>Latitude: {this.props.radarCenter.lat.toFixed(4)}</p>
+                        </div>
                         <div className="center-aligned-element">
                             <button type="button"
                                 //There seems to be an issue with using Links inside Map, and especially InfoWindow components.
