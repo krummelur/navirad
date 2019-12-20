@@ -1,19 +1,26 @@
-import React from 'react'
-import { lonLatZoomToZXY } from '../../helpers/mapHelpers'
-import "../Radar/Radar.css";
+import {GoogleApiWrapper, Map, Marker} from "google-maps-react";
+import React, { Component } from "react";
+import * as Constants from "../../data/apiConfig";
+import "../Radar/Radar.css"
 
-const referenceMapUrl = (radarCenter) => {
-    let zxy = lonLatZoomToZXY(radarCenter)
-    return "https://maps.wikimedia.org/osm-intl/" + zxy.z + "/" + zxy.x + "/" + zxy.y + ".png"
-};
+class SmallMap extends Component {
+    render() {
+        return (
+            <div>
+                <Map google={this.props.google}
+                     zoom={13}
+                     initialCenter={{lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon}}
+                     style={{width: '512px', height: '512px'}}
+                     disableDefaultUI={true}
+                     gestureHandling={'none'}>
+                    <Marker position={{ lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon }}/>
+                </Map>
+            </div>
 
-function SmallMap(props) {
-    console.log(props.radarCenter);
-    return (
-        <div className="smallmap-container">
-            <img src={referenceMapUrl(props.radarCenter)} style={{ width: 512, height: 512 }} id="map" alt="logo" />
-        </div>
-    )
+        )
+    }
 }
 
-export default SmallMap;
+export default GoogleApiWrapper({
+    apiKey: Constants.GOOGLE_API_KEY
+})(SmallMap);
