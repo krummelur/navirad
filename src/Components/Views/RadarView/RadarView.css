@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: 4.5fr 1fr;
     grid-template-rows: 9vh 6vh 85vh;
-
 }
 
 .radarmap-container {
@@ -12,7 +11,7 @@
     display: grid;
     grid-template-columns: 1fr 0.2fr 1fr;
     grid-template-rows: 5% 95%;
-    padding-left: 14.5%;
+    padding-left: 125px;
 }
 
 .radarheader {
@@ -20,7 +19,7 @@
     grid-row: 2;
     background-color: #123752;
     color: lightgray;
-    padding-left: 14%;
+    padding-left: 125px;
     padding-top: 1%;
 }
 

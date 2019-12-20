@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="smallmap changed to google map">
+    <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Map/MapBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/MapBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SmallMap/SmallMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SmallMap/SmallMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/About/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/About.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Map/Map.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/Map.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +108,7 @@
       <workItem from="1576674468424" duration="7000000" />
       <workItem from="1576695892729" duration="885000" />
       <workItem from="1576740742064" duration="9000000" />
-      <workItem from="1576772340522" duration="11162000" />
+      <workItem from="1576772340522" duration="12205000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -222,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576833243937</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="minor styling">
+      <created>1576834634343</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1576834634343</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +250,8 @@
     <MESSAGE value="styling" />
     <MESSAGE value="got rid of warnings" />
     <MESSAGE value="smallmap changed to google map" />
-    <option name="LAST_COMMIT_MESSAGE" value="smallmap changed to google map" />
+    <MESSAGE value="minor styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor styling" />
   </component>
   <component name="WindowStateProjectService">
     <state x="80" y="277" key="#ESLint" timestamp="1576440348578">
@@ -254,10 +262,10 @@
       <screen x="0" y="23" width="1366" height="745" />
     </state>
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="478" y="214" key="CommitChangelistDialog2" timestamp="1576834097919">
+    <state x="478" y="214" key="CommitChangelistDialog2" timestamp="1576834634019">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1576834097919" />
+    <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1576834634019" />
     <state width="1899" height="328" key="GridCell.Tab.0.bottom" timestamp="1576695953729">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -278,10 +286,10 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="676" y="334" key="MultipleFileMergeDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1576826885444" />
-    <state x="560" y="351" key="Vcs.Push.Dialog.v2" timestamp="1576833247644">
+    <state x="560" y="351" key="Vcs.Push.Dialog.v2" timestamp="1576834636240">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1576833247644" />
+    <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1576834636240" />
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1576661168132">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
