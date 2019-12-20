@@ -186,7 +186,7 @@ class Radar extends Component {
         let newPixelData = this.processImage(this.state.currentHeightmap)
         //let totalTime = Date.now() - startTime
         //console.log("Render Time: " + totalTime)
-        output(this.state.currentHeightmap, cnv)
+        output(newPixelData, cnv)
       }, 20))
   }
 
