@@ -125,7 +125,12 @@ class Radar extends Component {
     let nextPos = { x: bp.x, y: bp.y };
     let isHit = false;
     let min = 10;
+    //TODO: do this kinda stuff with canvas
     image.newPixelData[this.indexFromPos(bp.x, bp.y, image.width)] = 255;
+    image.newPixelData[this.indexFromPos(bp.x+1, bp.y, image.width)] = 255;
+    image.newPixelData[this.indexFromPos(bp.x-1, bp.y, image.width)] = 255;
+    image.newPixelData[this.indexFromPos(bp.x, bp.y+1, image.width)] = 255;
+    image.newPixelData[this.indexFromPos(bp.x, bp.y-1, image.width)] = 255;
     while (nextPos.x > 0 && nextPos.y > 0 && nextPos.x < image.width && nextPos.y < image.height) {
       let pixelAtPos = this.pixelDataAt(Math.floor(nextPos.x), Math.floor(nextPos.y), image.width, image.data).g;
       min = pixelAtPos >= min ? pixelAtPos : min;
