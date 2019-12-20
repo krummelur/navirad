@@ -30,8 +30,8 @@ The login/register function will be implemented through firebase authorization s
 A radar/map overlay will be implemented on the radar to more clearly se what and where the radar is rendering a simulation of.
 
 Other boats will be visualized on the map through an automatic identification system(AIS) and will be rendered live.
-This as well as some design updates is what the group has in 
-for the project’s final submission.
+
+This as well as some design updates is what the group has in for the project’s final submission.
 
 ## File Structure
 
