@@ -1,7 +1,8 @@
 # Project: NaviRad
 
 This project is being developed as a part of the course DH2642 – “Interactive Programming and the dynamic web” which is run as part of the activities of the Royal Institute of Technology in Stockholm, Sweden.
-This deployment serves as a submission for the mid-project review which is needed for the course examination and the project should be considered as a work in progress.
+NaviRad is an interactive radar simulator intended for introductory radar training and is aimed at people interested in learning how the view of a radar differs from the reality and a chart.
+
 The project developers are:
 Magnus Fredriksson
 Adam Liliemark
