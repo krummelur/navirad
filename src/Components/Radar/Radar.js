@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { isEqual } from 'lodash';
 import { lonLatZoomToZXY, degToRad } from '../../helpers/mapHelpers'
 import "./Radar.css";
-import { tsObjectKeyword } from '@babel/types';
 
 const assert = require('assert');
 const pixels = require('image-pixels');
@@ -31,7 +30,6 @@ class Radar extends Component {
   }
 
   componentDidMount() {
-    //this.setState({...this.state, isPreparingHeightmap: true})
     this.prepareForDrawing().then((heightmap) => {
       this.setState({...this.state, currentHeightmap: heightmap})
     })
@@ -49,8 +47,7 @@ class Radar extends Component {
           let cRedIndex = Math.floor(i/4)*4;
           let height = Math.max(this.pixelDataToHeight(obj.data[cRedIndex++], obj.data[cRedIndex++], obj.data[cRedIndex++]),0)
           return height > 8 ? height*10 : 0 
-        })
-        
+        })       
         resolve({data: newData, width: obj.width, height: obj.height});
       })
     }.bind(this));
@@ -61,14 +58,12 @@ class Radar extends Component {
   //When the center position is changed, this requires fetching new images and calculating a heightmap
   //And when the boatposition or radar settings change, these only require a redraw of the radar image.
   componentDidUpdate(prevProps, state, snapshot) {
-    let cnv = document.getElementById("canvas");
     if (snapshot.repositionMap) {
       this.prepareForDrawing().then((heightmap) => {
         this.state.currentHeightmap = heightmap;
         this.startContinousOutput();
       })
-    }
-    else {
+    } else {
       this.startContinousOutput();
     }
   }
@@ -90,15 +85,7 @@ class Radar extends Component {
   }
 
   processImage({ data, width, height }) {
-    console.log("Hmmm")
     let newPixelData = data.map((c, i) => {return (i + 1) % 4 === 0 ? 255 : 0})
-    let i = 0;
-    while (i < width * height * 4) {
-      newPixelData[i++] = 0;
-      newPixelData[i++] = 0;
-      newPixelData[i++] = 0;
-      newPixelData[i++] = 255;
-    }
 
     let angle = 0.0;
     let beamwidthRad = degToRad(this.props.radarSettings.beamwidth);
@@ -114,6 +101,7 @@ class Radar extends Component {
   }
 
   rainify(image, width, height) {
+    //TODO: make this into a map() 
     let x = 0;
     let y = 0;
     while (y < height) {
@@ -124,7 +112,6 @@ class Radar extends Component {
         let distanceFromOriginSquared = bpdeltax * bpdeltax + bpdeltay * bpdeltay;
         let someNum = 70;
         if ((Math.random() - 0.5) * distanceFromOriginSquared > someNum * someNum || Math.random() > 0.95) {
-
           image[this.indexFromPos(x, y, width) + 1] = 128;
         }
         x++
