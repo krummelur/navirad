@@ -3,3 +3,15 @@
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 13vh 87vh;
 }
+
+.login-container {
+    grid-column: 1 / span 3;
+    background-color: #123752;
+    text-align: center;
+    color: lightgray;
+}
+
+.login-text {
+    margin-top: 5%;
+    font-size: large;
+}

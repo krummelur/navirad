@@ -1,32 +1,40 @@
 import Validator from 'validator';
 
-export default function validateInput(data) {
+export function validateLoginInput(data) {
 
-    let errors = {};
-
-    if (Validator.isEmpty(data.userID))
-        errors.userID = "UserID is required!";
-
-    if (Validator.isEmpty(data.password))
-        errors.password = "Password is required!";
-
-    if (!Validator.isEmail(data.eMail))
-        errors.eMail = "Input is not an E-Mail!"
-
-    if (Validator.isEmpty(data.eMail))
-        errors.eMail = "E-Mail is required!";
-
-
-    if (data.loginForm)
+    const messages = {};
+  
         if (Validator.isEmpty(data.userID) || Validator.isEmpty(data.password))
-            errors.login = "Invalid username or password!";
-        else
-            errors = {};
+            messages.login = "Invalid username or password!";
+        
 
     return {
-        errors,
-        isValid: isEmpty(errors)
+        messages,
+        isValid: isEmpty(messages)
     };
+}
+
+export function validateRegisterInput(data) {
+
+    const messages = {};
+
+    if (Validator.isEmpty(data.userID))
+        messages.userID = "UserID is required!";
+
+    if (Validator.isEmpty(data.password))
+        messages.password = "Password is required!";
+
+    if (!Validator.isEmail(data.eMail))
+        messages.eMail = "Input is not an E-Mail!"
+
+    if (Validator.isEmpty(data.eMail))
+        messages.eMail = "E-Mail is required!";
+
+
+     return {
+        messages,
+        isValid: isEmpty(messages)
+     };
 }
 
 function isEmpty(object) {
