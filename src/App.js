@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import {Route, Switch} from "react-router-dom";
-import "./App.css";
 import StartView from "./Components/Views/StartView/StartView";
 import AboutView from "./Components/Views/AboutView/AboutView";
 import MapView from "./Components/Views/MapView/MapView";
 import RadarView from "./Components/Views/RadarView/RadarView";
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import {userActions} from "./data/actions/userActions";
+import "./App.css";
 
 class App extends Component {
     constructor(props) {

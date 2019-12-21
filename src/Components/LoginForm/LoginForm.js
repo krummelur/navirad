@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Input from "../Input/input";
 import Message from "../Message/message";
-import validateInput from "../../validateInput";
+import {validateLoginInput} from "../../validateInput";
 import { Link } from "react-router-dom";
 import "./form.css";
 
@@ -12,10 +12,7 @@ class LoginForm extends Component {
       userID: "",
       password: "",
       login: "",
-      eMail: "",
-      isValid: true,
-      errors: {},
-      loginForm: true
+      messages: {}
     }
   }
 
@@ -26,8 +23,8 @@ class LoginForm extends Component {
   }
 
   isValid() {
-    const { errors, isValid } = validateInput(this.state);
-    this.setState({ errors, isValid });
+    const { messages, isValid } = validateLoginInput(this.state);
+    this.setState({messages});
     return isValid;
   }
 
@@ -40,7 +37,6 @@ class LoginForm extends Component {
   render() {
 
     return (
-
       <div className="login-page">
         <div className="form">
           <form className="login-form">
@@ -54,11 +50,11 @@ class LoginForm extends Component {
               placeholder="password"
               sendData={this.getData.bind(this)}
             />
-            <Message usermessage={this.state.errors.login} />
+            <Message usermessage={this.state.messages.login} />
             <Link to="/map">
               <button type="button" link="/map" onClick={this.handleLogin.bind(this)}>login</button>
             </Link>
-            <p className="message">Not registered? <span onClick={() => this.props.setStartupToggle(!this.props.toggleStartup)} >Create an account</span></p>
+            <p className="message">Not registered? <span onClick={this.props.toggleFunction} >Create an account</span></p>
           </form>
         </div>
       </div>

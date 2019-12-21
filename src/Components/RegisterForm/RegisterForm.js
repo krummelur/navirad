@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import validateInput from "../../validateInput";
+import {validateRegisterInput} from "../../validateInput";
 import Input from "../Input/input";
 import Message from "../Message/message";
 import "../LoginForm/form.css";
@@ -11,8 +11,7 @@ class RegisterForm extends Component {
       userID: "",
       password: "",
       eMail: "",
-      errors: {},
-      isValid: true
+      messages: {},
     }
   }
 
@@ -28,13 +27,13 @@ class RegisterForm extends Component {
     event.preventDefault();
     if (this.isValid()) {
       this.addUser();
-      this.props.setStartupToggle(!this.props.toggleStartup);
+      this.props.toggleFunction();
     }
   }
 
   isValid() {
-    const { errors, isValid } = validateInput(this.state);
-    this.setState({ errors, isValid });
+    const { messages, isValid } = validateRegisterInput(this.state);
+    this.setState({ messages });
     return isValid;
   }
 
@@ -54,19 +53,19 @@ class RegisterForm extends Component {
               placeholder="userID"
               sendData={this.getData.bind(this)}
             />
-            <Message usermessage={this.state.errors.userID} />
+            <Message usermessage={this.state.messages.userID} />
             <Input
               type="password"
               placeholder="password"
               sendData={this.getData.bind(this)}
             />
-            <Message usermessage={this.state.errors.password} />
+            <Message usermessage={this.state.messages.password} />
             <Input
               type="text"
               placeholder="eMail"
               sendData={this.getData.bind(this)}
             />
-            <Message usermessage={this.state.errors.eMail} />
+            <Message usermessage={this.state.messages.eMail} />
             <button
               onClick={this.onSubmit.bind(this)}>
               create
@@ -74,7 +73,7 @@ class RegisterForm extends Component {
             <p className="message">
               Already registered?
               <span
-                onClick={() => this.props.setStartupToggle(!this.props.toggleStartup)}>
+                onClick={this.props.toggleFunction}>
                 Sign In
               </span>
             </p>
