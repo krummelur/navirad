@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { isEqual } from 'lodash';
 import { lonLatZoomToZXY, degToRad } from '../../helpers/mapHelpers'
+import { TILEZEN_API_KEY } from '../../data/apiConfig'
 import "./Radar.css";
 
 //const assert = require('assert');
@@ -10,17 +11,17 @@ const output = require('image-output');
 class Radar extends Component {
   constructor(props) {
     super(props);
-    //This is not part of the state becuase it should not prompt an update.
     this.state = {
       isPreparingHeightmap: false,
       currentHeightmap: undefined
     };
+    //This is not part of the state becuase it should not prompt an update.
     this.relBoatPos = undefined;
   }
 
   pixelDataToHeight = (r, g, b) => ((r * 256 + g + b / 256) - 32768);
-
-  zxyToImageUrl = ({ z, x, y }) => "https://tile.nextzen.org/tilezen/terrain/v1/512/terrarium/" + z + "/" + x + "/" + y + ".png?api_key=rSE_grk_QHGf-QgaYe5bNA";
+  
+  zxyToImageUrl = ({ z, x, y }) => `https://tile.nextzen.org/tilezen/terrain/v1/512/terrarium/${z}/${x}/${y}.png?api_key=${TILEZEN_API_KEY}`;
 
   getSnapshotBeforeUpdate(prevProps) {
     if (isEqual(prevProps.radarCenter, this.props.radarCenter))
