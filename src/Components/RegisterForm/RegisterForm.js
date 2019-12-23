@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {validateRegisterInput} from "../../Util/validateInput";
+import { validateRegisterInput } from "../../Util/validateInput";
 import Input from "../Input/input";
 import Message from "../Message/message";
-import FireBase from "../../Util/firebase";
+import { app } from "../../Util/authenticator";
 import "../LoginForm/form.css";
 
 class RegisterForm extends Component {
@@ -21,20 +21,20 @@ class RegisterForm extends Component {
   onSubmit(event) {
     event.preventDefault();
     if (this.isValid()) {
-      FireBase.auth().createUserWithEmailAndPassword(this.state.eMail, this.state.password)
-      .catch(error => {
-        this.setState({
+      app.auth().createUserWithEmailAndPassword(this.state.eMail, this.state.password)
+        .catch(error => {
+          this.setState({
             error: error.message,
             isValid: false
-        })}).then(() => {
-          if(this.state.isValid){
+          })
+        }).then(() => {
+          if (this.state.isValid) {
             this.props.toggleFunction();
             this.props.registration(
               "Registration was succesful!"
             );
           }
-          });
-     
+        });
     }
   }
 
@@ -60,28 +60,28 @@ class RegisterForm extends Component {
               placeholder="userID"
               sendData={this.getData.bind(this)}
             />
-            <Message 
-            usermessage={this.state.messages.userID} 
-            style={{color:"red"}}
+            <Message
+              usermessage={this.state.messages.userID}
+              style={{ color: "red" }}
             />
             <Input
               type="password"
               placeholder="password"
               sendData={this.getData.bind(this)}
             />
-            <Message usermessage={this.state.messages.password} 
-            style={{color:"red"}}
+            <Message usermessage={this.state.messages.password}
+              style={{ color: "red" }}
             />
             <Input
               type="text"
               placeholder="eMail"
               sendData={this.getData.bind(this)}
             />
-            <Message usermessage={this.state.messages.eMail} 
-            style={{color:"red"}}
+            <Message usermessage={this.state.messages.eMail}
+              style={{ color: "red" }}
             />
-            <Message usermessage={this.state.error} 
-            style={{color:"red"}}
+            <Message usermessage={this.state.error}
+              style={{ color: "red" }}
             />
             <button
               onClick={this.onSubmit.bind(this)}>

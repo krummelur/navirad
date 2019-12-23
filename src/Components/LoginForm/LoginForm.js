@@ -2,9 +2,10 @@ import React, { useContext, useState } from 'react';
 import Input from "../Input/input";
 import Message from "../Message/message";
 import { validateLoginInput } from "../../Util/validateInput";
-import { withRouter, Redirect } from "react-router";
+import { Redirect } from "react-router";
 import { AuthenticatorContext } from "../../Util/authenticator";
-import firebaseApp from "../../Util/firebase";
+import {app} from "../../Util/authenticator";
+import firebase from "firebase";
 import "./form.css";
 
 const LoginForm = (props) => {
@@ -16,7 +17,10 @@ const LoginForm = (props) => {
   const handleLogin = (event) => {
     event.preventDefault();
     if (isValid()) {
-      firebaseApp.auth().signInWithEmailAndPassword(userID.value, password.value)
+      app.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+        .then(() => {
+          app.auth().signInWithEmailAndPassword(userID.value, password.value);
+        })
         .catch(error => {
           setMessage(error.message);
         })
@@ -29,7 +33,7 @@ const LoginForm = (props) => {
     return isValid;
   }
 
-  const {currentUser} = useContext(AuthenticatorContext);
+  const { currentUser } = useContext(AuthenticatorContext);
 
   if (currentUser)
     return <Redirect to="/map" />;
@@ -71,4 +75,4 @@ const LoginForm = (props) => {
 
 }
 
-export default withRouter(LoginForm);
+export default LoginForm;

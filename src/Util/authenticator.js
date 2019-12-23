@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import app from "./firebase";
+import {firebaseConfig} from "../data/apiConfig";
+import "firebase/auth";
+
+const firebase = require("firebase/app");
+
+export const app = firebase.initializeApp(firebaseConfig);
 
 export const AuthenticatorContext = React.createContext();
 

@@ -6,7 +6,6 @@ import MapView from "./Components/Views/MapView/MapView";
 import RadarView from "./Components/Views/RadarView/RadarView";
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import { AuthenticatorProvider } from "./Util/authenticator";
-import { userActions } from "./data/actions/userActions";
 import PrivateRoute from "./Components/PrivateRoute/privateRoute";
 import "./App.css";
 
@@ -29,10 +28,6 @@ class App extends Component {
 
     restoreStateFromDisk() {
         let storedState = JSON.parse(localStorage.getItem('NaviRad'));
-
-        storedState.users.forEach(user => {
-            this.props.store.dispatch(userActions.addUser(user));
-        });
     }
 
     render() {
@@ -40,14 +35,13 @@ class App extends Component {
             <div className="App">
                 <AuthenticatorProvider>
                     <Switch>
-                        <Route exact path="/" component={StartView}/>
-                        <PrivateRoute exact path="/about" component={AboutView}/>
-                        <PrivateRoute exact path="/map" component={MapView}/>
-                        <PrivateRoute exact path="/radar" component={RadarView}/>
-                        <PrivateRoute path="*" component={PageNotFound}/>
+                        <Route exact path="/" component={StartView} />
+                        <PrivateRoute exact path="/about" component={AboutView} />
+                        <PrivateRoute exact path="/map" component={MapView} />
+                        <PrivateRoute exact path="/radar" component={RadarView} />
+                        <PrivateRoute path="*" component={PageNotFound} />
                     </Switch>
                 </AuthenticatorProvider>
-
             </div>
         );
     }

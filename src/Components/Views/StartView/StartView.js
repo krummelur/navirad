@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginForm from "../../LoginForm/LoginForm";
-import RegisterForm from "../../RegisterForm/RegisterFormContainer";
+import RegisterForm from "../../RegisterForm/RegisterForm";
 import Header from "../../Header/Header";
 import Message from "../../Message/message";
 import "./StartView.css";
