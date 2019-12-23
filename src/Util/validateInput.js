@@ -2,15 +2,14 @@ import Validator from 'validator';
 
 export function validateLoginInput(data) {
 
-    const messages = {};
+    let message = "";
   
-        if (Validator.isEmpty(data.userID) || Validator.isEmpty(data.password))
-            messages.login = "Invalid username or password!";
+    if (Validator.isEmpty(data.userID.value) || Validator.isEmpty(data.password.value))
+        message = "Invalid username or password!";
         
-
     return {
-        messages,
-        isValid: isEmpty(messages)
+        message: message,
+        isValid: isEmpty(message)
     };
 }
 

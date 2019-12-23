@@ -8,11 +8,12 @@ class Message extends Component {
     }
     render() {
         return (
-            <div className="usermessage">
+            <div className="usermessage" style={this.props.style}>
                 {this.props.usermessage}
             </div>
         );
     }
+
 }
 
 export default Message;

@@ -1,65 +1,74 @@
-import React, { Component } from 'react';
+import React, { useContext, useState } from 'react';
 import Input from "../Input/input";
 import Message from "../Message/message";
-import {validateLoginInput} from "../../validateInput";
-import { Link } from "react-router-dom";
+import { validateLoginInput } from "../../Util/validateInput";
+import { withRouter, Redirect } from "react-router";
+import { AuthenticatorContext } from "../../Util/authenticator";
+import firebaseApp from "../../Util/firebase";
 import "./form.css";
 
-class LoginForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userID: "",
-      password: "",
-      login: "",
-      messages: {}
+const LoginForm = (props) => {
+
+  const [userID, setUserID] = useState({ ID: "", value: "" });
+  const [password, setPassword] = useState({ ID: "", value: "" });
+  const [message, setMessage] = useState("");
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    if (isValid()) {
+      firebaseApp.auth().signInWithEmailAndPassword(userID.value, password.value)
+        .catch(error => {
+          setMessage(error.message);
+        })
     }
   }
 
-  handleLogin(event) {
-    event.preventDefault();
-    if (this.isValid())
-      window.location = "/map";
-  }
-
-  isValid() {
-    const { messages, isValid } = validateLoginInput(this.state);
-    this.setState({messages});
+  const isValid = () => {
+    const { message, isValid } = validateLoginInput({ userID, password });
+    setMessage(message);
     return isValid;
   }
 
-  getData(data) {
-    this.setState({
-      [data.ID]: data.value
-    });
-  }
+  const {currentUser} = useContext(AuthenticatorContext);
 
-  render() {
+  if (currentUser)
+    return <Redirect to="/map" />;
 
-    return (
-      <div className="login-page">
-        <div className="form">
-          <form className="login-form">
-            <Input
-              type="text"
-              placeholder="userID"
-              sendData={this.getData.bind(this)}
-            />
-            <Input
-              type="password"
-              placeholder="password"
-              sendData={this.getData.bind(this)}
-            />
-            <Message usermessage={this.state.messages.login} />
-            <Link to="/map">
-              <button type="button" link="/map" onClick={this.handleLogin.bind(this)}>login</button>
-            </Link>
-            <p className="message">Not registered? <span onClick={this.props.toggleFunction} >Create an account</span></p>
-          </form>
-        </div>
+  return (
+    <div className="login-page">
+      <div className="form">
+        <form className="login-form">
+          <Input
+            type="text"
+            placeholder="userID"
+            sendData={setUserID}
+          />
+          <Input
+            type="password"
+            placeholder="password"
+            sendData={setPassword}
+          />
+          <Message
+            usermessage={message}
+            style={{ color: "red" }}
+          />
+          <button
+            onClick={handleLogin}>
+            login
+              </button>
+          <p
+            className="message">
+            Not registered?
+                <span
+              onClick={props.toggleFunction}>
+              Create an account
+                </span>
+          </p>
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
+
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
