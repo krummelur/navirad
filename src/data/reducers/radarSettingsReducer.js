@@ -4,7 +4,8 @@ const defaultState = {
     radarCenter: undefined,
     beamwidth: 4,
     rainInterference: false,
-    radarInterference: false
+    radarInterference: false,
+    showMapUnderlay: false,
 }
 
 export function radarSettingsReducer(state = defaultState, action) {
@@ -17,6 +18,8 @@ export function radarSettingsReducer(state = defaultState, action) {
             return {...state, radarInterference: action.payload};
         case constants.SET_RADAR_CENTER:
             return {...state, radarCenter: action.payload};
+        case constants.SET_MAP_UNDERLAY:
+            return {...state, showMapUnderlay: action.payload};
         default:
             return state;
     }

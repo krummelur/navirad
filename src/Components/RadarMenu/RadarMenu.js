@@ -36,8 +36,9 @@ function RadarMenu(props){
                             <label htmlFor="checkboxTwo">Radio interference</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="checkboxThree"/>
-                            <label htmlFor="checkboxThree">Radar/map overlay (to be implemented)</label>
+                            <input type="checkbox" id="checkboxThree"
+                            onChange={evt => {props.setUnderlay(evt.target.checked)}}/>
+                            <label htmlFor="checkboxThree">Radar/map overlay</label>
                         </li>
                         <li>
                             <input type="checkbox" id="checkboxFour"/>
