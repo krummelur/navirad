@@ -4,7 +4,7 @@ export function validateLoginInput(data) {
 
     let message = "";
   
-    if (Validator.isEmpty(data.userID.value) || Validator.isEmpty(data.password.value))
+    if (Validator.isEmpty(data.eMail.value) || Validator.isEmpty(data.password.value))
         message = "Invalid username or password!";
         
     return {

@@ -2,7 +2,7 @@ import React from "react";
 import { slide as Menu } from "react-burger-menu";
 import "./Menu.css";
 import { Link } from "react-router-dom";
-import { app } from "../../Util/authenticator";
+import { firebaseApp } from "../../Util/authenticator";
 
 // Source: https://negomi.github.io/react-burger-menu/
 
@@ -18,7 +18,7 @@ export default props => {
                 <p>Map</p>
             </Link>
 
-            <p onClick={() => app.auth().signOut()}>Logout</p>
+            <p onClick={() => firebaseApp.auth().signOut()}>Logout</p>
         </Menu>
     );
 };

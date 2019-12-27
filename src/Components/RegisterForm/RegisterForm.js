@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { validateRegisterInput } from "../../Util/validateInput";
 import Input from "../Input/input";
 import Message from "../Message/message";
-import { app } from "../../Util/authenticator";
+import { firebaseApp } from "../../Util/authenticator";
 import "../LoginForm/form.css";
 
 class RegisterForm extends Component {
@@ -21,18 +21,18 @@ class RegisterForm extends Component {
   onSubmit(event) {
     event.preventDefault();
     if (this.isValid()) {
-      app.auth().createUserWithEmailAndPassword(this.state.eMail, this.state.password)
+      firebaseApp.auth().createUserWithEmailAndPassword(this.state.eMail, this.state.password)
         .catch(error => {
           this.setState({
             error: error.message,
             isValid: false
           })
-        }).then(() => {
-          if (this.state.isValid) {
-            this.props.toggleFunction();
-            this.props.registration(
-              "Registration was succesful!"
-            );
+        }).then((object) => {
+          if (this.state.isValid) {        
+            firebaseApp.database().ref("/users/" + object.user.uid).set({
+              userID: this.state.userID,
+              eMail: this.state.eMail
+            }).then(this.props.toggleFunction());
           }
         });
     }
@@ -57,11 +57,11 @@ class RegisterForm extends Component {
           <form className="register-form">
             <Input
               type="text"
-              placeholder="userID"
+              placeholder="eMail"
               sendData={this.getData.bind(this)}
             />
             <Message
-              usermessage={this.state.messages.userID}
+              usermessage={this.state.messages.eMail}
               style={{ color: "red" }}
             />
             <Input
@@ -74,10 +74,10 @@ class RegisterForm extends Component {
             />
             <Input
               type="text"
-              placeholder="eMail"
+              placeholder="userID"
               sendData={this.getData.bind(this)}
             />
-            <Message usermessage={this.state.messages.eMail}
+            <Message usermessage={this.state.messages.userID}
               style={{ color: "red" }}
             />
             <Message usermessage={this.state.error}

@@ -7,6 +7,8 @@ import RadarView from "./Components/Views/RadarView/RadarView";
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import { AuthenticatorProvider } from "./Util/authenticator";
 import PrivateRoute from "./Components/PrivateRoute/privateRoute";
+import {firebaseApp} from "./Util/authenticator";
+import firebase from "firebase";
 import "./App.css";
 
 class App extends Component {
@@ -28,6 +30,10 @@ class App extends Component {
 
     restoreStateFromDisk() {
         let storedState = JSON.parse(localStorage.getItem('NaviRad'));
+    }
+
+    componentDidMount(){
+        firebaseApp.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION); 
     }
 
     render() {

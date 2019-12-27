@@ -4,31 +4,29 @@ import Message from "../Message/message";
 import { validateLoginInput } from "../../Util/validateInput";
 import { Redirect } from "react-router";
 import { AuthenticatorContext } from "../../Util/authenticator";
-import {app} from "../../Util/authenticator";
-import firebase from "firebase";
+import { firebaseApp } from "../../Util/authenticator";
 import "./form.css";
 
 const LoginForm = (props) => {
 
-  const [userID, setUserID] = useState({ ID: "", value: "" });
+  const [eMail, seteMail] = useState({ ID: "", value: "" });
   const [password, setPassword] = useState({ ID: "", value: "" });
   const [message, setMessage] = useState("");
 
   const handleLogin = (event) => {
     event.preventDefault();
+
     if (isValid()) {
-      app.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-        .then(() => {
-          app.auth().signInWithEmailAndPassword(userID.value, password.value);
-        })
+      firebaseApp.auth().signInWithEmailAndPassword(eMail.value, password.value)
         .catch(error => {
           setMessage(error.message);
-        })
+        });
     }
   }
 
+
   const isValid = () => {
-    const { message, isValid } = validateLoginInput({ userID, password });
+    const { message, isValid } = validateLoginInput({ eMail, password });
     setMessage(message);
     return isValid;
   }
@@ -44,8 +42,8 @@ const LoginForm = (props) => {
         <form className="login-form">
           <Input
             type="text"
-            placeholder="userID"
-            sendData={setUserID}
+            placeholder="eMail"
+            sendData={seteMail}
           />
           <Input
             type="password"
