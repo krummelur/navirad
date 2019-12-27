@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { isEqual } from 'lodash';
 import { lonLatZoomToZXY, degToRad } from '../../helpers/mapHelpers'
 import { TILEZEN_API_KEY } from '../../data/apiConfig'
+import radarIndicator_Img from '../../media/radar-indicator.png'
 import "./Radar.css";
 
 //const assert = require('assert');
@@ -17,12 +18,21 @@ class Radar extends Component {
     };
     //This is not part of the state becuase it should not prompt an update.
     this.relBoatPos = undefined;
+    this.radarIndicatorImg = new Image();
+    this.radarIndicatorImg.src = radarIndicator_Img;
   }
 
   pixelDataToHeight = (r, g, b) => ((r * 256 + g + b / 256) - 32768);
   
   zxyToImageUrl = ({ z, x, y }) => `https://tile.nextzen.org/tilezen/terrain/v1/512/terrarium/${z}/${x}/${y}.png?api_key=${TILEZEN_API_KEY}`;
 
+  referenceMapUrl = () => {
+    let zxy = lonLatZoomToZXY(this.props.radarCenter)
+    return `https://maps.wikimedia.org/osm-intl/${zxy.z}/${zxy.x}/${zxy.y}.png`
+  }
+
+  //Will be called whenever one of the props changes, before the actual update. 
+  //However, we don't need to reload the heightmap if the area does not change
   getSnapshotBeforeUpdate(prevProps) {
     if (isEqual(prevProps.radarCenter, this.props.radarCenter))
       return { repositionMap: false }
@@ -31,6 +41,15 @@ class Radar extends Component {
   }
 
   componentDidMount() {
+    let img = this.radarMapUnderlay; 
+    img = new Image();
+    img.onload = () => {
+      let   cnv = document.getElementById("map-canvas"); 
+      console.log(cnv.width)
+      console.log(cnv.height)
+      cnv.getContext("2d").drawImage(img, 0, 0, cnv.width, cnv.height  )
+    }
+    img.src = this.referenceMapUrl();
     this.prepareForDrawing().then((heightmap) => {
       this.setState({...this.state, currentHeightmap: heightmap})
     })
@@ -42,7 +61,6 @@ class Radar extends Component {
     return new Promise(function (resolve, reject) {
       pixels(imageUrl).then((obj) => {
         this.relBoatPos = { x: zxy.xRem * obj.width, y: zxy.yRem * obj.height };
-
         let newData = obj.data.map((c, i) => {
           if((i + 1) % 4 === 0) return c;
           let cRedIndex = Math.floor(i/4)*4;
@@ -50,14 +68,10 @@ class Radar extends Component {
           return height > 8 ? height*10 : 0 
         })       
         resolve({data: newData, width: obj.width, height: obj.height});
-      })
+      }).catch(e => reject(e))
     }.bind(this));
   }
 
-  //Will be called whenever one of the props changes.
-  //However, needs to implemented that there are 2 different updates
-  //When the center position is changed, this requires fetching new images and calculating a heightmap
-  //And when the boatposition or radar settings change, these only require a redraw of the radar image.
   componentDidUpdate(prevProps, state, snapshot) {
     if (snapshot.repositionMap) {
       this.prepareForDrawing().then((heightmap) => {
@@ -87,7 +101,7 @@ class Radar extends Component {
   }
 
   processImage({ data, width, height }) {
-    let newPixelData = data.map((c, i) => {return (i + 1) % 4 === 0 ? 255 : 0})
+    let newPixelData = data.map((c, i) => {return (i + 3) % 4 === 0 ? 255 : 0})
 
     let angle = 0.0;
     let beamwidthRad = degToRad(this.props.radarSettings.beamwidth);
@@ -114,7 +128,7 @@ class Radar extends Component {
         let distanceFromOriginSquared = bpdeltax * bpdeltax + bpdeltay * bpdeltay;
         let someNum = 70;
         if ((Math.random() - 0.5) * distanceFromOriginSquared > someNum * someNum || Math.random() > 0.95) {
-          image[this.indexFromPos(x, y, width) + 1] = 128;
+          image[this.indexFromPos(x, y, width) + 3] = 128;
         }
         x++
       }
@@ -127,12 +141,6 @@ class Radar extends Component {
     let nextPos = { x: bp.x, y: bp.y };
     let isHit = false;
     let min = 10;
-    //TODO: do this kinda stuff with canvas
-    image.newPixelData[this.indexFromPos(bp.x, bp.y, image.width)] = 255;
-    image.newPixelData[this.indexFromPos(bp.x+1, bp.y, image.width)] = 255;
-    image.newPixelData[this.indexFromPos(bp.x-1, bp.y, image.width)] = 255;
-    image.newPixelData[this.indexFromPos(bp.x, bp.y+1, image.width)] = 255;
-    image.newPixelData[this.indexFromPos(bp.x, bp.y-1, image.width)] = 255;
     while (nextPos.x > 0 && nextPos.y > 0 && nextPos.x < image.width && nextPos.y < image.height) {
       let pixelAtPos = this.pixelDataAt(Math.floor(nextPos.x), Math.floor(nextPos.y), image.width, image.data).g;
       min = pixelAtPos >= min ? pixelAtPos : min;
@@ -143,11 +151,11 @@ class Radar extends Component {
       if (this.props.radarSettings.radarInterference) {
         let shouldDrawRadarInterf = (Math.random() > 0.5);
         if (shouldDrawRadarInterf)
-          image.newPixelData[this.indexFromPos(nextPos.x, nextPos.y, image.width) + 1] = 220;
+          image.newPixelData[this.indexFromPos(nextPos.x, nextPos.y, image.width) + 3] = 220;
       }
       if (pixelAtPos === min && !isHit) {
         let distanceFromOrigin = Math.sqrt(distanceFromOriginSquared);
-        image.newPixelData[this.indexFromPos(nextPos.x, nextPos.y, image.width) + 1] = pixelAtPos;
+        image.newPixelData[this.indexFromPos(nextPos.x, nextPos.y, image.width) + 3] = pixelAtPos;
         //Approximation of errors due to beamwidth
         let errorLength = distanceFromOrigin * degToRad(this.props.radarSettings.beamwidth)
         let mat = [0, -1, 1, 0];
@@ -159,7 +167,7 @@ class Radar extends Component {
         let errTraced = 0;
         while (errTraced < errorLength) {
           let index = this.indexFromPos(Math.round(nextErrLocation.x), Math.round(nextErrLocation.y), image.width);
-          index && (image.newPixelData[index + 1] = pixelAtPos * 4);
+          index && (image.newPixelData[index + 3] = pixelAtPos * 4);
           nextErrLocation.x += errorDir.x;
           nextErrLocation.y += errorDir.y;
           errTraced++;
@@ -176,11 +184,13 @@ class Radar extends Component {
         this.relBoatPos.x += 0.0
         this.relBoatPos.y += 0.0
         let cnv = document.getElementById("canvas")
-        //let startTime = Date.now()
+        let startTime = Date.now()
         let newPixelData = this.processImage(this.state.currentHeightmap)
-        //let totalTime = Date.now() - startTime
-        //console.log("Render Time: " + totalTime)
         output(newPixelData, cnv)
+        cnv.getContext("2d").drawImage(this.radarIndicatorImg, this.relBoatPos.x-4, this.relBoatPos.y-4)
+        //cnv.getContext("2d").drawImage(offscreemCnv, 0, 0, cnv.width, cnv.height)
+        let totalTime = Date.now() - startTime
+        //console.log("Render Time: " + totalTime)
       }, 100))
   }
 
@@ -189,14 +199,13 @@ class Radar extends Component {
     clearInterval(this.intervalReference)
   }
 
-
-
-
   render() {
     return (
       <div className="canvas-container">
         <div className="loader">
-        <canvas id="canvas" alt="radar"/>
+          <canvas id="map-canvas" width="512" height="512" alt="cnv" 
+            style={{display: this.props.radarSettings.showMapUnderlay ? "" : "none" }}/>
+          <canvas id="canvas" width="512" height="512" alt="radar"/>
         </div>
       </div>
     )

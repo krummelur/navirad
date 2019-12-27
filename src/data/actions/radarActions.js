@@ -3,6 +3,7 @@ export const constants = {
     SET_RAIN_INTERFERENCE: "SET_RAIN_INTERFERENCE",
     SET_RADAR_INTERFERENCE: "SET_RADAR_INTERFERENCE",
     SET_RADAR_CENTER: "SET_RADAR_CENTER",
+    SET_MAP_UNDERLAY: "SET_MAP_UNDERLAY",
 };
 
 export function setRadarCenter(newCenter) {
@@ -29,6 +30,13 @@ export function setRain(load) {
 export function setInterference(load) {
     return {
         type: constants.SET_RADAR_INTERFERENCE,
+        payload: load
+    }
+}
+
+export function setUnderlay(load) {
+    return {
+        type: constants.SET_MAP_UNDERLAY,
         payload: load
     }
 }
