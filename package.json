@@ -17,6 +17,7 @@
     "react-burger-menu": "^2.6.13",
     "react-dom": "^16.12.0",
     "react-scripts": "^3.3.0",
+    "react-scroll": "^1.7.15",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "validator": "^12.1.0",

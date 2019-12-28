@@ -4,7 +4,6 @@ import Header from "../../Header/Header";
 import MapBox from "../../Map/MapBox";
 import Menu from "../../Menu/Menu";
 
-
 class MapView extends Component {
     render() {
         return (

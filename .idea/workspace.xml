@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/About/AboutHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/About/Section.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Radar/Radar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Radar/Radar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SmallMap/SmallMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SmallMap/SmallMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/About/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/About.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PrivateRoute/privateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PrivateRoute/privateRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Views/MapView/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/MapView/MapView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +39,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="CSS" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/Radar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/About" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -51,11 +54,13 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/data" />
       <recent name="$PROJECT_DIR$/src/Components/Views" />
       <recent name="$PROJECT_DIR$/src/Views" />
       <recent name="$PROJECT_DIR$/src/Components/Start" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/About" />
       <recent name="$PROJECT_DIR$/src/Components/Radar" />
       <recent name="$PROJECT_DIR$/src/Views/RegisterView" />
     </key>
@@ -110,6 +115,9 @@
       <workItem from="1576695892729" duration="885000" />
       <workItem from="1576740742064" duration="9000000" />
       <workItem from="1576772340522" duration="15157000" />
+      <workItem from="1577472495050" duration="436000" />
+      <workItem from="1577480568892" duration="6609000" />
+      <workItem from="1577553870797" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -283,22 +291,22 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1576836822817" />
-    <state width="1899" height="328" key="GridCell.Tab.0.bottom" timestamp="1576695953729">
+    <state width="1899" height="328" key="GridCell.Tab.0.bottom" timestamp="1577472731038">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="328" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1576695953729" />
-    <state width="1899" height="328" key="GridCell.Tab.0.center" timestamp="1576695953727">
+    <state width="1899" height="328" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1577472731038" />
+    <state width="1899" height="328" key="GridCell.Tab.0.center" timestamp="1577472731036">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="328" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1576695953727" />
-    <state width="1899" height="328" key="GridCell.Tab.0.left" timestamp="1576695953726">
+    <state width="1899" height="328" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1577472731036" />
+    <state width="1899" height="328" key="GridCell.Tab.0.left" timestamp="1577472731035">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="328" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1576695953726" />
-    <state width="1899" height="328" key="GridCell.Tab.0.right" timestamp="1576695953728">
+    <state width="1899" height="328" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1577472731035" />
+    <state width="1899" height="328" key="GridCell.Tab.0.right" timestamp="1577472731037">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="1899" height="328" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1576695953728" />
+    <state width="1899" height="328" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1577472731037" />
     <state x="676" y="334" key="MultipleFileMergeDialog" timestamp="1576826885444">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -311,10 +319,10 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1576661168132" />
-    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576830154275">
+    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577553638618">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1177@0.23.1920.1177" timestamp="1576830154275" />
+    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577553638618" />
     <state x="625" y="288" width="670" height="676" key="search.everywhere.popup" timestamp="1576680752608">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
