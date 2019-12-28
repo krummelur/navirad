@@ -4,7 +4,6 @@ import "./Map.css";
 import * as Constants from "../../data/apiConfig";
 import InfoWindowWrapper from "./InfoWindowWrapper";
 import { Link } from "react-router-dom";
-import { tsExpressionWithTypeArguments } from "@babel/types";
 import { isEqual } from 'lodash';
 
 class MapEmbedder extends Component {
@@ -17,12 +16,10 @@ class MapEmbedder extends Component {
     }
 
     centerMarker() {
-        console.log("Gets the marker")
             return <Marker key="Marker" position={{ lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon }} />
     }
 
     infoBox() {
-        console.log("Gets the box")
             return (
                 //The InfoWindow will not trigger custom onClick events, hence this wrapper.
                 <InfoWindowWrapper

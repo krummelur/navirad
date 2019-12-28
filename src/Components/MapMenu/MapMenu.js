@@ -13,7 +13,6 @@ MapMenu.propTypes = {
 
 function MapMenu(props) {
   useEffect(() => {
-    console.log("FETCHING PLACES")
     props.fetchPlaces();
   }, [])
 

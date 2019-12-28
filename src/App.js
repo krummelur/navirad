@@ -29,7 +29,7 @@ class App extends Component {
     }
 
     restoreStateFromDisk() {
-        let storedState = JSON.parse(localStorage.getItem('NaviRad'));
+        //let storedState = JSON.parse(localStorage.getItem('NaviRad'));
     }
 
     componentDidMount(){

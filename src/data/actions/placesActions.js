@@ -20,7 +20,7 @@ export const fetchPlacesAction = () => {
 export const addPlaceAction = (place) => {
   console.log("Adding place")
   if(typeof place.name !== 'string') 
-    throw "name must be string!";
+    throw new Error("name must be string!");
   const { currentUser } = firebaseApp.auth();
   return dispatch => {
     firebaseApp
