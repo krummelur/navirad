@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState }from "react";
 import PropTypes from "prop-types";
-import "./RadarMenu.css";
+import "../Shared-Styles/View-Menu.css";
 
 RadarMenu.propTypes = {
     setBeamWidth: PropTypes.func.isRequired,
     beamWidth: PropTypes.number.isRequired
 };
 
-function RadarMenu(props){
+function RadarMenu(props) {
+    const [storedText, setStoredText] = useState("");
         return (
-            <div className="radarmenu-container">
+            <div className="view-menu-container">
                 <div className="large-text">Radar Controls</div>
                 <div className="slider-outer">
                     <p className="medium-text">Beam width: <span>{props.beamWidth}</span></p>
@@ -43,6 +44,13 @@ function RadarMenu(props){
                         <li>
                             <input type="checkbox" id="checkboxFour"/>
                             <label htmlFor="checkboxFour">Other boats (to be implemented)</label>
+                        </li>
+                        <li>
+                            <input type="text" placeholder="Name your location"
+                            onChange={evt => setStoredText(evt.target.value)}>
+                            </input>
+                            <input type="submit" value="Save location"
+                            onClick={() =>{props.addPlace({...props.radarCenter, name: storedText})}}/>
                         </li>
                     </ul>
                 </div>

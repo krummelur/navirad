@@ -3,9 +3,7 @@ import {Route, Redirect} from "react-router-dom";
 import {AuthenticatorContext} from "../../Util/authenticator";
 
 const PrivateRoute =({component: RouteComponent, ...rest}) => {
-    //const {currentUser} = useContext(AuthenticatorContext);
-
-    const currentUser = true;
+    const {currentUser} = useContext(AuthenticatorContext);
 
     //Set the conditional value(true) to currentUser to implement the login function
     return(

@@ -1,4 +1,4 @@
-.radarmenu-container {
+.view-menu-container {
     grid-row: 2 / span 3;
     grid-column: 3;
     background-color: #032136;
@@ -13,6 +13,10 @@
 
 .medium-text {
     font-size: medium;
+    margin-left: 5%;
+}
+
+.content-selector {
     margin-left: 5%;
 }
 

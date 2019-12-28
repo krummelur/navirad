@@ -5,7 +5,7 @@ import RadarMapUnderlay from './RadarMapUnderlay';
 
 const mapStateToProps = state => ({
     radarCenter: state.radarSettings.radarCenter,
-    radarSettings: state.radarSettings.showMapUnderlay
+    shouldDisplayMap: state.radarSettings.showMapUnderlay
 });
 
 const mapDispatchToProps = dispatch => {
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RadarMapUnderlay);
+export default connect(mapStateToProps, null)(RadarMapUnderlay);

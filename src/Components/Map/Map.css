@@ -31,3 +31,8 @@
 .infowindow-text {
     color: black;
 }
+
+.google-maps-main {
+    width: calc(100vw - 550px) !important;
+    height: 75% !important;
+}

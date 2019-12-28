@@ -4,33 +4,32 @@ import "./Map.css";
 import * as Constants from "../../data/apiConfig";
 import InfoWindowWrapper from "./InfoWindowWrapper";
 import { Link } from "react-router-dom";
+import { tsExpressionWithTypeArguments } from "@babel/types";
+import { isEqual } from 'lodash';
 
 class MapEmbedder extends Component {
     constructor(props) {
         super(props);
-        //props.addPlace({name: "test place", lat: 59, lon:18});
-        props.fetchPlaces();
         this.mapOptions = this.mapOptions.bind(this);
-        this.latlng = { lon: 18.762034897697504, lat: 59.43893468208873 }
         this.state = {
             displayMarkerInfo: false
         }
     }
 
     centerMarker() {
-        if (this.props.radarCenter)
+        console.log("Gets the marker")
             return <Marker key="Marker" position={{ lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon }} />
     }
 
     infoBox() {
-        if (this.props.radarCenter)
+        console.log("Gets the box")
             return (
                 //The InfoWindow will not trigger custom onClick events, hence this wrapper.
                 <InfoWindowWrapper
                     options={{
                         pixelOffset: new window.google.maps.Size(0, -40)
                     }}
-                    visible={true}
+                    visible={this.state.displayMarkerInfo}
                     position={{ lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon }}
                     onClose={() => { this.setState({ displayMarkerInfo: false }) }}>
                     <div>
@@ -63,26 +62,34 @@ class MapEmbedder extends Component {
         });
     };
 
+    componentDidUpdate(prevProps) {
+        //If another component updates the center, we should move there and display info
+        if(!isEqual(prevProps.radarCenter, this.props.radarCenter) && !this.state.displayMarkerInfo){
+            console.log("reset")
+            this.setState({displayMarkerInfo: true})
+        }
+    }
+
     render() {
-        console.log(this.props.places);
         if (!this.props.loaded) {
             return <div>Loading...</div>
         }
         return (
             <React.Fragment>
                 <Map google={this.props.google}
+                    className="google-maps-main"
                     zoom={12}
-                    initialCenter={{ lat: 59.440503, lng: 18.734038 }}
+                    initialCenter={{lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon}}
                     disableDoubleClickZoom={true}
                     disableDefaultUI={true}
                     onReady={this.mapOptions}
-                    style={{ width: '78.75%', height: '75%' }}
+                    //style={{ width: '78.75%', height: '75%' }}
                     onClick={(t, map, c) => {
-                        if (!this.state.displayMarkerInfo) this.setState({ displayMarkerInfo: true })
+                        this.setState({displayMarkerInfo: true})
                         this.props.setRadarCenter({ lon: c.latLng.lng(), lat: c.latLng.lat() })
                     }}>
                     {this.state.displayMarkerInfo && this.centerMarker()}
-                    {this.state.displayMarkerInfo && this.infoBox()}
+                    {this.infoBox()}
                 </Map>
                 <Link to={"/radar"} id="radarLink" />
             </React.Fragment>
