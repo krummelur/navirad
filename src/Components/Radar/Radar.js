@@ -28,7 +28,7 @@ class Radar extends Component {
 
   referenceMapUrl = () => {
     let zxy = lonLatZoomToZXY(this.props.radarCenter)
-    return `https://maps.wikimedia.org/osm-intl/${zxy.z}/${zxy.x}/${zxy.y}.png`
+    return `https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/${zxy.z}/${zxy.x}/${zxy.y}.png`
   }
 
   //Will be called whenever one of the props changes, before the actual update. 
@@ -41,12 +41,9 @@ class Radar extends Component {
   }
 
   componentDidMount() {
-    let img = this.radarMapUnderlay; 
-    img = new Image();
+    let img = new Image();
     img.onload = () => {
       let   cnv = document.getElementById("map-canvas"); 
-      console.log(cnv.width)
-      console.log(cnv.height)
       cnv.getContext("2d").drawImage(img, 0, 0, cnv.width, cnv.height  )
     }
     img.src = this.referenceMapUrl();
@@ -195,7 +192,6 @@ class Radar extends Component {
   }
 
   componentWillUnmount() {
-    console.log("UNMOUNTING, STOPPING ANIMATION")
     clearInterval(this.intervalReference)
   }
 

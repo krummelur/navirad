@@ -21,7 +21,7 @@ class RadarView extends Component {
                     <div className="radarmap-container">
                         <SmallMapBox/>
                         <RadarContainer />
-                    </div>
+                        </div>
                     <RadarMenuContainer />
                 </div>
             </div>

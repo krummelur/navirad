@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 class MapEmbedder extends Component {
     constructor(props) {
         super(props);
+        //props.addPlace({name: "test place", lat: 59, lon:18});
+        props.fetchPlaces();
         this.mapOptions = this.mapOptions.bind(this);
         this.latlng = { lon: 18.762034897697504, lat: 59.43893468208873 }
         this.state = {
@@ -62,6 +64,7 @@ class MapEmbedder extends Component {
     };
 
     render() {
+        console.log(this.props.places);
         if (!this.props.loaded) {
             return <div>Loading...</div>
         }

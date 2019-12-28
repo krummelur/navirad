@@ -1,0 +1,6 @@
+#map-canvas {
+    image-rendering: pixelated;
+    width: 512;
+    height: 512px;
+    position: absolute;
+}
