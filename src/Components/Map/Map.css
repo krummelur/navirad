@@ -33,6 +33,6 @@
 }
 
 .google-maps-main {
-    width: calc(100vw - 550px) !important;
+    width: calc(78vw - 6%) !important;
     height: 75% !important;
 }
