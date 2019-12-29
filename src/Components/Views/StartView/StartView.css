@@ -1,11 +1,12 @@
 .StartView {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 13vh 87vh;
+    grid-template-rows: 9vh 91vh;
 }
 
 .login-container {
     grid-column: 1 / span 3;
+    grid-row: 2;
     background-color: #123752;
     text-align: center;
     color: lightgray;

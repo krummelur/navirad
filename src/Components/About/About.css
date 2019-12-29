@@ -7,12 +7,11 @@
 }
 
 .about-header {
-    position: fixed;
-    background-color: #032136;
     height: 9vh;
     z-index: 1;
     display: flex;
     width: 100%;
+    font-size: medium;
 }
 
 .about-header ul {

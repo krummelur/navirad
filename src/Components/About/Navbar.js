@@ -1,23 +1,13 @@
 import React, { Component } from "react";
 import { Link, animateScroll } from "react-scroll";
 import "./About.css";
-import Header from "../Header/Header";
 
 
-export default class AboutHeader extends Component {
-
-  componentWillUnmount() {
-    animateScroll.scrollToTop();
-  }
-
+class Navbar extends Component {
   render() {
     return (
-      <div className="about-header">
-          <Header/>
+        <div className="about-header">
           <ul>
-            <li>
-              <Link onClick={animateScroll.scrollToTop}>⬆ Back to top ⬆</Link>
-            </li>
             <li>
               <Link to="radar" smooth={true} offset={-180} duration={500}>
                 Radar
@@ -39,7 +29,10 @@ export default class AboutHeader extends Component {
               </Link>
             </li>
           </ul>
-      </div>
+        </div>
     );
   }
+
 }
+
+export default Navbar;

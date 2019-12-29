@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./AboutView.css";
 import About from "../../About/About";
-import AboutHeader from "../../About/AboutHeader";
+import Navbar from "../../About/Navbar";
 import Menu from "../../Menu/Menu";
+import Header from "../../Header/Header";
 
 class AboutView extends Component {
 
@@ -12,7 +13,10 @@ class AboutView extends Component {
                 <Menu pageWrapId={"AboutView"} outerContainerId={"outer"}/>
 
                 <div className="AboutView">
-                    <AboutHeader/>
+                    <Header>
+                        <Navbar/>
+                    </Header>
+
                     <About />
                 </div>
             </div>

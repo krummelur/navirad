@@ -5,7 +5,7 @@ export default function Section({ title, content, id }) {
     <div className="section" id={id}>
       <div className="section-outer">
         <h1>{title}</h1>
-        <p>{content}</p>
+        <div>{content}</div>
       </div>
     </div>
   );

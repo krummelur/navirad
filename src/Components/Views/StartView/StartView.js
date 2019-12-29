@@ -8,7 +8,7 @@ class Start extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            toggle: true         
+            toggle: true
         }
     }
 
@@ -21,24 +21,24 @@ class Start extends Component {
     render() {
         return (
             <div className="StartView">
-                <Header />
+
+                <Header/>
                 <div className="login-container">
                     <div className="login-text">
                         Welcome to NaviRad, a marine radar simulator.<p />
                         To use this app, you must first login.<br /> If you don't have an account, you can register for free.
                     </div>
                     {this.state.toggle &&
-                        <LoginForm
-                            toggleFunction={this.togglePage.bind(this)}
-                        />}
+                    <LoginForm
+                        toggleFunction={this.togglePage.bind(this)}
+                    />}
                     {!this.state.toggle &&
-                        <RegisterForm
-                            toggleFunction={this.togglePage.bind(this)}
-                        />}
+                    <RegisterForm
+                        toggleFunction={this.togglePage.bind(this)}
+                    />}
                 </div>
             </div>
         );
     }
 }
-
 export default Start;
