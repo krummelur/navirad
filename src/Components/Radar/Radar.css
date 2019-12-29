@@ -39,7 +39,7 @@
 .loader {
     width: 512px;
     height: 512px;
-    background-color: rgba(0, 0, 0, 0.7)
+    background-color: rgba(0, 0, 0, 1)
 }
 
 .loading-text {

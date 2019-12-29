@@ -3,11 +3,14 @@ import { isEqual } from 'lodash';
 import { lonLatZoomToZXY, degToRad } from '../../helpers/mapHelpers'
 import { TILEZEN_API_KEY } from '../../data/apiConfig'
 import radarIndicator_Img from '../../media/radar-indicator.png'
+import loading_Img from '../../media/radar-loading.png'
 import "./Radar.css";
 
 //const assert = require('assert');
 const pixels = require('image-pixels');
 const output = require('image-output');
+
+const imageDimensions = {width: 512, height: 512 }
 
 class Radar extends Component {
   constructor(props) {
@@ -20,6 +23,8 @@ class Radar extends Component {
     this.relBoatPos = undefined;
     this.radarIndicatorImg = new Image();
     this.radarIndicatorImg.src = radarIndicator_Img;
+    this.loadingImg = new Image();
+    this.loadingImg.src = loading_Img;
   }
 
   pixelDataToHeight = (r, g, b) => ((r * 256 + g + b / 256) - 32768);
@@ -34,30 +39,37 @@ class Radar extends Component {
   //Will be called whenever one of the props changes, before the actual update. 
   //However, we don't need to reload the heightmap if the area does not change
   getSnapshotBeforeUpdate(prevProps) {
-    if (isEqual(prevProps.radarCenter, this.props.radarCenter))
-      return { repositionMap: false }
-    else
+    let prevTile = lonLatZoomToZXY(prevProps.radarCenter);
+    let curTile =  lonLatZoomToZXY(this.props.radarCenter);
+    if (prevTile.x !== curTile.x || prevTile.y !== curTile.y)
       return { repositionMap: true }
+    else
+      return { repositionMap: false }
   }
 
-  componentDidMount() {
+  updateUnderlayImage() {
     let img = new Image();
     img.onload = () => {
       let   cnv = document.getElementById("map-canvas"); 
       cnv.getContext("2d").drawImage(img, 0, 0, cnv.width, cnv.height  )
     }
     img.src = this.referenceMapUrl();
+  }
+
+  componentDidMount() {
     this.prepareForDrawing().then((heightmap) => {
       this.setState({...this.state, currentHeightmap: heightmap})
     })
   }
 
   prepareForDrawing() {
+    this.updateUnderlayImage();
+    let cnv = document.getElementById("canvas"); 
+    cnv.getContext("2d").drawImage(this.loadingImg,0,0)
     let zxy = lonLatZoomToZXY(this.props.radarCenter)
     let imageUrl = this.zxyToImageUrl(zxy);
     return new Promise(function (resolve, reject) {
       pixels(imageUrl).then((obj) => {
-        this.relBoatPos = { x: zxy.xRem * obj.width, y: zxy.yRem * obj.height };
         let newData = obj.data.map((c, i) => {
           if((i + 1) % 4 === 0) return c;
           let cRedIndex = Math.floor(i/4)*4;
@@ -71,6 +83,7 @@ class Radar extends Component {
 
   componentDidUpdate(prevProps, state, snapshot) {
     if (snapshot.repositionMap) {
+      this.stopContinuousOutput();
       this.prepareForDrawing().then((heightmap) => {
         this.setState({...this.state, currentHeightmap: heightmap});
         //this.state.currentHeightmap = heightmap;
@@ -178,21 +191,26 @@ class Radar extends Component {
   startContinousOutput() {
     clearInterval(this.intervalReference);
     (this.intervalReference = setInterval(() => {
-        this.relBoatPos.x += 0.0
-        this.relBoatPos.y += 0.0
+        let zxy = lonLatZoomToZXY(this.props.radarCenter);
+        this.relBoatPos = { x: zxy.xRem * imageDimensions.width, y: zxy.yRem * imageDimensions.height };
         let cnv = document.getElementById("canvas")
         let startTime = Date.now()
         let newPixelData = this.processImage(this.state.currentHeightmap)
         output(newPixelData, cnv)
+        this.props.setRadarCenter({lat: this.props.radarCenter.lat+0.0001, lon: this.props.radarCenter.lon+0.0001})
         cnv.getContext("2d").drawImage(this.radarIndicatorImg, this.relBoatPos.x-4, this.relBoatPos.y-4)
         //cnv.getContext("2d").drawImage(offscreemCnv, 0, 0, cnv.width, cnv.height)
         let totalTime = Date.now() - startTime
         //console.log("Render Time: " + totalTime)
-      }, 100))
+      }, 20))
+  }
+
+  stopContinuousOutput() {
+    clearInterval(this.intervalReference);
   }
 
   componentWillUnmount() {
-    clearInterval(this.intervalReference)
+    this.stopContinuousOutput();
   }
 
   render() {
