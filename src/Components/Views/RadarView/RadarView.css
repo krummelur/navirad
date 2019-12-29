@@ -6,6 +6,8 @@
 
 .radarmap-container {
     grid-column: 1 / span 2;
+    grid-row: 2;
+    height: 100vh;
     background-color: #123752;
     color: lightgray;
     display: grid;
