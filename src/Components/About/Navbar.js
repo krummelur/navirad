@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, animateScroll } from "react-scroll";
+import { Link } from "react-scroll";
 import "./About.css";
 
 
@@ -9,7 +9,7 @@ class Navbar extends Component {
         <div className="about-header">
           <ul>
             <li>
-              <Link to="radar" smooth={true} offset={-180} duration={500}>
+              <Link to="radar" smooth={true} offset={-100} duration={500}>
                 Radar
               </Link>
             </li>

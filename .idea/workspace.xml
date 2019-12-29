@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/About/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/About.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/About/AboutHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/About/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/Section.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PrivateRoute/privateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PrivateRoute/privateRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/About/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/Navbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Views/StartView/StartView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/StartView/StartView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Views/StartView/StartView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/StartView/StartView.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +112,8 @@
       <workItem from="1577480568892" duration="6609000" />
       <workItem from="1577553870797" duration="967000" />
       <workItem from="1577565557721" duration="172000" />
-      <workItem from="1577565854507" duration="4946000" />
+      <workItem from="1577565854507" duration="5969000" />
+      <workItem from="1577645432658" duration="358000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -261,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577553909519</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="aboutview navbar remodeled">
+      <created>1577628102441</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1577628102441</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +287,8 @@
     <MESSAGE value="last minute styling" />
     <MESSAGE value="loginform styling" />
     <MESSAGE value="aboutview remodeling" />
-    <option name="LAST_COMMIT_MESSAGE" value="aboutview remodeling" />
+    <MESSAGE value="aboutview navbar remodeled" />
+    <option name="LAST_COMMIT_MESSAGE" value="aboutview navbar remodeled" />
   </component>
   <component name="WindowStateProjectService">
     <state x="80" y="277" key="#ESLint" timestamp="1576440348578">
@@ -301,10 +303,10 @@
       <screen x="0" y="23" width="1366" height="745" />
     </state>
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="478" y="214" key="CommitChangelistDialog2" timestamp="1577553908832">
+    <state x="478" y="214" key="CommitChangelistDialog2" timestamp="1577628102043">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1577553908832" />
+    <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1577628102043" />
     <state width="1899" height="328" key="GridCell.Tab.0.bottom" timestamp="1577472731038">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -325,18 +327,18 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="676" y="334" key="MultipleFileMergeDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1576826885444" />
-    <state x="560" y="351" key="Vcs.Push.Dialog.v2" timestamp="1577553914120">
+    <state x="560" y="351" key="Vcs.Push.Dialog.v2" timestamp="1577628108760">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577553914120" />
+    <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577628108760" />
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1577565968373">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1577565968373" />
-    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577628079434">
+    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577645885528">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577628079434" />
+    <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577645885528" />
     <state x="625" y="288" width="670" height="676" key="search.everywhere.popup" timestamp="1576680752608">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
