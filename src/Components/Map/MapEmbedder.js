@@ -62,7 +62,6 @@ class MapEmbedder extends Component {
     componentDidUpdate(prevProps) {
         //If another component updates the center, we should move there and display info
         if(!isEqual(prevProps.radarCenter, this.props.radarCenter) && !this.state.displayMarkerInfo){
-            console.log("reset")
             this.setState({displayMarkerInfo: true})
         }
     }

@@ -6,6 +6,7 @@ import RadarHeaderContainer from "../../RadarHeader/RadarHeaderContainer";
 import SmallMapBox from "../../SmallMap/SmallMapBox";
 import Menu from "../../Menu/Menu";
 import "./RadarView.css";
+import RadarMapUnderlayContainer from "../../RadarMapUnderlay/RadarMapUnderlayContainer";
 
 class RadarView extends Component {
     render() {
@@ -20,7 +21,11 @@ class RadarView extends Component {
                     </div>
                     <div className="radarmap-container">
                         <SmallMapBox/>
+                        <div className="canvas-container">
+                        <RadarMapUnderlayContainer/>
                         <RadarContainer />
+                        </div>
+
                         </div>
                     <RadarMenuContainer />
                 </div>

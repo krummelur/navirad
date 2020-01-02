@@ -23,7 +23,7 @@ class SmallMap extends Component {
         });
     }
 
-    //Since the view can be updated very often due to live updating of the boats position
+    //Since the view can be updated very often due to live updating of the  position
     //rerendering on each update is very taxing, especially since the whole map is reinitialized on a 
     //rerender. Instead, only the marker may be updated, freeing up resources.
     shouldComponentUpdate(prevProps) {

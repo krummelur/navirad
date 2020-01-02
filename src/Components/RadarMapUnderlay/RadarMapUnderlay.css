@@ -1,4 +1,4 @@
-#map-canvas {
+#map-underlay {
     image-rendering: pixelated;
     width: 512;
     height: 512px;

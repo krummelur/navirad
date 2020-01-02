@@ -10,7 +10,7 @@ import "./Radar.css";
 const pixels = require('image-pixels');
 const output = require('image-output');
 
-const imageDimensions = {width: 512, height: 512 }
+const imageDimensions = { width: 512, height: 512 }
 
 class Radar extends Component {
   constructor(props) {
@@ -28,55 +28,40 @@ class Radar extends Component {
   }
 
   pixelDataToHeight = (r, g, b) => ((r * 256 + g + b / 256) - 32768);
-  
-  zxyToImageUrl = ({ z, x, y }) => `https://tile.nextzen.org/tilezen/terrain/v1/512/terrarium/${z}/${x}/${y}.png?api_key=${TILEZEN_API_KEY}`;
 
-  referenceMapUrl = () => {
-    let zxy = lonLatZoomToZXY(this.props.radarCenter)
-    return `https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/${zxy.z}/${zxy.x}/${zxy.y}.png`
-  }
+  zxyToImageUrl = ({ z, x, y }) => `https://tile.nextzen.org/tilezen/terrain/v1/512/terrarium/${z}/${x}/${y}.png?api_key=${TILEZEN_API_KEY}`;
 
   //Will be called whenever one of the props changes, before the actual update. 
   //However, we don't need to reload the heightmap if the area does not change
   getSnapshotBeforeUpdate(prevProps) {
     let prevTile = lonLatZoomToZXY(prevProps.radarCenter);
-    let curTile =  lonLatZoomToZXY(this.props.radarCenter);
+    let curTile = lonLatZoomToZXY(this.props.radarCenter);
     if (prevTile.x !== curTile.x || prevTile.y !== curTile.y)
       return { repositionMap: true }
     else
       return { repositionMap: false }
   }
 
-  updateUnderlayImage() {
-    let img = new Image();
-    img.onload = () => {
-      let   cnv = document.getElementById("map-canvas"); 
-      cnv.getContext("2d").drawImage(img, 0, 0, cnv.width, cnv.height  )
-    }
-    img.src = this.referenceMapUrl();
-  }
-
   componentDidMount() {
     this.prepareForDrawing().then((heightmap) => {
-      this.setState({...this.state, currentHeightmap: heightmap})
+      this.setState({ ...this.state, currentHeightmap: heightmap })
     })
   }
 
   prepareForDrawing() {
-    this.updateUnderlayImage();
-    let cnv = document.getElementById("canvas"); 
-    cnv.getContext("2d").drawImage(this.loadingImg,0,0)
+    let cnv = document.getElementById("canvas");
+    cnv.getContext("2d").drawImage(this.loadingImg, 0, 0)
     let zxy = lonLatZoomToZXY(this.props.radarCenter)
     let imageUrl = this.zxyToImageUrl(zxy);
     return new Promise(function (resolve, reject) {
       pixels(imageUrl).then((obj) => {
         let newData = obj.data.map((c, i) => {
-          if((i + 1) % 4 === 0) return c;
-          let cRedIndex = Math.floor(i/4)*4;
-          let height = Math.max(this.pixelDataToHeight(obj.data[cRedIndex++], obj.data[cRedIndex++], obj.data[cRedIndex++]),0)
-          return height > 8 ? height*10 : 0 
-        })       
-        resolve({data: newData, width: obj.width, height: obj.height});
+          if ((i + 1) % 4 === 0) return c;
+          let cRedIndex = Math.floor(i / 4) * 4;
+          let height = Math.max(this.pixelDataToHeight(obj.data[cRedIndex++], obj.data[cRedIndex++], obj.data[cRedIndex++]), 0)
+          return height > 8 ? height * 10 : 0
+        })
+        resolve({ data: newData, width: obj.width, height: obj.height });
       }).catch(e => reject(e))
     }.bind(this));
   }
@@ -85,8 +70,7 @@ class Radar extends Component {
     if (snapshot.repositionMap) {
       this.stopContinuousOutput();
       this.prepareForDrawing().then((heightmap) => {
-        this.setState({...this.state, currentHeightmap: heightmap});
-        //this.state.currentHeightmap = heightmap;
+        this.setState({ ...this.state, currentHeightmap: heightmap });
         this.startContinousOutput();
       })
     } else {
@@ -111,7 +95,7 @@ class Radar extends Component {
   }
 
   processImage({ data, width, height }) {
-    let newPixelData = data.map((c, i) => {return (i + 3) % 4 === 0 ? 255 : 0})
+    let newPixelData = data.map((c, i) => { return (i + 3) % 4 === 0 ? 255 : 0 })
 
     let angle = 0.0;
     let beamwidthRad = degToRad(this.props.radarSettings.beamwidth);
@@ -189,24 +173,25 @@ class Radar extends Component {
   }
 
   startContinousOutput() {
-    clearInterval(this.intervalReference);
+    if(!this.intervalReference)
     (this.intervalReference = setInterval(() => {
-        let zxy = lonLatZoomToZXY(this.props.radarCenter);
-        this.relBoatPos = { x: zxy.xRem * imageDimensions.width, y: zxy.yRem * imageDimensions.height };
-        let cnv = document.getElementById("canvas")
-        let startTime = Date.now()
-        let newPixelData = this.processImage(this.state.currentHeightmap)
-        output(newPixelData, cnv)
-        this.props.setRadarCenter({lat: this.props.radarCenter.lat+0.0001, lon: this.props.radarCenter.lon+0.0001})
-        cnv.getContext("2d").drawImage(this.radarIndicatorImg, this.relBoatPos.x-4, this.relBoatPos.y-4)
-        //cnv.getContext("2d").drawImage(offscreemCnv, 0, 0, cnv.width, cnv.height)
-        let totalTime = Date.now() - startTime
-        //console.log("Render Time: " + totalTime)
-      }, 20))
+      let zxy = lonLatZoomToZXY(this.props.radarCenter);
+      this.relBoatPos = { x: zxy.xRem * imageDimensions.width, y: zxy.yRem * imageDimensions.height };
+      let cnv = document.getElementById("canvas")
+      //let startTime = Date.now()
+      let newPixelData = this.processImage(this.state.currentHeightmap)
+      output(newPixelData, cnv)
+      this.props.setRadarCenter({ lat: this.props.radarCenter.lat + 0.0001, lon: this.props.radarCenter.lon + 0.0001 })
+      cnv.getContext("2d").drawImage(this.radarIndicatorImg, this.relBoatPos.x - 4, this.relBoatPos.y - 4)
+      //cnv.getContext("2d").drawImage(offscreemCnv, 0, 0, cnv.width, cnv.height)
+      //let totalTime = Date.now() - startTime
+      //console.log("Render Time: " + totalTime)
+    }, 40))
   }
 
   stopContinuousOutput() {
     clearInterval(this.intervalReference);
+    this.intervalReference = undefined;
   }
 
   componentWillUnmount() {
@@ -215,15 +200,10 @@ class Radar extends Component {
 
   render() {
     return (
-      <div className="canvas-container">
-        <div className="loader">
-          <canvas id="map-canvas" width="512" height="512" alt="cnv" 
-            style={{display: this.props.radarSettings.showMapUnderlay ? "" : "none" }}/>
-          <canvas id="canvas" width="512" height="512" alt="radar"/>
-        </div>
+      <div className="loader">
+        <canvas id="canvas" width="512" height="512" alt="radar" />
       </div>
-    )
-  }
+    )}
 }
 
 export default Radar;

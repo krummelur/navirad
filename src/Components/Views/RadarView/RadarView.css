@@ -19,6 +19,7 @@
 .radarheader {
     grid-column: 1 / span 2;
     grid-row: 2;
+    z-index: 2;
     background-color: #123752;
     color: lightgray;
     padding-left: 125px;
