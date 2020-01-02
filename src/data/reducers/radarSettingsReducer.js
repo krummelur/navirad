@@ -18,6 +18,12 @@ export function radarSettingsReducer(state = defaultState, action) {
             return {...state, radarInterference: action.payload};
         case constants.SET_RADAR_CENTER:
             return {...state, radarCenter: {...action.payload, initialCenter: false}};
+        case constants.MOVE_RADAR_CENTER:
+            let newCenter = {};
+                Object.keys(action.payload).forEach(k => {
+                      newCenter[k] = action.payload[k] + state.radarCenter[k]  
+                  })
+            return {...state, radarCenter: {...newCenter, initialCenter: false}};
         case constants.SET_MAP_UNDERLAY:
             return {...state, showMapUnderlay: action.payload};
         default:

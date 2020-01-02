@@ -181,7 +181,7 @@ class Radar extends Component {
       //let startTime = Date.now()
       let newPixelData = this.processImage(this.state.currentHeightmap)
       output(newPixelData, cnv)
-      this.props.setRadarCenter({ lat: this.props.radarCenter.lat + 0.0001, lon: this.props.radarCenter.lon + 0.0001 })
+      //this.props.setRadarCenter({ lat: this.props.radarCenter.lat + 0.0001, lon: this.props.radarCenter.lon + 0.0002 })
       cnv.getContext("2d").drawImage(this.radarIndicatorImg, this.relBoatPos.x - 4, this.relBoatPos.y - 4)
       //cnv.getContext("2d").drawImage(offscreemCnv, 0, 0, cnv.width, cnv.height)
       //let totalTime = Date.now() - startTime

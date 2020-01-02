@@ -1,11 +1,14 @@
 import React, { useState }from "react";
 import PropTypes from "prop-types";
 import "../Shared-Styles/View-Menu.css";
+import NavigationControlsContainer from "../NavigationControls/NavigationControlsContainer";
 
 RadarMenu.propTypes = {
     setBeamWidth: PropTypes.func.isRequired,
     beamWidth: PropTypes.number.isRequired
 };
+
+
 
 function RadarMenu(props) {
     const [storedText, setStoredText] = useState("");
@@ -51,6 +54,10 @@ function RadarMenu(props) {
                             </input>
                             <input type="submit" value="Save location"
                             onClick={() =>{props.addPlace({...props.radarCenter, name: storedText})}}/>
+                        </li>
+                        <li>
+                        <p className="medium-text">Click and drag in the joystick area<br/>to control the radars position.</p>
+                           <NavigationControlsContainer/>
                         </li>
                     </ul>
                 </div>

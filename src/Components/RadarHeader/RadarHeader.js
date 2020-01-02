@@ -12,7 +12,7 @@ function RadarHeader(props){
                 </Link>
             </div>
             <div>Current position:
-                <span> Lat {props.radarCenter.lat}, long {props.radarCenter.lon}</span>
+                <span> Lat {props.radarCenter.lat.toFixed(6)}, long {props.radarCenter.lon.toFixed(6)}</span>
             </div>
         </div>
 
