@@ -173,7 +173,7 @@ class Radar extends Component {
   }
 
   startContinousOutput() {
-    if(!this.intervalReference)
+    if(this.intervalReference === undefined)
     (this.intervalReference = setInterval(() => {
       let zxy = lonLatZoomToZXY(this.props.radarCenter);
       this.relBoatPos = { x: zxy.xRem * imageDimensions.width, y: zxy.yRem * imageDimensions.height };
