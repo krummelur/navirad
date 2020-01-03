@@ -75,8 +75,6 @@ class Radar extends Component {
         this.setState({currentHeightmap: heightmap, isPreparingHeightmap: false});
         this.startContinousOutput();
       })
-    } else if (!this.state.isPreparingHeightmap){
-      
     }
   }
 
