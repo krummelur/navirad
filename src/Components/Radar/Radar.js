@@ -45,6 +45,7 @@ class Radar extends Component {
   componentDidMount() {
     this.prepareForDrawing().then((heightmap) => {
       this.setState({ ...this.state, currentHeightmap: heightmap })
+      this.startContinousOutput();
     })
   }
 
@@ -68,13 +69,14 @@ class Radar extends Component {
 
   componentDidUpdate(prevProps, state, snapshot) {
     if (snapshot.repositionMap) {
+      this.setState({...this.state, isPreparingHeightmap: true});
       this.stopContinuousOutput();
       this.prepareForDrawing().then((heightmap) => {
-        this.setState({ ...this.state, currentHeightmap: heightmap });
+        this.setState({currentHeightmap: heightmap, isPreparingHeightmap: false});
         this.startContinousOutput();
       })
-    } else {
-      this.startContinousOutput();
+    } else if (!this.state.isPreparingHeightmap){
+      
     }
   }
 
@@ -174,19 +176,18 @@ class Radar extends Component {
 
   startContinousOutput() {
     if(this.intervalReference === undefined)
-    (this.intervalReference = setInterval(() => {
-      let zxy = lonLatZoomToZXY(this.props.radarCenter);
-      this.relBoatPos = { x: zxy.xRem * imageDimensions.width, y: zxy.yRem * imageDimensions.height };
-      let cnv = document.getElementById("canvas")
-      //let startTime = Date.now()
-      let newPixelData = this.processImage(this.state.currentHeightmap)
-      output(newPixelData, cnv)
-      //this.props.setRadarCenter({ lat: this.props.radarCenter.lat + 0.0001, lon: this.props.radarCenter.lon + 0.0002 })
-      cnv.getContext("2d").drawImage(this.radarIndicatorImg, this.relBoatPos.x - 4, this.relBoatPos.y - 4)
-      //cnv.getContext("2d").drawImage(offscreemCnv, 0, 0, cnv.width, cnv.height)
-      //let totalTime = Date.now() - startTime
-      //console.log("Render Time: " + totalTime)
-    }, 40))
+      this.intervalReference = setInterval(() => {
+        let zxy = lonLatZoomToZXY(this.props.radarCenter);
+        this.relBoatPos = { x: zxy.xRem * imageDimensions.width, y: zxy.yRem * imageDimensions.height };
+        let cnv = document.getElementById("canvas")
+        //let startTime = Date.now()
+        let newPixelData = this.processImage(this.state.currentHeightmap)
+        output(newPixelData, cnv)
+        cnv.getContext("2d").drawImage(this.radarIndicatorImg, this.relBoatPos.x - 4, this.relBoatPos.y - 4)
+        //cnv.getContext("2d").drawImage(offscreemCnv, 0, 0, cnv.width, cnv.height)
+        //let totalTime = Date.now() - startTime
+        //console.log("Render Time: " + totalTime)
+      }, 40)
   }
 
   stopContinuousOutput() {
