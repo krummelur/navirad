@@ -18,6 +18,6 @@ export const zxyToTileCenter = ({z,x,y}) => {
 
 const fract = (num) => num - Math.trunc(num)
 export const degToRad = (a) =>  a * (Math.PI / 180.0);
-const radToDeg = (a) => a * (180.0 / Math.PI);
+export const radToDeg = (a) => a * (180.0 / Math.PI);
 
 const sec = (a) => 1/Math.cos(a)

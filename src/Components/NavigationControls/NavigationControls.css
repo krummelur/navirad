@@ -13,4 +13,5 @@
     width: 200px;
     height: 200px;
     position: absolute;
+    -webkit-mask-image: linear-gradient(calc(var(--grad-rot, 0) * 1deg),  white, 20%, white, calc(var(--grad-end, 512) * 1%), rgba(255,255,255,0));
 }
