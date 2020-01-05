@@ -18,7 +18,6 @@ class NavigationControls extends Component {
     }
 
     stopMoving() {
-        console.log("stopmovieng")
         this.imageElem.style.setProperty('--grad-end', 512) 
         clearTimeout(this.timeoutRef)
     }
