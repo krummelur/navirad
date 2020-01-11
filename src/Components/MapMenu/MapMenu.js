@@ -8,13 +8,10 @@ MapMenu.propTypes = {
   setRadarCenter: PropTypes.func.isRequired
 };
 
-
-
-
 function MapMenu(props) {
   useEffect(() => {
     props.fetchPlaces();
-  }, [])
+  }, []);
 
   return (
     <div className="view-menu-container">
@@ -23,7 +20,7 @@ function MapMenu(props) {
         <p className="medium-text">Pick from your saved locations:</p>
         <select className="content-selector" defaultValue="DEFAULT"
           onChange={(evt) => {
-            console.log("Setting radar center")
+            console.log("Setting radar center");
             props.setRadarCenter(props.places[evt.target.value])}}>
           <option value="DEFAULT" disabled>Choose a location</option>
           {

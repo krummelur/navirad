@@ -5,24 +5,20 @@
 }
 
 .radarmap-container {
-    grid-column: 1 / span 2;
-    grid-row: 2;
-    height: 100vh;
+    height: 85vh;
     background-color: #123752;
     color: lightgray;
     display: grid;
-    grid-template-columns: 1fr 0.2fr 1fr;
-    grid-template-rows: 5% 95%;
-    padding-left: 125px;
+    grid-template-columns: 1fr 0.1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .radarheader {
-    grid-column: 1 / span 2;
-    grid-row: 2;
     z-index: 2;
     background-color: #123752;
     color: lightgray;
     padding-left: 125px;
     padding-top: 1%;
 }
-

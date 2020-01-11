@@ -79,7 +79,7 @@ class MapEmbedder extends Component {
                     disableDoubleClickZoom={true}
                     disableDefaultUI={true}
                     onReady={this.mapOptions}
-                    //style={{ width: '78.75%', height: '75%' }}
+                    style={{ width: '90%', height: '75%' }}
                     onClick={(t, map, c) => {
                         this.setState({displayMarkerInfo: true})
                         this.props.setRadarCenter({ lon: c.latLng.lng(), lat: c.latLng.lat() })

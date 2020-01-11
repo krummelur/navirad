@@ -8,8 +8,6 @@ RadarMenu.propTypes = {
     beamWidth: PropTypes.number.isRequired
 };
 
-
-
 function RadarMenu(props) {
     const [storedText, setStoredText] = useState("");
         return (

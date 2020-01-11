@@ -5,8 +5,8 @@ import RadarMenuContainer from "../../RadarMenu/RadarMenuContainer";
 import RadarHeaderContainer from "../../RadarHeader/RadarHeaderContainer";
 import SmallMapBox from "../../SmallMap/SmallMapBox";
 import Menu from "../../Menu/Menu";
-import "./RadarView.css";
 import RadarMapUnderlayContainer from "../../RadarMapUnderlay/RadarMapUnderlayContainer";
+import "./RadarView.css";
 
 class RadarView extends Component {
     render() {
@@ -16,17 +16,19 @@ class RadarView extends Component {
 
                 <div className="RadarView">
                     <Header />
-                    <div className="radarheader">
-                        <RadarHeaderContainer/>
+                    <div className="radar-container">
+                        <div className="radarheader">
+                            <RadarHeaderContainer/>
+                        </div>
+                        <div className="radarmap-container">
+                            <SmallMapBox/>
+                            <div className="canvas-container">
+                                <RadarMapUnderlayContainer/>
+                                <RadarContainer />
+                            </div>
+                        </div>
                     </div>
-                    <div className="radarmap-container">
-                        <SmallMapBox/>
-                        <div className="canvas-container">
-                        <RadarMapUnderlayContainer/>
-                        <RadarContainer />
-                        </div>
 
-                        </div>
                     <RadarMenuContainer />
                 </div>
             </div>

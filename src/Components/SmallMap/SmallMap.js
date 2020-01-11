@@ -5,9 +5,9 @@ import "../Radar/Radar.css"
 import { lonLatZoomToZXY, zxyToTileCenter } from '../../helpers/mapHelpers'
 
 const  radarCenterToTileCenter = (c) => {
-    let center = lonLatZoomToZXY(c)
+    let center = lonLatZoomToZXY(c);
     return zxyToTileCenter(center);
-}
+};
 
 class SmallMap extends Component {
     constructor(props) {
@@ -27,12 +27,10 @@ class SmallMap extends Component {
     //rerendering on each update is very taxing, especially since the whole map is reinitialized on a 
     //rerender. Instead, only the marker may be updated, freeing up resources.
     shouldComponentUpdate(prevProps) {
-        let currentCenter = radarCenterToTileCenter(this.props.radarCenter)
-        let prevCenter = radarCenterToTileCenter(prevProps.radarCenter)
-        this.marker.setPosition(new window.google.maps.LatLng(this.props.radarCenter.lat, this.props.radarCenter.lon))
-        if(prevCenter.x !== currentCenter.x || prevCenter.y !== currentCenter.y)
-            return false;
-        return true;
+        let currentCenter = radarCenterToTileCenter(this.props.radarCenter);
+        let prevCenter = radarCenterToTileCenter(prevProps.radarCenter);
+        this.marker.setPosition(new window.google.maps.LatLng(this.props.radarCenter.lat, this.props.radarCenter.lon));
+        return !(prevCenter.x !== currentCenter.x || prevCenter.y !== currentCenter.y);
     }
 
     render() {
