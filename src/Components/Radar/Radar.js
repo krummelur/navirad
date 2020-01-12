@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { isEqual } from 'lodash';
 import { lonLatZoomToZXY, degToRad } from '../../helpers/mapHelpers'
 import { TILEZEN_API_KEY } from '../../data/apiConfig'
 import radarIndicator_Img from '../../media/radar-indicator.png'
@@ -44,14 +43,15 @@ class Radar extends Component {
 
   componentDidMount() {
     this.prepareForDrawing().then((heightmap) => {
-      this.setState({ ...this.state, currentHeightmap: heightmap })
+      this.setState({ currentHeightmap: heightmap })
       this.startContinousOutput();
-    })
+    }).catch()
   }
 
   prepareForDrawing() {
-    let cnv = document.getElementById("canvas");
-    cnv.getContext("2d").drawImage(this.loadingImg, 0, 0)
+  this.setState({...this.state, isPreparingHeightmap: true});
+  let cnv = document.getElementById("canvas");
+  cnv.getContext("2d").drawImage(this.loadingImg, 0, 0)
     let zxy = lonLatZoomToZXY(this.props.radarCenter)
     let imageUrl = this.zxyToImageUrl(zxy);
     return new Promise(function (resolve, reject) {
@@ -62,6 +62,7 @@ class Radar extends Component {
           let height = Math.max(this.pixelDataToHeight(obj.data[cRedIndex++], obj.data[cRedIndex++], obj.data[cRedIndex++]), 0)
           return height > 8 ? height * 10 : 0
         })
+        this.setState({isPreparingHeightmap: false});
         resolve({ data: newData, width: obj.width, height: obj.height });
       }).catch(e => reject(e))
     }.bind(this));
@@ -69,12 +70,14 @@ class Radar extends Component {
 
   componentDidUpdate(prevProps, state, snapshot) {
     if (snapshot.repositionMap) {
-      this.setState({...this.state, isPreparingHeightmap: true});
+      this.setState({isPreparingHeightmap: true});
       this.stopContinuousOutput();
       this.prepareForDrawing().then((heightmap) => {
-        this.setState({currentHeightmap: heightmap, isPreparingHeightmap: false});
         this.startContinousOutput();
-      })
+        this.setState({currentHeightmap: heightmap});
+      }).catch(function(e){
+        this.props.showError("Could not download height data")
+      }.bind(this))
     }
   }
 
@@ -182,7 +185,6 @@ class Radar extends Component {
         let newPixelData = this.processImage(this.state.currentHeightmap)
         output(newPixelData, cnv)
         cnv.getContext("2d").drawImage(this.radarIndicatorImg, this.relBoatPos.x - 4, this.relBoatPos.y - 4)
-        //cnv.getContext("2d").drawImage(offscreemCnv, 0, 0, cnv.width, cnv.height)
         //let totalTime = Date.now() - startTime
         //console.log("Render Time: " + totalTime)
       }, 40)
@@ -200,6 +202,7 @@ class Radar extends Component {
   render() {
     return (
       <div className="loader">
+        <img src={loading_Img} className = "loading-img" style={{display: this.state.isPreparingHeightmap ? "" : "none"}}/>
         <canvas id="canvas" width="512" height="512" alt="radar" />
       </div>
     )}

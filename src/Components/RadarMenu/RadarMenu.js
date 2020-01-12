@@ -9,8 +9,8 @@ RadarMenu.propTypes = {
 };
 
 function RadarMenu(props) {
-    const [storedText, setStoredText] = useState("");
-        return (
+    const [storedText, setStoredText] = useState("");    
+    return (
             <div className="view-menu-container">
                 <div className="large-text">Radar Controls</div>
                 <div className="slider-outer">
@@ -28,17 +28,20 @@ function RadarMenu(props) {
                 <div className="medium-text">Other properties:
                     <ul className="ks-cboxtags">
                         <li>
-                            <input type="checkbox" id="checkboxOne"
+                            <input type="checkbox" id="checkboxOne" 
+                            defaultChecked={props.rainInterference}
                             onChange={evt => {props.setRainInterference(evt.target.checked)}}/>
                             <label htmlFor="checkboxOne">Rain clutter</label>
                         </li>
                         <li>
                             <input type="checkbox" id="checkboxTwo"
+                            defaultChecked={props.radarInterference}
                             onChange={evt => {props.setRadarInterference(evt.target.checked)}}/>
                             <label htmlFor="checkboxTwo">Radio interference</label>
                         </li>
                         <li>
                             <input type="checkbox" id="checkboxThree"
+                            defaultChecked={props.mapUnderlay}
                             onChange={evt => {props.setUnderlay(evt.target.checked)}}/>
                             <label htmlFor="checkboxThree">Radar/map overlay</label>
                         </li>
@@ -47,11 +50,13 @@ function RadarMenu(props) {
                             <label htmlFor="checkboxFour">Other boats (to be implemented)</label>
                         </li>
                         <li>
-                            <input type="text" placeholder="Name your location"
+                            <p>
+                            <input type="text" placeholder="Name this location"
                             onChange={evt => setStoredText(evt.target.value)}>
                             </input>
                             <input type="submit" value="Save location"
                             onClick={() =>{props.addPlace({...props.radarCenter, name: storedText})}}/>
+                            </p>
                         </li>
                         <li>
                         <p className="medium-text">Click and drag in the joystick area<br/>to control the radars position.</p>

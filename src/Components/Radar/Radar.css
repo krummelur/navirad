@@ -5,6 +5,11 @@
     display: block;
 }
 
+.loading-img {
+    position: absolute;
+    z-index: 5
+}
+
 .smallmap-container {
     grid-column: 1;
     grid-row: 1;

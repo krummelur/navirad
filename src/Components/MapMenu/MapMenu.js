@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../Shared-Styles/View-Menu.css";
 
 MapMenu.propTypes = {
-  places: PropTypes.array.isRequired,
+  places: PropTypes.object.isRequired,
   fetchPlaces: PropTypes.func.isRequired,
   setRadarCenter: PropTypes.func.isRequired
 };
@@ -21,10 +21,10 @@ function MapMenu(props) {
         <select className="content-selector" defaultValue="DEFAULT"
           onChange={(evt) => {
             console.log("Setting radar center");
-            props.setRadarCenter(props.places[evt.target.value])}}>
+            props.setRadarCenter(props.places.result[evt.target.value])}}>
           <option value="DEFAULT" disabled>Choose a location</option>
           {
-            props.places.map((place, i) =>
+            props.places.result.map((place, i) =>
               <option key={"placeSelector"+i} value={i}>{place.name}</option>)
           }
         </select>
