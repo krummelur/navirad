@@ -28,7 +28,8 @@ export function placesReducer(state = {result: [],  error: null}, action) {
       };
     case constants.REMOVE_PLACE_SUCCESS:
       return {
-        result: state.result.filter((el) => el !== action.payload.name)
+        ...state, 
+        result: state.result.filter((el) => el.name !== action.payload.name)
       };
     default:
       return state;
