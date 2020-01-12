@@ -12,7 +12,8 @@ class MapEmbedder extends Component {
         this.mapOptions = this.mapOptions.bind(this);
         this.state = {
             displayMarkerInfo: false,
-            isLoadingWaterApi: false
+            isLoadingWaterApi: false,
+            onWater: false,
         }
     }
 
@@ -21,14 +22,39 @@ class MapEmbedder extends Component {
     }
 
     infoBox() {
+        let onWaterBody =
+            <React.Fragment>
+                <div>
+                    <p>Open radar view at this position?</p>
+                    <p>Longitude: {this.props.radarCenter.lon.toFixed(4)}</p>
+                    <p>Latitude: {this.props.radarCenter.lat.toFixed(4)}</p>
+                </div>
+                <div className="center-aligned-element">
+                    <button type="button"
+                        //There seems to be an issue with using Links inside Map, and especially InfoWindow components.
+                        //This works, but could be made nicer. navigation by dispatch (redux-router) could probably solve it.
+                            onClick={() => { document.getElementById("radarLink").click() }}>
+                        Go to radar view</button>
+                </div>
+            </React.Fragment>;
+
+        let onLandBody =
+            <React.Fragment>
+                <div>
+                    <p>You clicked on land.</p>
+                    <p>This is a marine radar.</p>
+                    <p>It is mounted on a boat.</p>
+                </div>
+            </React.Fragment>;
+
+        let body = this.state.onWater ? onWaterBody : onLandBody;
         let infoBoxBody = this.state.isLoadingWaterApi ?
             <p> Loading... </p>
             :
             <React.Fragment>
-                <p>Open radar view at this position?</p>
-                <p>Longitude: {this.props.radarCenter.lon.toFixed(4)}</p>
-                <p>Latitude: {this.props.radarCenter.lat.toFixed(4)}</p>
-            </React.Fragment>
+                {body}
+            </React.Fragment>;
+
         return (
             //The InfoWindow will not trigger custom onClick events, hence this wrapper.
             <InfoWindowWrapper
@@ -38,17 +64,8 @@ class MapEmbedder extends Component {
                 visible={this.state.displayMarkerInfo}
                 position={{ lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon }}
                 onClose={() => { this.setState({ displayMarkerInfo: false }) }}>
-                <div>
-                    <div className="infowindow-text">
-                        {infoBoxBody}
-                    </div>
-                    <div className="center-aligned-element">
-                        <button type="button"
-                            //There seems to be an issue with using Links inside Map, and especially InfoWindow components.
-                            //This works, but could be made nicer. navigation by dispatch (redux-router) could probably solve it.
-                                onClick={() => { document.getElementById("radarLink").click() }}>
-                            Go to radar view</button>
-                    </div>
+                <div className="infowindow-text">
+                    {infoBoxBody}
                 </div>
             </InfoWindowWrapper>)
     }
@@ -74,10 +91,10 @@ class MapEmbedder extends Component {
     }
 
     onWater = (lat, lon) => {
-        this.setState({ isLoadingWaterApi: true })
+        this.setState({ isLoadingWaterApi: true });
         return fetch("https://api.onwater.io/api/v1/results/" + lat + "," + lon + "?access_token=" + Constants.ONWATER_API_KEY)
             .then(response => response.json())
-            .then(response => response.water)
+            .then(response => this.setState({onWater: response.water}))
     };
 
     render() {
