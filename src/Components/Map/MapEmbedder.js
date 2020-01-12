@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import React, {Component} from "react";
+import {GoogleApiWrapper, Map, Marker} from "google-maps-react";
 import "./Map.css";
 import * as Constants from "../../data/apiConfig";
 import InfoWindowWrapper from "./InfoWindowWrapper";
-import { Link } from "react-router-dom";
-import { isEqual } from 'lodash';
+import {Link} from "react-router-dom";
+import {isEqual} from 'lodash';
 
 class MapEmbedder extends Component {
     constructor(props) {
         super(props);
         this.mapOptions = this.mapOptions.bind(this);
         this.state = {
-            displayMarkerInfo: false
+            displayMarkerInfo: false,
         }
     }
 
@@ -20,6 +20,7 @@ class MapEmbedder extends Component {
     }
 
     infoBox() {
+        if(this.onWater(this.props.radarCenter.lat, this.props.radarCenter.lon)) {
             return (
                 //The InfoWindow will not trigger custom onClick events, hence this wrapper.
                 <InfoWindowWrapper
@@ -39,11 +40,16 @@ class MapEmbedder extends Component {
                             <button type="button"
                                 //There seems to be an issue with using Links inside Map, and especially InfoWindow components.
                                 //This works, but could be made nicer. navigation by dispatch (redux-router) could probably solve it.
-                                onClick={() => { document.getElementById("radarLink").click() }}>
+                                    onClick={() => { document.getElementById("radarLink").click() }}>
                                 Go to radar view</button>
                         </div>
                     </div>
                 </InfoWindowWrapper>)
+        }
+        else
+            return null;
+
+
     }
 
     mapOptions(mapProps, map) {
@@ -66,6 +72,10 @@ class MapEmbedder extends Component {
         }
     }
 
+    onWater = (lat, lon) => {
+      return fetch("https://api.onwater.io/api/v1/results/" + lat + "," + lon + "?access_token=" + Constants.ONWATER_API_KEY).then(response => response.json()).then(response => response.water).then(console.log)
+    };
+
     render() {
         if (!this.props.loaded) {
             return <div>Loading...</div>
@@ -80,8 +90,9 @@ class MapEmbedder extends Component {
                     disableDefaultUI={true}
                     onReady={this.mapOptions}
                     style={{ width: '90%', height: '75%' }}
-                    onClick={(t, map, c) => {
-                        this.setState({displayMarkerInfo: true})
+                    onClick= {async (t, map, c) => {
+                        this.setState({displayMarkerInfo: true});
+                        await this.onWater(c.latLng.lat(), c.latLng.lng());
                         this.props.setRadarCenter({ lon: c.latLng.lng(), lat: c.latLng.lat() })
                     }}>
                     {this.state.displayMarkerInfo && this.centerMarker()}
