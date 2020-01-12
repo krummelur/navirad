@@ -9,7 +9,7 @@ import App from './App';
 import './index.css';
 
 const composer = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
-const store = createStore(reducer, composer(applyMiddleware(thunk)));
+const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={store}>
