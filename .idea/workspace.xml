@@ -123,7 +123,8 @@
       <workItem from="1578731977770" duration="2187000" />
       <workItem from="1578735408528" duration="5406000" />
       <workItem from="1578775230306" duration="667000" />
-      <workItem from="1578821895539" duration="14826000" />
+      <workItem from="1578821895539" duration="15014000" />
+      <workItem from="1578855741627" duration="1237000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -346,11 +347,15 @@
     </state>
     <state x="380" y="100" key="#npm_start/0.0.1500.970@0.0.1500.970" timestamp="1578730537241" />
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1578853645086">
+    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1578857054494">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578853645086" />
+    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578857054494" />
     <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646428416" />
+    <state x="92" y="92" width="1736" height="986" key="DiffContextDialog" timestamp="1578856156093">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="92" y="92" width="1736" height="986" key="DiffContextDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578856156093" />
     <state width="1900" height="324" key="GridCell.Tab.0.bottom" timestamp="1578840819641">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -375,9 +380,10 @@
     <state width="1900" height="324" key="GridCell.Tab.0.right/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578840819641" />
     <state width="1480" height="259" key="GridCell.Tab.0.right/0.0.1500.970@0.0.1500.970" timestamp="1578732032392" />
     <state width="1899" height="328" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1577472731037" />
-    <state x="676" y="334" key="MultipleFileMergeDialog" timestamp="1576826885444">
-      <screen x="0" y="23" width="1920" height="1177" />
+    <state x="676" y="309" key="MultipleFileMergeDialog" timestamp="1578855570034">
+      <screen x="0" y="0" width="1920" height="1170" />
     </state>
+    <state x="676" y="309" key="MultipleFileMergeDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578855570034" />
     <state x="676" y="334" key="MultipleFileMergeDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1576826885444" />
     <state x="326" y="159" key="SettingsEditor" timestamp="1578739347793">
       <screen x="0" y="0" width="1920" height="1170" />
@@ -393,12 +399,16 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1577565968373" />
-    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578855544807">
+    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578856352074">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578855544807" />
+    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578856352074" />
     <state x="598" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.970@0.0.1500.970" timestamp="1578731911246" />
     <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577645885528" />
+    <state x="628" y="377" key="git4idea.merge.GitMergeDialog" timestamp="1578856002665">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="628" y="377" key="git4idea.merge.GitMergeDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578856002665" />
     <state x="625" y="288" width="670" height="676" key="search.everywhere.popup" timestamp="1576680752608">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
