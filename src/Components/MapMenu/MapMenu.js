@@ -27,7 +27,9 @@ function MapMenu(props) {
               {label}
             </div>
             <div className="option-remover"
-            onClick={() => { !disabled && props.removePlace(innerProps.value)}}>
+            onClick={(evt) => {
+              !disabled && props.removePlace(innerProps.value);
+              evt.stopPropagation()}}>
               {innerProps.isDisabled ? "" : "X"}
             </div>
       </div>
