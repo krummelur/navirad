@@ -1,0 +1,27 @@
+.list-option {
+    padding-left: 1em;
+}
+
+.list-option {
+    padding-left: 1em;
+}
+
+.disabled-option {
+    padding-left: 1em;
+    color: grey;
+}
+
+.list-option-container {
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; user-select:none;
+    -o-user-select:none;
+    color: black;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+.option-remover {
+    padding-right: 1em;
+}

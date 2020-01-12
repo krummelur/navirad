@@ -14,7 +14,7 @@ const composer = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
 const store = createStore(reducer, composer(applyMiddleware(thunk)));
 const alertConfig = {
     position: positions.BOTTOM_CENTER,
-    timeout: 500000,
+    timeout: 5000,
     offset: '30px',
     transition: transitions.SCALE
 }

@@ -26,6 +26,10 @@ export function placesReducer(state = {result: [],  error: null}, action) {
         result: [...state.result],
         error: action.payload.error
       };
+    case constants.REMOVE_PLACE_SUCCESS:
+      return {
+        result: state.result.filter((el) => el !== action.payload.name)
+      };
     default:
       return state;
   }

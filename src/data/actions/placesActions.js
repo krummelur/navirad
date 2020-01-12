@@ -4,7 +4,8 @@ export const constants = {
   PLACES_FETCH_SUCCESS: "PLACES_FETCH_SUCCESS",
   PLACES_FETCH_FAILURE: "PLACES_FETCH_FAILURE",
   ADD_PLACE_SUCCESS: "ADD_PLACE_SUCCESS",
-  ADD_PLACE_FAILURE: "ADD_PLACE_FAILURE"
+  ADD_PLACE_FAILURE: "ADD_PLACE_FAILURE",
+  REMOVE_PLACE_SUCCESS: "REMOVE_PLACE_SUCCESS"
 }
 
 export const fetchPlacesAction = () => {
@@ -43,5 +44,27 @@ export const addPlaceAction = (place) => {
   }
 }
 
+export const removePlaceAction = (place) => {
+  console.log("Adding place")
+  if(typeof place.name !== 'string') 
+    throw new Error("name must be string!");
+  const { currentUser } = firebaseApp.auth();
+  return dispatch => {
+    firebaseApp
+    .database()
+    .ref(`places/${currentUser.uid}/${place.name}`)
+    .remove()
+    .then(function() {
+      dispatch(showMessageAction(`Location ${place.name} removed!`))
+      dispatch(removePlaceSuccessAction(place));
+    })
+    .catch(function(error) {
+      dispatch(showErrorAction(`could not delete location ${place.name}!`))
+      console.log("Remove failed: " + error.message)
+    });
+  }
+}
+
 const addPlaceSuccessAction = (newPlace) => { return { type: constants.ADD_PLACE_SUCCESS, payload: newPlace }};
 const addPlaceFailureAction = (error) => { return { type: constants.ADD_PLACE_FAILURE, payload: error }};
+const removePlaceSuccessAction = (removedPlace) => { return { type: constants.REMOVE_PLACE_SUCCESS, payload: removedPlace}};
