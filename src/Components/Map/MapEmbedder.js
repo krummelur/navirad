@@ -33,7 +33,7 @@ class MapEmbedder extends Component {
                     <button type="button"
                         //There seems to be an issue with using Links inside Map, and especially InfoWindow components.
                         //This works, but could be made nicer. navigation by dispatch (redux-router) could probably solve it.
-                            onClick={() => { document.getElementById("radarLink").click() }}>
+                        onClick={() => { document.getElementById("radarLink").click() }}>
                         Go to radar view</button>
                 </div>
             </React.Fragment>;
@@ -85,8 +85,13 @@ class MapEmbedder extends Component {
 
     componentDidUpdate(prevProps) {
         //If another component updates the center, we should move there and display info
-        if (!isEqual(prevProps.radarCenter, this.props.radarCenter) && !this.state.displayMarkerInfo) {
-            this.setState({ displayMarkerInfo: true })
+        if (!isEqual(prevProps.radarCenter, this.props.radarCenter)) {
+            this.setState({ isLoadingWaterApi: true, displayMarkerInfo: true });
+            this.onWater(this.props.radarCenter.lat, this.props.radarCenter.lon).then((result) => {
+                console.log("HMMM");
+                //TODO CHECK AND HANDLE ANY API ERRORS!!
+                this.setState({ isLoadingWaterApi: false });
+            })
         }
     }
 
@@ -94,7 +99,7 @@ class MapEmbedder extends Component {
         this.setState({ isLoadingWaterApi: true });
         return fetch("https://api.onwater.io/api/v1/results/" + lat + "," + lon + "?access_token=" + Constants.ONWATER_API_KEY)
             .then(response => response.json())
-            .then(response => this.setState({onWater: response.water}))
+            .then(response => this.setState({ onWater: response.water }))
     };
 
     render() {
@@ -104,21 +109,16 @@ class MapEmbedder extends Component {
         return (
             <React.Fragment>
                 <Map google={this.props.google}
-                     className="google-maps-main"
-                     zoom={12}
-                     initialCenter={{ lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon }}
-                     disableDoubleClickZoom={true}
-                     disableDefaultUI={true}
-                     onReady={this.mapOptions}
-                     style={{ width: '90%', height: '75%' }}
-                     onClick={(t, map, c) => {
-                         this.setState({ isLoadingWaterApi: true, displayMarkerInfo: true });
-                         this.props.setRadarCenter({ lon: c.latLng.lng(), lat: c.latLng.lat() })
-                         this.onWater(c.latLng.lat(), c.latLng.lng()).then((result) => {
-                             //TODO CHECK AND HANDLE ANY API ERRORS!!
-                             this.setState({ isLoadingWaterApi: false });
-                         })
-                     }}>
+                    className="google-maps-main"
+                    zoom={12}
+                    initialCenter={{ lat: this.props.radarCenter.lat, lng: this.props.radarCenter.lon }}
+                    disableDoubleClickZoom={true}
+                    disableDefaultUI={true}
+                    onReady={this.mapOptions}
+                    style={{ width: '90%', height: '75%' }}
+                    onClick={(t, map, c) => {
+                        this.props.setRadarCenter({ lon: c.latLng.lng(), lat: c.latLng.lat() })
+                    }}>
                     {this.state.displayMarkerInfo && this.centerMarker()}
                     {this.infoBox()}
                 </Map>
