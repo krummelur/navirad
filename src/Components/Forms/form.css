@@ -51,17 +51,6 @@
   text-decoration: underline;
 }
 
-body {
-  background: white;
-  background: -webkit-linear-gradient(right, lightgray lightgray);
-  background: -moz-linear-gradient(right, lightgray, lightgray);
-  background: -o-linear-gradient(right, lightgray, lightgray);
-  background: linear-gradient(to left, lightgray, lightgray);
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .create{
   cursor: pointer;
 }

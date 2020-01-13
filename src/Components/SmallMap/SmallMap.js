@@ -36,7 +36,7 @@ class SmallMap extends Component {
     render() {
         let smallMapCenter = radarCenterToTileCenter(this.props.radarCenter);
         return (
-            <div>
+            <React.Fragment>
                 <Map google={this.props.google}
                      zoom={13}
                      ref={ref => {this.marker || this.onGoogleMapLoaded(ref.map)}} 
@@ -46,7 +46,7 @@ class SmallMap extends Component {
                      disableDefaultUI={true}
                      gestureHandling={'none'}>
                 </Map>
-            </div>
+            </React.Fragment>
         )
     }
 }
