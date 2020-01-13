@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import "./About.css";
 import Section from "./Section";
+import {animateScroll} from "react-scroll";
 
 class About extends Component {
+
+    scrollToTop = () => {
+        animateScroll.scrollToTop();
+    };
 
     render() {
         return (
@@ -18,6 +23,8 @@ class About extends Component {
                             rain clutter.<p/>
 
                             The map view is an embedded Google Map with custom marker behaviour and infowindow.<p/>
+
+                            <a onClick={this.scrollToTop}>Back to top</a>
                         </div>
                     }
                     id="radar"
@@ -38,8 +45,8 @@ class About extends Component {
                             <a href="https://onwater.io">OnWater</a> determines whether a position is on land or water.<p/>
 
                             <a href="https://www.aishub.net">AISHub</a> is used to fetch other, real, boats. The boats transmit their position (and metadata) over VHF via AIS, and AISHub provides these feeds on the internet.<br/>
-                            A special thanks to <a href="https://www.vassaro.se">Vässarö</a> for providing us with a raw AIS feed, which was needed to gain access to the AISHub API.
-
+                            A special thanks to <a href="https://www.vassaro.se">Vässarö</a> for providing us with a raw AIS feed, which was needed to gain access to the AISHub API.<p/>
+                            <a onClick={this.scrollToTop}>Back to top</a>
                         </div>
 
 
@@ -56,7 +63,9 @@ class About extends Component {
 
                             The complete source code for this project can be found at our <a href="https://gits-15.sys.kth.se/adamlil/dh2642-proj">git repository</a><p/>
 
-                            The project's two releases, mid project and final, can be found under the releases tab.
+                            The project's two releases, mid project and final, can be found under the releases tab.<p/>
+
+                            <a onClick={this.scrollToTop}>Back to top</a>
                         </div>
                     }
                     id="code"
@@ -68,7 +77,9 @@ class About extends Component {
                             The team consists of:<br/>
                             Magnus Fredriksson<br/>
                             Adam Liliemark<br/>
-                            Fredrik Öberg<br/>
+                            Fredrik Öberg<p/>
+
+                            <a onClick={this.scrollToTop}>Back to top</a>
                         </div>
                     }
                     id="team"

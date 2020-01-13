@@ -16,10 +16,15 @@
     z-index: 1;
 }
 
-@media (max-width: 1079px) {
+@media (max-width: 1440px) {
     .smallmap-container {
         grid-row: 2;
-        grid-column: 3;
+        grid-column: 1;
+        margin-top: 5%;
+    }
+
+    .canvas-container {
+        grid-column: 1 !important;
     }
 }
 
