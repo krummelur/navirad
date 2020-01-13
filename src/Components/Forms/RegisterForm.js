@@ -4,7 +4,7 @@ import Input from "../Input/input";
 import Message from "../Message/message";
 import Button from "../Button/Button";
 import { firebaseApp } from "../../Util/authenticator";
-import "../LoginForm/form.css";
+import "./form.css";
 
 class RegisterForm extends Component {
   constructor(props) {
@@ -90,7 +90,7 @@ class RegisterForm extends Component {
             />
             <p className="message">
               Already registered?
-              <span
+              <span className="signin"
                 onClick={this.props.toggleFunction}>
                 Sign In
               </span>

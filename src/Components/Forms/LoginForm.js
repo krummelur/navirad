@@ -62,7 +62,7 @@ const LoginForm = (props) => {
           <p
             className="message">
             Not registered?
-                <span
+                <span className="create"
               onClick={props.toggleFunction}>
               Create an account
                 </span>

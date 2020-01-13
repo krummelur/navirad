@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { slide as Menu } from "react-burger-menu";
 import "./Menu.css";
 import { Link } from "react-router-dom";
 import { firebaseApp } from "../../Util/authenticator";
 import { Redirect } from "react-router";
 
+
 // Source: https://negomi.github.io/react-burger-menu/
 
 export default props => {
+
+    const onSubmit = () => {      
+        firebaseApp.auth().signOut();
+        window.location = "/";
+    }
+
     return (
         <Menu {...props}>
 
@@ -19,10 +26,7 @@ export default props => {
                 <p>Map</p>
             </Link>
 
-                <p onClick={() => {
-                    firebaseApp.auth().signOut();
-                    window.location = "/"
-                    } }>Logout</p>
+                <p className="logout" onClick={onSubmit}>Logout</p>
             
         </Menu>
     );
