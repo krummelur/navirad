@@ -13,7 +13,8 @@ class MapEmbedder extends Component {
         this.state = {
             displayMarkerInfo: false,
             isLoadingWaterApi: false,
-            onWater: false,
+            onWater: undefined,
+            onWaterApiFault: false
         }
     }
 
@@ -47,7 +48,22 @@ class MapEmbedder extends Component {
                 </div>
             </React.Fragment>;
 
-        let body = this.state.onWater ? onWaterBody : onLandBody;
+        let apiFault =
+            <React.Fragment>
+                <div>
+                    <p>There was a fault when checking your position.</p>
+                    <p>If your position is on land, the radar will not</p>
+                    <p>function properly.</p>
+                    {onWaterBody}
+                </div>
+            </React.Fragment>;
+
+        let body;
+        if(this.state.onWaterApiFault)
+            body = apiFault;
+        else
+            body = this.state.onWater ? onWaterBody : onLandBody;
+
         let infoBoxBody = this.state.isLoadingWaterApi ?
             <p> Loading... </p>
             :
@@ -90,13 +106,29 @@ class MapEmbedder extends Component {
         }
     }
 
+    handleOnWaterError = (response) => {
+        if (!response.ok) {
+            console.log(response.status);
+            this.setState({onWaterApiFault: true})
+        }
+        return response;
+    };
+
+    /**
+     * onWater makes a call to the onWater API to check if the selected position is on water or land.
+     *
+     * @param lat the latitude of the position to check
+     * @param lon the longitude of the position to check
+     * @returns boolean, true if the api returns an error
+     */
     onWater = (lat, lon) => {
         this.setState({ isLoadingWaterApi: true });
         return fetch("https://api.onwater.io/api/v1/results/" + lat + "," + lon + "?access_token=" + Constants.ONWATER_API_KEY)
+            .then(this.handleOnWaterError)
             .then(response => response.json())
             .then(response => this.setState({onWater: response.water}))
-    };
 
+    };
     render() {
         if (!this.props.loaded) {
             return <div>Loading...</div>
@@ -115,7 +147,6 @@ class MapEmbedder extends Component {
                          this.setState({ isLoadingWaterApi: true, displayMarkerInfo: true });
                          this.props.setRadarCenter({ lon: c.latLng.lng(), lat: c.latLng.lat() })
                          this.onWater(c.latLng.lat(), c.latLng.lng()).then((result) => {
-                             //TODO CHECK AND HANDLE ANY API ERRORS!!
                              this.setState({ isLoadingWaterApi: false });
                          })
                      }}>

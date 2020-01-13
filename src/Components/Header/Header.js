@@ -5,10 +5,10 @@ class Header extends Component {
     render() {
         return (
             <header className="App-header">
-                <p className="App-title">
+                <div className="App-title">
                     NaviRad
                     {this.props.children}
-                </p>
+                </div>
             </header>
         );
     }

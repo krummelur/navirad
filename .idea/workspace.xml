@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="onwater api">
+    <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,16 +50,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/About" />
+      <recent name="$PROJECT_DIR$/src/Components/Radar" />
+      <recent name="$PROJECT_DIR$/src/Views/RegisterView" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/data" />
       <recent name="$PROJECT_DIR$/src/Components/Views" />
       <recent name="$PROJECT_DIR$/src/Views" />
       <recent name="$PROJECT_DIR$/src/Components/Start" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Components/About" />
-      <recent name="$PROJECT_DIR$/src/Components/Radar" />
-      <recent name="$PROJECT_DIR$/src/Views/RegisterView" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -124,7 +125,9 @@
       <workItem from="1578735408528" duration="5406000" />
       <workItem from="1578775230306" duration="667000" />
       <workItem from="1578821895539" duration="15014000" />
-      <workItem from="1578855741627" duration="3301000" />
+      <workItem from="1578855741627" duration="4537000" />
+      <workItem from="1578902222066" duration="256000" />
+      <workItem from="1578902493737" duration="1410000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -308,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578857068875</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="onwater api implemented w/o error handling">
+      <created>1578864254212</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1578864254212</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,7 +348,8 @@
     <MESSAGE value="fixed layout issue on radar" />
     <MESSAGE value="fixed some layout, somewhat responsive" />
     <MESSAGE value="onwater api" />
-    <option name="LAST_COMMIT_MESSAGE" value="onwater api" />
+    <MESSAGE value="onwater api implemented w/o error handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="onwater api implemented w/o error handling" />
   </component>
   <component name="WindowStateProjectService">
     <state x="80" y="277" key="#ESLint" timestamp="1576440348578">
@@ -354,10 +365,10 @@
     </state>
     <state x="380" y="100" key="#npm_start/0.0.1500.970@0.0.1500.970" timestamp="1578730537241" />
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1578857074696">
+    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1578864253627">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578857074696" />
+    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578864253627" />
     <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646428416" />
     <state x="92" y="92" width="1736" height="986" key="DiffContextDialog" timestamp="1578856156093">
       <screen x="0" y="0" width="1920" height="1170" />
@@ -397,10 +408,10 @@
     </state>
     <state x="326" y="159" key="SettingsEditor/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578739347793" />
     <state x="255" y="132" key="SettingsEditor/0.0.1500.970@0.0.1500.970" timestamp="1578731905177" />
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1578857085775">
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1578864257167">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578857085775" />
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578864257167" />
     <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646529721" />
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1577565968373">
       <screen x="0" y="23" width="1920" height="1177" />
@@ -416,9 +427,10 @@
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="628" y="377" key="git4idea.merge.GitMergeDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578856002665" />
-    <state x="625" y="288" width="670" height="676" key="search.everywhere.popup" timestamp="1576680752608">
-      <screen x="0" y="23" width="1920" height="1177" />
+    <state x="625" y="263" width="672" height="672" key="search.everywhere.popup" timestamp="1578902995003">
+      <screen x="0" y="0" width="1920" height="1170" />
     </state>
+    <state x="625" y="263" width="672" height="672" key="search.everywhere.popup/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578902995003" />
     <state x="625" y="288" width="670" height="676" key="search.everywhere.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1576680752608" />
   </component>
 </project>
