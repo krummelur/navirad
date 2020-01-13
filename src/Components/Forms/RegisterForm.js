@@ -3,7 +3,7 @@ import { validateRegisterInput } from "../../Util/validateInput";
 import Input from "../Input/input";
 import Message from "../Message/message";
 import Button from "../Button/Button";
-import { firebaseApp } from "../../Util/authenticator";
+import firebaseApp from "../../Util/firebase";
 import "./form.css";
 
 class RegisterForm extends Component {

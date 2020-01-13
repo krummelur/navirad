@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import { validateLoginInput } from "../../Util/validateInput";
 import { Redirect } from "react-router";
 import { AuthenticatorContext } from "../../Util/authenticator";
-import { firebaseApp } from "../../Util/authenticator";
+import firebaseApp from "../../Util/firebase";
 import "./form.css";
 
 const LoginForm = (props) => {
@@ -18,7 +18,6 @@ const LoginForm = (props) => {
     event.preventDefault();
 
     if (isValid()) {
-      console.log("loginform");
       firebaseApp.auth().signInWithEmailAndPassword(eMail.value, password.value)
         .catch(error => {
           setMessage(error.message);

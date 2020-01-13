@@ -8,7 +8,7 @@ import RadarView from "./Components/Views/RadarView/RadarView";
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import { AuthenticatorProvider } from "./Util/authenticator";
 import PrivateRoute from "./Components/PrivateRoute/privateRoute";
-import {firebaseApp} from "./Util/authenticator";
+import firebaseApp from "./Util/firebase";
 import firebase from "firebase";
 import "./App.css";
 import { saveState, restoreState } from "./helpers/persistentStateHelpers";

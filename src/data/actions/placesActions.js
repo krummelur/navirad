@@ -1,4 +1,4 @@
-import { firebaseApp } from "../../Util/authenticator";
+import firebaseApp from "../../Util/firebase";
 import { showErrorAction, showMessageAction } from './messageActions'
 export const constants = {
   PLACES_FETCH_SUCCESS: "PLACES_FETCH_SUCCESS",

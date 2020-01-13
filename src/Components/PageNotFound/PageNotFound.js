@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from "../Header/Header";
-import { Redirect } from "react-router";
+import history from "../../Util/history";
 import "./PageNotFound.css";
 
 class PageNotFound extends Component {
@@ -24,7 +24,7 @@ class PageNotFound extends Component {
     }
 
     redirect(){
-        window.location = "/"
+       history.push("/");
     }
 
     render() {
