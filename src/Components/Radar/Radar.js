@@ -202,7 +202,7 @@ class Radar extends Component {
   render() {
     return (
       <div className="loader">
-        <img src={loading_Img} className = "loading-img" style={{display: this.state.isPreparingHeightmap ? "" : "none"}}/>
+        <img src={loading_Img} alt="" className="loading-img" style={{display: this.state.isPreparingHeightmap ? "" : "none"}}/>
         <canvas id="canvas" width="512" height="512" alt="radar" />
       </div>
     )}

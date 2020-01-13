@@ -27,7 +27,9 @@ function MapMenu(props) {
               {label}
             </div>
             <div className="option-remover"
-            onClick={() => { !disabled && props.removePlace(innerProps.value)}}>
+            onClick={(evt) => {
+              !disabled && props.removePlace(innerProps.value);
+              evt.stopPropagation()}}>
               {innerProps.isDisabled ? "" : "X"}
             </div>
       </div>
@@ -49,8 +51,7 @@ function MapMenu(props) {
           placeholder="Choose a location"
           components={{ Option: CustomOption }}
           onChange={(evt) => {
-            console.log("Setting radar center to");
-            props.setRadarCenter(evt.value)
+            props.setRadarCenter({...evt.value, lat: evt.value.lat+Math.random()*0.0001})
           }}
         />
       </div>
