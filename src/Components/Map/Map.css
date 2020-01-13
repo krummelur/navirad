@@ -3,25 +3,20 @@
     grid-row: 2;
     background-color: #123752;
 
-    display: grid;
-    grid-template-columns: 0.5fr 3fr 0.5fr;
-    grid-template-rows: 7% 93%;
+    display: block;
     padding-left: 125px;
     color: lightgray;
 }
 
 .mapbox {
     background-color: #123752;
-    grid-column: 1 / span 2;
-    grid-row: 2;
 }
 
 .map-title {
     font-size: x-large;
     font-weight: bold;
     margin-top: 2%;
-    grid-row: 1;
-    grid-column: 1 / span 2;
+    overflow-x: wrap;
 }
 
 .center-aligned-element {

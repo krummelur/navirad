@@ -1,36 +1,58 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import "../Shared-Styles/View-Menu.css";
+import "./MapMenu.css";
+import Select from 'react-select'
+
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' }
+]
 
 MapMenu.propTypes = {
-  places: PropTypes.array.isRequired,
+  places: PropTypes.object.isRequired,
   fetchPlaces: PropTypes.func.isRequired,
   setRadarCenter: PropTypes.func.isRequired
 };
 
-
-
-
 function MapMenu(props) {
+
+  const CustomOption = (innerProps) => {
+    let label = innerProps.label;
+    let disabled = innerProps.isDisabled;
+    return (
+      <div className="list-option-container">
+            <div className={disabled ?  "disabled-option" : "list-option" }   {...innerProps.innerProps}>
+              {label}
+            </div>
+            <div className="option-remover"
+            onClick={() => { !disabled && props.removePlace(innerProps.value)}}>
+              {innerProps.isDisabled ? "" : "X"}
+            </div>
+      </div>
+    );
+  }
+  
   useEffect(() => {
     props.fetchPlaces();
-  }, [])
+  }, []);
 
   return (
     <div className="view-menu-container">
       <div className="large-text">Options</div>
       <div className="slider-outer">
         <p className="medium-text">Pick from your saved locations:</p>
-        <select className="content-selector" defaultValue="DEFAULT"
+        <Select className="content-selector"
+          options={[{ label: "Choose a location", value:0, isDisabled:true}, 
+            ...props.places.result.map((el) => { return{value: el, label: el.name }})]}
+          placeholder="Choose a location"
+          components={{ Option: CustomOption }}
           onChange={(evt) => {
-            console.log("Setting radar center")
-            props.setRadarCenter(props.places[evt.target.value])}}>
-          <option value="DEFAULT" disabled>Choose a location</option>
-          {
-            props.places.map((place, i) =>
-              <option key={"placeSelector"+i} value={i}>{place.name}</option>)
-          }
-        </select>
+            console.log("Setting radar center to");
+            props.setRadarCenter(evt.value)
+          }}
+        />
       </div>
     </div>
   );

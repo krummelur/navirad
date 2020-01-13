@@ -6,14 +6,11 @@ import {  } from '../../data/actions/radarActions'
 
 const mapStateToProps = state => ({
     radarCenter: state.radarSettings.radarCenter,
-    places: state.places
 });
 
 const mapDispatchToProps = dispatch => {
     return {
-    fetchPlaces: () => dispatch(fetchPlacesAction()),
     setRadarCenter: newCenter => dispatch(setRadarCenter(newCenter)),
-    addPlace: place => dispatch(addPlaceAction(place))
     }
 };
 

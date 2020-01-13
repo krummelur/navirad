@@ -7,7 +7,8 @@ const mapStateToProps = state => ({
     beamWidth: state.radarSettings.beamwidth,
     rainInterference: state.radarSettings.rainInterference,
     radarInterference: state.radarSettings.radarInterference,
-    radarCenter: state.radarSettings.radarCenter
+    radarCenter: state.radarSettings.radarCenter,
+    mapUnderlay: state.radarSettings.showMapUnderlay
 });
 
 const mapDispatchToProps = dispatch => {

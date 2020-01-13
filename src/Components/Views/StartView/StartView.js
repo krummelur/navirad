@@ -21,7 +21,6 @@ class Start extends Component {
     render() {
         return (
             <div className="StartView">
-
                 <Header/>
                 <div className="login-container">
                     <div className="login-text">

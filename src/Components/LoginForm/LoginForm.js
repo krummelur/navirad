@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Input from "../Input/input";
 import Message from "../Message/message";
+import Button from "../Button/Button";
 import { validateLoginInput } from "../../Util/validateInput";
 import { Redirect } from "react-router";
 import { AuthenticatorContext } from "../../Util/authenticator";
@@ -17,13 +18,13 @@ const LoginForm = (props) => {
     event.preventDefault();
 
     if (isValid()) {
+      console.log("loginform");
       firebaseApp.auth().signInWithEmailAndPassword(eMail.value, password.value)
         .catch(error => {
           setMessage(error.message);
         });
     }
   }
-
 
   const isValid = () => {
     const { message, isValid } = validateLoginInput({ eMail, password });
@@ -54,10 +55,10 @@ const LoginForm = (props) => {
             usermessage={message}
             style={{ color: "red" }}
           />
-          <button
-            onClick={handleLogin}>
-            login
-              </button>
+          <Button
+            function={handleLogin}
+            title={"login"}
+          />
           <p
             className="message">
             Not registered?

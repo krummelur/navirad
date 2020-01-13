@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { validateRegisterInput } from "../../Util/validateInput";
 import Input from "../Input/input";
 import Message from "../Message/message";
+import Button from "../Button/Button";
 import { firebaseApp } from "../../Util/authenticator";
 import "../LoginForm/form.css";
 
@@ -28,7 +29,7 @@ class RegisterForm extends Component {
             isValid: false
           })
         }).then((object) => {
-          if (this.state.isValid) {        
+          if (this.state.isValid) {
             firebaseApp.database().ref("/users/" + object.user.uid).set({
               userID: this.state.userID,
               eMail: this.state.eMail
@@ -83,10 +84,10 @@ class RegisterForm extends Component {
             <Message usermessage={this.state.error}
               style={{ color: "red" }}
             />
-            <button
-              onClick={this.onSubmit.bind(this)}>
-              create
-            </button>
+            <Button
+              function={this.onSubmit.bind(this)}
+              title={"create"}
+            />
             <p className="message">
               Already registered?
               <span
