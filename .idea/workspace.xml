@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/About.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/actions/otherBoatAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/actions/otherBoatAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/reducers/otherBoatReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/reducers/otherBoatReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +127,7 @@
       <workItem from="1578821895539" duration="15014000" />
       <workItem from="1578855741627" duration="4537000" />
       <workItem from="1578902222066" duration="256000" />
-      <workItem from="1578902493737" duration="12210000" />
+      <workItem from="1578902493737" duration="14347000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -353,14 +353,20 @@
       <option name="project" value="LOCAL" />
       <updated>1578919339906</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="minor fix on about.">
+      <created>1578922924702</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1578922924702</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="maps again" />
     <MESSAGE value="layout work" />
     <MESSAGE value="merge with fobe" />
     <MESSAGE value="styling of loginpage" />
@@ -385,7 +391,8 @@
     <MESSAGE value="about page updated, minor changes elsewhere" />
     <MESSAGE value="layout fixes. scales well to smaller screens." />
     <MESSAGE value="minor layout fixes. considered done." />
-    <option name="LAST_COMMIT_MESSAGE" value="minor layout fixes. considered done." />
+    <MESSAGE value="minor fix on about." />
+    <option name="LAST_COMMIT_MESSAGE" value="minor fix on about." />
   </component>
   <component name="WindowStateProjectService">
     <state x="80" y="277" key="#ESLint" timestamp="1576440348578">
@@ -401,10 +408,10 @@
     </state>
     <state x="380" y="100" key="#npm_start/0.0.1500.970@0.0.1500.970" timestamp="1578730537241" />
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1578919339343">
+    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1578922923962">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578919339343" />
+    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578922923962" />
     <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646428416" />
     <state x="92" y="92" width="1736" height="986" key="DiffContextDialog" timestamp="1578904158260">
       <screen x="0" y="0" width="1920" height="1170" />
@@ -448,10 +455,10 @@
     </state>
     <state x="326" y="159" key="SettingsEditor/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578739347793" />
     <state x="255" y="132" key="SettingsEditor/0.0.1500.970@0.0.1500.970" timestamp="1578731905177" />
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1578919341309">
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1578922929214">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578919341309" />
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578922929214" />
     <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646529721" />
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1577565968373">
       <screen x="0" y="23" width="1920" height="1177" />

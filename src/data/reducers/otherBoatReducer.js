@@ -1,14 +1,23 @@
+import { constants} from "../actions/otherBoatAction";
+
 const defaultState = {
     lastFetch: null,
-    boats: {}
+    boats: {},
+    error: null
 };
 
 export function otherBoatReducer(state = defaultState, action) {
-    if(action.type === "FETCH_BOATS")
-        if(state.lastFetch && state.lastFetch < Math.floor(Date.now()))
-            return {...state, lastFetch: Date.now(), boats: action.payload};
-        else
+    switch(action.type) {
+        case constants.BOAT_FETCH_SUCCESS:
+            return {
+                ...state, lastFetch: Date.now(), boats: action.payload
+            };
+        case constants.BOAT_FETCH_FAILURE:
+            return {
+                boats: null,
+                error: action.payload.error
+            };
+        default:
             return state;
-    else
-        return state;
+    }
 }
