@@ -1,5 +1,5 @@
 import { AISHUB_CONFIG } from "../apiConfig";
-import { firebaseApp } from "../../Util/authenticator";
+import firebaseApp from "../../Util/firebase";
 export const constants = {
     BOAT_FETCH_SUCCESS: "BOAT_FETCH_SUCCESS",
     BOAT_FETCH_FAILURE: "BOAT_FETCH_FAILURE",
