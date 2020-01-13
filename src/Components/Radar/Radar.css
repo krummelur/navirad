@@ -20,6 +20,7 @@
     .smallmap-container {
         grid-row: 2;
         grid-column: 1;
+        margin-top: 5%;
     }
 
     .canvas-container {

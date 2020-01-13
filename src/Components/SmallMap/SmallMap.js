@@ -42,7 +42,7 @@ class SmallMap extends Component {
                      ref={ref => {this.marker || this.onGoogleMapLoaded(ref.map)}} 
                      initialCenter={{lat: smallMapCenter.lat, lng: smallMapCenter.lon}}
                      center={{lat: smallMapCenter.lat, lng: smallMapCenter.lon}}
-                     style={{width: '512px', height: '512px'}}
+                     style={{width: '512px', height: '512px', overflow: 'hidden'}}
                      disableDefaultUI={true}
                      gestureHandling={'none'}>
                 </Map>
