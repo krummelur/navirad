@@ -34,7 +34,7 @@ class MapEmbedder extends Component {
                     <button type="button"
                         //There seems to be an issue with using Links inside Map, and especially InfoWindow components.
                         //This works, but could be made nicer. navigation by dispatch (redux-router) could probably solve it.
-                            onClick={() => { document.getElementById("radarLink").click() }}>
+                        onClick={() => { document.getElementById("radarLink").click() }}>
                         Go to radar view</button>
                 </div>
             </React.Fragment>;
@@ -101,8 +101,13 @@ class MapEmbedder extends Component {
 
     componentDidUpdate(prevProps) {
         //If another component updates the center, we should move there and display info
-        if (!isEqual(prevProps.radarCenter, this.props.radarCenter) && !this.state.displayMarkerInfo) {
-            this.setState({ displayMarkerInfo: true })
+        if (!isEqual(prevProps.radarCenter, this.props.radarCenter)) {
+            this.setState({ isLoadingWaterApi: true, displayMarkerInfo: true });
+            this.onWater(this.props.radarCenter.lat, this.props.radarCenter.lon).then((result) => {
+                console.log("HMMM");
+                //TODO CHECK AND HANDLE ANY API ERRORS!!
+                this.setState({ isLoadingWaterApi: false });
+            })
         }
     }
 
@@ -127,8 +132,9 @@ class MapEmbedder extends Component {
             .then(this.handleOnWaterError)
             .then(response => response.json())
             .then(response => this.setState({onWater: response.water}))
-
     };
+
+
     render() {
         if (!this.props.loaded) {
             return <div>Loading...</div>
