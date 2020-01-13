@@ -6,7 +6,7 @@ const defaultState = {
     error: null
 };
 
-export function otherBoatReducer(state = defaultState, action) {
+export function otherBoatsReducer(state = defaultState, action) {
     switch(action.type) {
         case constants.BOAT_FETCH_SUCCESS:
             return {
