@@ -4,11 +4,6 @@ import Section from "./Section";
 import {animateScroll} from "react-scroll";
 
 class About extends Component {
-
-    scrollToTop = () => {
-        animateScroll.scrollToTop();
-    };
-
     render() {
         return (
             <div className="about-container">
@@ -26,8 +21,6 @@ class About extends Component {
                             rain clutter.<p/>
 
                             The map view is an embedded Google Map with custom marker behaviour and infowindow.<p/>
-
-                            <button onClick={this.scrollToTop}>Back to top</button>
                         </div>
                     }
                     id="radar"
@@ -57,7 +50,6 @@ class About extends Component {
                             the internet.<br/>
                             A special thanks to <a href="https://www.vassaro.se">Vässarö</a> for providing us with a raw
                             AIS feed, which was needed to gain access to the AISHub API.<p/>
-                            <button onClick={this.scrollToTop}>Back to top</button>
                         </div>
 
 
@@ -75,8 +67,6 @@ class About extends Component {
                                 href="https://gits-15.sys.kth.se/adamlil/dh2642-proj">git repository</a><p/>
 
                             The project's two releases, mid project and final, can be found under the releases tab.<p/>
-
-                            <button onClick={this.scrollToTop}>Back to top</button>
                         </div>
                     }
                     id="code"
@@ -90,8 +80,6 @@ class About extends Component {
                             Magnus Fredriksson<br/>
                             Adam Liliemark<br/>
                             Fredrik Öberg<p/>
-
-                            <button onClick={this.scrollToTop}>Back to top</button>
                         </div>
                     }
                     id="team"

@@ -38,6 +38,10 @@
     cursor: pointer;
 }
 
+#radar {
+    margin-top: -8%;
+}
+
 .section {
     display: flex;
     flex-direction: column;
@@ -59,7 +63,6 @@
 }
 
 .section button {
-    border: none;
     background-color: transparent;
     font-size: large;
     color: #708EA4;

@@ -106,7 +106,7 @@ function RadarMenu(props) {
             </div>
 
             <div className="joystick-area">
-                <p>Click and drag in the joystick area<br/>to control the radars position.</p>
+                <div>Click and drag in the joystick<br/>area or use the arrow keys to<br/>control the radars position.</div>
                 <NavigationControlsContainer/>
             </div>
 
