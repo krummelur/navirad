@@ -15,7 +15,6 @@ class KeyboardNavigation extends Component {
 
     componentWillUnmount() {
         this.stopMovingByArrows();
-        this.stopMoving();
     }
 
     noKeysPressed() {
@@ -62,7 +61,7 @@ class KeyboardNavigation extends Component {
         
         thiselem.addEventListener("keyup", function (e) {
             if (listenKeys.includes(e.code)) {
-                e.preventDefault();
+                e.preventDefault(); 
                 this.arrowsPressed[e.code] = false;
             }
             if (this.noKeysPressed())
