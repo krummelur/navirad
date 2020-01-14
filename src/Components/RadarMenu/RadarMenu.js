@@ -86,7 +86,11 @@ function RadarMenu(props) {
                         title="Shows other boats on the radar via the AIS protocol. The boats shown are actual real life boats and their real position (with some limitations in update frequency)"
                         placement="left">
                         <li>
-                            <input type="checkbox" id="checkboxFour"/>
+                            <input type="checkbox" id="checkboxFour"
+                            defaultChecked={props.otherBoats}
+                            onChange={evt => {
+                                props.setOtherBoats(evt.target.checked)}}
+                            />
                             <label htmlFor="checkboxFour">Other boats</label>
                         </li>
                     </StyledTooltip>

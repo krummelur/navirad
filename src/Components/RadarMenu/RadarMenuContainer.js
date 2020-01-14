@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import RadarMenu from './RadarMenu'
-import {setBeamWidth, setInterference, setRain, setUnderlay, setRadarCenter} from "../../data/actions/radarActions";
+import {setBeamWidth, setInterference, setRain, setUnderlay, setRadarCenter, setOtherBoats} from "../../data/actions/radarActions";
 import {addPlaceAction} from "../../data/actions/placesActions";
 
 const mapStateToProps = state => ({
@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
     rainInterference: state.radarSettings.rainInterference,
     radarInterference: state.radarSettings.radarInterference,
     radarCenter: state.radarSettings.radarCenter,
-    mapUnderlay: state.radarSettings.showMapUnderlay
+    mapUnderlay: state.radarSettings.showMapUnderlay,
+    otherBoats: state.radarSettings.otherBoats
 });
 
 const mapDispatchToProps = dispatch => {
@@ -18,7 +19,8 @@ const mapDispatchToProps = dispatch => {
         setRadarInterference: shouldInterfere => dispatch(setInterference(shouldInterfere)),
         setUnderlay: shouldDisplayUnderlay => dispatch(setUnderlay(shouldDisplayUnderlay)),
         addPlace: newPlace => dispatch(addPlaceAction(newPlace)),
-        setRadarCenter: newCenter => dispatch(setRadarCenter(newCenter))
+        setRadarCenter: newCenter => dispatch(setRadarCenter(newCenter)),
+        setOtherBoats: shouldDisplay => dispatch(setOtherBoats(shouldDisplay))
     }
 };
 
