@@ -6,7 +6,8 @@ import {fetchBoatsAction} from '../../data/actions/otherBoatAction';
 
 const mapStateToProps = state => ({
     otherBoats: state.otherBoats,
-    radarCenter: state.radarSettings.radarCenter
+    radarCenter: state.radarSettings.radarCenter,
+    shouldDiplayBoats: state.radarSettings.otherBoats
 });
 
 const mapDispatchToProps = dispatch => {

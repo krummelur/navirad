@@ -40,34 +40,43 @@ class OtherBoatsOverlay extends Component {
 
     //Dont redraw completely unless we changed tile
     getSnapshotBeforeUpdate(prevProps) {
+        let result = {shouldUpdate: false}
         let prevTile = lonLatZoomToZXY(prevProps.radarCenter);
         let curTile = lonLatZoomToZXY(this.props.radarCenter);
         if (prevTile.x !== curTile.x || prevTile.y !== curTile.y)
-            return {repositionMap: true}
-        else
-            return {repositionMap: false}
+            return {shouldUpdate: true}
+        if (prevProps.shouldDiplayBoats !== this.props.shouldDiplayBoats)
+            return {shouldUpdate: true}
+        return result;
+    }
+
+    clearCanvas() {    
+        let context = document.getElementById("boats-canvas").getContext("2d")
+        context.clearRect(0, 0, wh, wh)
     }
 
     renderIntoCanvas() {
-        console.log("drawing!");
         let img = this.boatIndicatorImg;
         let context = document.getElementById("boats-canvas").getContext("2d")
         setTimeout(function() {
             this.boatsInBounds().map( (b,i) => {
-                    let zxy = lonLatZoomToZXY({lat: b.LATITUDE, lon: b.LONGITUDE});
-                    context.drawImage(img, zxy.xRem*wh, zxy.yRem*wh)
+                let zxy = lonLatZoomToZXY({lat: b.LATITUDE, lon: b.LONGITUDE});
+                context.drawImage(img, zxy.xRem*wh, zxy.yRem*wh)
             })
-        }.bind(this), 1)
+        }.bind(this), 10)
     }
-
+    
     componentDidUpdate(prevProps, state, snapshot) {
-        if (snapshot.repositionMap) {
-            //this.renderIntoCanvas();
+        if (snapshot.shouldUpdate) {
+            this.clearCanvas();
+            if(this.props.shouldDiplayBoats)
+                this.renderIntoCanvas();
         }
     }
     
     componentDidMount() {
-        //this.renderIntoCanvas()
+        if(this.props.shouldDiplayBoats)
+        this.renderIntoCanvas()
     }
 
     render() {

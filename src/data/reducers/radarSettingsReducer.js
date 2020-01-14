@@ -10,6 +10,8 @@ const defaultState = {
 
 export function radarSettingsReducer(state = defaultState, action) {
     switch (action.type) {
+        case constants.SET_OTHER_BOATS:
+            return {...state, otherBoats: action.payload};
         case constants.SET_RADAR_BEAMWIDTH:
             return {...state, beamwidth: action.payload};
         case constants.SET_RAIN_INTERFERENCE:
