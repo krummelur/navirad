@@ -9,13 +9,13 @@ const PrivateRoute = ({component: RouteComponent, ...rest}) => {
     //Set the conditional value(true) to currentUser to implement the login function
     return (
         <Route {...rest}
-               render={routeProps => {
-                   if (currentUser)
-                       return <RouteComponent {...routeProps} />
-                   else
-                       return <PageNotFound/>
-               }
-               }
+            render={routeProps => {
+                    if (currentUser)
+                        return <RouteComponent {...routeProps} />
+                    else
+                        return <PageNotFound/>
+                }
+            }
         />
     );
 };
