@@ -24,7 +24,7 @@ class About extends Component {
 
                             The map view is an embedded Google Map with custom marker behaviour and infowindow.<p/>
 
-                            <a onClick={this.scrollToTop}>Back to top</a>
+                            <button onClick={this.scrollToTop}>Back to top</button>
                         </div>
                     }
                     id="radar"
@@ -46,7 +46,7 @@ class About extends Component {
 
                             <a href="https://www.aishub.net">AISHub</a> is used to fetch other, real, boats. The boats transmit their position (and metadata) over VHF via AIS, and AISHub provides these feeds on the internet.<br/>
                             A special thanks to <a href="https://www.vassaro.se">Vässarö</a> for providing us with a raw AIS feed, which was needed to gain access to the AISHub API.<p/>
-                            <a onClick={this.scrollToTop}>Back to top</a>
+                            <button onClick={this.scrollToTop}>Back to top</button>
                         </div>
 
 
@@ -65,7 +65,7 @@ class About extends Component {
 
                             The project's two releases, mid project and final, can be found under the releases tab.<p/>
 
-                            <a onClick={this.scrollToTop}>Back to top</a>
+                            <button onClick={this.scrollToTop}>Back to top</button>
                         </div>
                     }
                     id="code"
@@ -79,7 +79,7 @@ class About extends Component {
                             Adam Liliemark<br/>
                             Fredrik Öberg<p/>
 
-                            <a onClick={this.scrollToTop}>Back to top</a>
+                            <button onClick={this.scrollToTop}>Back to top</button>
                         </div>
                     }
                     id="team"

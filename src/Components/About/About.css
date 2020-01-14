@@ -58,6 +58,19 @@
     cursor: pointer;
 }
 
+.section button {
+    border: none;
+    background-color:transparent;
+    font-size: medium;
+    color: #708EA4;
+    padding: 0;
+}
+
+.section button:hover {
+    color: skyblue;
+    cursor: pointer;
+}
+
 .section-outer {
     width: 80%;
 }
