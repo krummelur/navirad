@@ -1,5 +1,5 @@
 import firebaseApp from "../../Util/firebase";
-import {showErrorAction, showMessageAction} from './messageActions'
+import { showErrorAction, showMessageAction } from './messageActions'
 
 export const constants = {
     PLACES_FETCH_SUCCESS: "PLACES_FETCH_SUCCESS",
@@ -10,14 +10,14 @@ export const constants = {
 }
 
 export const fetchPlacesAction = () => {
-    const {currentUser} = firebaseApp.auth();
+    const { currentUser } = firebaseApp.auth();
     return dispatch => {
-        firebaseApp
-            .database()
-            .ref(`places/${currentUser.uid}`)
-            .on('value', snapshot => {
-                snapshot.val() && dispatch({type: constants.PLACES_FETCH_SUCCESS, payload: snapshot.val()});
-            });
+        let fbRef = firebaseApp.database().ref(`places/${currentUser.uid}`)
+
+        fbRef.on('value', snapshot => {
+            fbRef.off();
+            snapshot.val() && dispatch({ type: constants.PLACES_FETCH_SUCCESS, payload: snapshot.val() });
+        });
     };
 };
 
@@ -25,9 +25,9 @@ export const addPlaceAction = (place) => {
     if (typeof place.name !== 'string')
         throw new Error("name must be string!");
 
-    const {currentUser} = firebaseApp.auth();
+    const { currentUser } = firebaseApp.auth();
     const childObject = {};
-    childObject[place.name] = {lat: place.lat, lon: place.lon}
+    childObject[place.name] = { lat: place.lat, lon: place.lon }
     return dispatch => {
         if (place.name === "")
             dispatch(showErrorAction("Enter a name for the location first!"))
@@ -49,10 +49,9 @@ export const addPlaceAction = (place) => {
 }
 
 export const removePlaceAction = (place) => {
-    console.log("Adding place")
     if (typeof place.name !== 'string')
         throw new Error("name must be string!");
-    const {currentUser} = firebaseApp.auth();
+    const { currentUser } = firebaseApp.auth();
     return dispatch => {
         firebaseApp
             .database()
@@ -70,11 +69,11 @@ export const removePlaceAction = (place) => {
 }
 
 const addPlaceSuccessAction = (newPlace) => {
-    return {type: constants.ADD_PLACE_SUCCESS, payload: newPlace}
+    return { type: constants.ADD_PLACE_SUCCESS, payload: newPlace }
 };
 const addPlaceFailureAction = (error) => {
-    return {type: constants.ADD_PLACE_FAILURE, payload: error}
+    return { type: constants.ADD_PLACE_FAILURE, payload: error }
 };
 const removePlaceSuccessAction = (removedPlace) => {
-    return {type: constants.REMOVE_PLACE_SUCCESS, payload: removedPlace}
+    return { type: constants.REMOVE_PLACE_SUCCESS, payload: removedPlace }
 };

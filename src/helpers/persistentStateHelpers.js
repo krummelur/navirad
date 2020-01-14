@@ -9,7 +9,7 @@ export const restoreState = (store) => {
         storedRadarSettings.rainInterference && store.dispatch(setRain(storedRadarSettings.rainInterference));
         storedRadarSettings.radarInterference && store.dispatch(setInterference(storedRadarSettings.radarInterference));
         storedRadarSettings.showMapUnderlay && store.dispatch(setUnderlay(storedRadarSettings.showMapUnderlay));
-        storedRadarSettings.otherBoats && store.dispatch(setOtherBoats(storedRadarSettings.showMapUnderlay));
+        storedRadarSettings.otherBoats && store.dispatch(setOtherBoats(storedRadarSettings.otherBoats));
     }
 }
 

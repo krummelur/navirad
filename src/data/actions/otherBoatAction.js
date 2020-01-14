@@ -10,7 +10,7 @@ const writeBoatsToFirebase = (boats) => {
     firebaseApp
         .database()
         .ref('boats')
-        .update({"boats": {...boats, lastFetch: Date.now()}}, function (error) {
+        .update({ "boats": { ...boats, lastFetch: Date.now() } }, function (error) {
             if (error) {
                 console.log(error)
             }
@@ -19,29 +19,25 @@ const writeBoatsToFirebase = (boats) => {
 
 export const fetchBoatsAction = () => {
     return dispatch => {
-        firebaseApp
-            .database()
-            .ref('boats')
-            .on('value', value => {
-                if (!value.val() || value.val().boats.lastFetch < Date.now() - 65000) {
-                    fetchBoats(53.27, 66.27, 4.87, 24.27)
-                        .then(res => {
+        let fbRef = firebaseApp.database().ref('boats')
+        fbRef.on('value', value => {
+            fbRef.off();
+            if (!value.val() || value.val().boats.lastFetch < Date.now() - 65000) {
+                fetchBoats(53.27, 66.27, 4.87, 24.27)
+                    .then(res => {
+                        if (res[0].ERROR === false) {
                             writeBoatsToFirebase(res);
-                            console.log("res:");
-                            console.log(res);
                             dispatch(fetchSuccessAction(res[1]));
-                        })
-                        .catch(function (error) {
-                            dispatch(fetchFailureAction(error));
-                            console.log(error);
-                        })
-                } else {
-                    dispatch(fetchSuccessAction(value.val().boats[1]));
-                    console.log("unfetched:");
-                    console.log(value.val().boats[1]);
-                }
-
-            });
+                        }
+                    })
+                    .catch(function (error) {
+                        dispatch(fetchFailureAction(error));
+                        console.log(error);
+                    })
+            } else {
+                dispatch(fetchSuccessAction(value.val().boats[1]));
+            }
+        });
     }
 };
 
@@ -54,12 +50,11 @@ const fetchBoats = (latmin, latmax, lonmin, lonmax) => {
             origin: 'GET'
         })
         .then(results => results.json())
-        .then(console.log("boats fetched"))
 };
 
 const fetchSuccessAction = (boats) => {
-    return {type: constants.BOAT_FETCH_SUCCESS, payload: boats}
+    return { type: constants.BOAT_FETCH_SUCCESS, payload: boats }
 };
 const fetchFailureAction = (error) => {
-    return {type: constants.BOAT_FETCH_FAILURE, payload: error}
+    return { type: constants.BOAT_FETCH_FAILURE, payload: error }
 };

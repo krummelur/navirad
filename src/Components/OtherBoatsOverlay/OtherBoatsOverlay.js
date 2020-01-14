@@ -8,9 +8,7 @@ const wh = 512;
 class OtherBoatsOverlay extends Component {
     constructor(props) {
         super(props)
-        console.log("I LIVE AGAIN!")
         this.props.fetchBoats()
-        console.log(this.tileBounds());
         this.boatIndicatorImg = new Image();
         this.boatIndicatorImg.src = boatIndicator_img;
     }
@@ -19,8 +17,6 @@ class OtherBoatsOverlay extends Component {
         let cTile = lonLatZoomToZXY(this.props.radarCenter);
         let upperLeft = zxyToTileCorner(cTile);
         let lowerRight = zxyToTileCorner({...cTile, x: cTile.x+1, y: cTile.y+1});
-        //console.log(upperLeft);
-        //console.log(lowerRight);
         let lats = {lower: Math.min(upperLeft.lat, lowerRight.lat),
                     upper: Math.max(upperLeft.lat, lowerRight.lat)}
         let lons= {lower: Math.min(upperLeft.lon, lowerRight.lon),
@@ -30,7 +26,6 @@ class OtherBoatsOverlay extends Component {
 
     boatsInBounds() {
         let bounds = this.tileBounds();
-        console.log(bounds)
         return this.props.otherBoats.boats.filter(o => 
             o.LONGITUDE > bounds.lons.lower &&
             o.LONGITUDE < bounds.lons.upper &&

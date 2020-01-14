@@ -46,10 +46,8 @@ class KeyboardNavigation extends Component {
 
     setUpKeyListeners() {
         let thiselem = document.getElementById("keyboardnavigation") 
-        console.log("Setting up keylisteners")
-
+        
         thiselem.addEventListener("keydown", function (e) {
-            console.log("AAYAYAYAYAYsdsd")
             let isFirstKey = this.noKeysPressed();
             if (listenKeys.includes(e.code)) {
                 e.preventDefault();

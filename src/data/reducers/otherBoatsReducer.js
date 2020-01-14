@@ -14,7 +14,7 @@ export function otherBoatsReducer(state = defaultState, action) {
             };
         case constants.BOAT_FETCH_FAILURE:
             return {
-                boats: null,
+                boats: [],
                 error: action.payload.error
             };
         default:
