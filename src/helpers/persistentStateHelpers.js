@@ -1,4 +1,4 @@
-import {setRadarCenter, setBeamWidth, setRain, setInterference, setUnderlay} from "../data/actions/radarActions";
+import {setRadarCenter, setBeamWidth, setRain, setInterference, setUnderlay, setOtherBoats} from "../data/actions/radarActions";
 
 export const restoreState = (store) => {
     let storedRadarSettings = localStorage.getItem("radarSettings");
@@ -9,6 +9,7 @@ export const restoreState = (store) => {
         storedRadarSettings.rainInterference && store.dispatch(setRain(storedRadarSettings.rainInterference));
         storedRadarSettings.radarInterference && store.dispatch(setInterference(storedRadarSettings.radarInterference));
         storedRadarSettings.showMapUnderlay && store.dispatch(setUnderlay(storedRadarSettings.showMapUnderlay));
+        storedRadarSettings.otherBoats && store.dispatch(setOtherBoats(storedRadarSettings.showMapUnderlay));
     }
 }
 
