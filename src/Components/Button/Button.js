@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import "./Button.css";
 
 class Button extends Component {
@@ -6,8 +6,9 @@ class Button extends Component {
         super(props);
         this.state = {}
     }
+
     render() {
-    return (<button className="button" onClick={this.props.function}>{this.props.title}</button>);
+        return (<button className="button" onClick={this.props.function}>{this.props.title}</button>);
     }
 }
 

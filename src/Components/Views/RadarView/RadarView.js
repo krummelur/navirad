@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Header from "../../Header/Header";
 import RadarContainer from "../../Radar/RadarContainer";
 import RadarMenuContainer from "../../RadarMenu/RadarMenuContainer";
@@ -16,7 +16,7 @@ class RadarView extends Component {
                 <Menu pageWrapId={"RadarView"} outerContainerId={"outer"}/>
 
                 <div className="RadarView">
-                    <Header />
+                    <Header/>
                     <div className="radar-container">
                         <div className="radarheader">
                             <RadarHeaderContainer/>
@@ -26,12 +26,12 @@ class RadarView extends Component {
                             <div className="canvas-container">
                                 <OtherBoatsOverlayContainer/>
                                 <RadarMapUnderlayContainer/>
-                                <RadarContainer />
+                                <RadarContainer/>
                             </div>
                         </div>
                     </div>
 
-                    <RadarMenuContainer />
+                    <RadarMenuContainer/>
                 </div>
             </div>
         );

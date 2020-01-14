@@ -1,7 +1,7 @@
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import RadarMenu from './RadarMenu'
 import {setBeamWidth, setInterference, setRain, setUnderlay, setRadarCenter} from "../../data/actions/radarActions";
-import { addPlaceAction } from "../../data/actions/placesActions";
+import {addPlaceAction} from "../../data/actions/placesActions";
 
 const mapStateToProps = state => ({
     beamWidth: state.radarSettings.beamwidth,

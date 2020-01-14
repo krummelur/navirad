@@ -12,6 +12,7 @@
     transition: all 0.3 ease;
     cursor: pointer;
 }
-.button:hover,.button:active,.button:focus {
+
+.button:hover, .button:active, .button:focus {
     background: #486D88;
 }

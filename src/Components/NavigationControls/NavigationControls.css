@@ -3,8 +3,9 @@
     height: 200px;
     /*background-color: rgba(0,0,0, 0.5)*/
 }
+
 .joystick-bg {
-    user-drag: none; 
+    user-drag: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -13,5 +14,5 @@
     width: 200px;
     height: 200px;
     position: absolute;
-    -webkit-mask-image: linear-gradient(calc(var(--grad-rot, 0) * 1deg),  white, 20%, white, calc(var(--grad-end, 512) * 1%), rgba(255,255,255,0));
+    -webkit-mask-image: linear-gradient(calc(var(--grad-rot, 0) * 1deg), white, 20%, white, calc(var(--grad-end, 512) * 1%), rgba(255, 255, 255, 0));
 }

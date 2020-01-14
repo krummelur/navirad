@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
 import {radarSettingsReducer} from "./radarSettingsReducer";
-import { placesReducer } from "./placesReducer";
-import { messageReducer } from "./messagesReducer";
-import { otherBoatsReducer} from "./otherBoatsReducer";
+import {placesReducer} from "./placesReducer";
+import {messageReducer} from "./messagesReducer";
+import {otherBoatsReducer} from "./otherBoatsReducer";
 
 const combinedReducers = combineReducers({
     radarSettings: radarSettingsReducer,

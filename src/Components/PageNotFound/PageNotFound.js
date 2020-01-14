@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Header from "../Header/Header";
 import history from "../../Util/history";
 import "./PageNotFound.css";
@@ -20,31 +20,31 @@ class PageNotFound extends Component {
     }
 
     enableMessage() {
-        this.setState({ displayMessage: true });
+        this.setState({displayMessage: true});
     }
 
-    redirect(){
-       history.push("/");
+    redirect() {
+        history.push("/");
     }
 
     render() {
 
-        const { displayMessage } = this.state;
+        const {displayMessage} = this.state;
 
         if (!displayMessage)
             return null;
 
         return (
-            
+
             <div className="pagenotfound">
-                <Header />
+                <Header/>
                 <div className="pagetext">
                     <h2>Either the page does not exist or you are not authorized to enter the site</h2>
                     <h2 className="headertext">Push the button to enter the frontpage</h2>
                     <button className="button" onClick={this.redirect.bind(this)}>frontpage</button>
                 </div>
             </div>
-            
+
         );
     }
 }

@@ -3,7 +3,7 @@ import "../Views/RadarView/RadarView.css";
 import "./RadarHeader.css";
 import {Link} from "react-router-dom";
 
-function RadarHeader(props){
+function RadarHeader(props) {
     return (
         <div>
             <div>
@@ -16,7 +16,7 @@ function RadarHeader(props){
             </div>
         </div>
 
-);
+    );
 }
 
 export default RadarHeader;

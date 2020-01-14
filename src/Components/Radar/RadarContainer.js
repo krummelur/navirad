@@ -1,7 +1,7 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import Radar from './Radar'
-import { setRadarCenter } from '../../data/actions/radarActions'
-import { showErrorAction } from '../../data/actions/messageActions';
+import {setRadarCenter} from '../../data/actions/radarActions'
+import {showErrorAction} from '../../data/actions/messageActions';
 
 
 const mapStateToProps = state => ({

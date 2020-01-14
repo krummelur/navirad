@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "./AboutView.css";
 import About from "../../About/About";
 import Navbar from "../../About/Navbar";
 import Menu from "../../Menu/Menu";
 import Header from "../../Header/Header";
-import { animateScroll } from "react-scroll";
+import {animateScroll} from "react-scroll";
 
 class AboutView extends Component {
 
@@ -17,7 +17,7 @@ class AboutView extends Component {
     }
 
     scrollToTop = () => {
-      animateScroll.scrollToTop();
+        animateScroll.scrollToTop();
     };
 
     render() {
@@ -30,7 +30,7 @@ class AboutView extends Component {
                         <Navbar/>
                     </Header>
 
-                    <About />
+                    <About/>
                 </div>
             </div>
         );

@@ -4,15 +4,15 @@
  * See also https://reactjs.org/docs/hooks-effect.html
  */
 
-import { InfoWindow } from 'google-maps-react';
-import React, { useEffect, useState, useRef } from 'react';
+import {InfoWindow} from 'google-maps-react';
+import React, {useEffect, useState, useRef} from 'react';
 import ReactDOM from 'react-dom'
 
 export default function InfoWindowWrapper(props) {
     const [infoWindowRef] = useState(React.createRef());
     const [contentElement] = useState(document.createElement(`div`));
     const prevChildrenRef = useRef();
-    
+
     useEffect(() => {
         //Only re-render when something changed
         const prevChildren = prevChildrenRef.current;
@@ -24,7 +24,7 @@ export default function InfoWindowWrapper(props) {
             infoWindowRef.current.infowindow.setContent(contentElement);
         }
     })
-    
+
     useEffect(() => {
         prevChildrenRef.current = props.children;
     });

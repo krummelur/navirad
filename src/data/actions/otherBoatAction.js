@@ -1,5 +1,6 @@
-import { AISHUB_CONFIG } from "../apiConfig";
+import {AISHUB_CONFIG} from "../apiConfig";
 import firebaseApp from "../../Util/firebase";
+
 export const constants = {
     BOAT_FETCH_SUCCESS: "BOAT_FETCH_SUCCESS",
     BOAT_FETCH_FAILURE: "BOAT_FETCH_FAILURE",
@@ -9,7 +10,7 @@ const writeBoatsToFirebase = (boats) => {
     firebaseApp
         .database()
         .ref("")
-        .update({ "boats": { ...boats, lastFetch: Date.now() } }, function (error) {
+        .update({"boats": {...boats, lastFetch: Date.now()}}, function (error) {
             if (error) {
                 console.log(error)
             }
@@ -38,10 +39,14 @@ export const fetchBoatsAction = () => {
 
 const fetchBoats = (latmin, latmax, lonmin, lonmax) => {
     return fetch(
-        `https://data.aishub.net/ws.php?username=${AISHUB_CONFIG.apiKey}`+
+        `https://data.aishub.net/ws.php?username=${AISHUB_CONFIG.apiKey}` +
         `&format=1&output=json&compress=0&latmin=${latmin}&latmax=${latmax}&lonmin=${lonmin}&lonmax=${lonmax}`)
         .then(results => results.json())
 };
 
-const fetchSuccessAction = (boats) => { return { type: constants.BOAT_FETCH_SUCCESS, payload: boats } };
-const fetchFailureAction = (error) => { return { type: constants.BOAT_FETCH_FAILURE, payload: error } };
+const fetchSuccessAction = (boats) => {
+    return {type: constants.BOAT_FETCH_SUCCESS, payload: boats}
+};
+const fetchFailureAction = (error) => {
+    return {type: constants.BOAT_FETCH_FAILURE, payload: error}
+};

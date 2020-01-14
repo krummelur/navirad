@@ -1,10 +1,10 @@
 import {GoogleApiWrapper, Map, Marker} from "google-maps-react";
-import React, { Component } from "react";
+import React, {Component} from "react";
 import * as Constants from "../../data/apiConfig";
 import "../Radar/Radar.css"
-import { lonLatZoomToZXY, zxyToTileCenter } from '../../helpers/mapHelpers'
+import {lonLatZoomToZXY, zxyToTileCenter} from '../../helpers/mapHelpers'
 
-const  radarCenterToTileCenter = (c) => {
+const radarCenterToTileCenter = (c) => {
     let center = lonLatZoomToZXY(c);
     return zxyToTileCenter(center);
 };
@@ -39,7 +39,9 @@ class SmallMap extends Component {
             <React.Fragment>
                 <Map google={this.props.google}
                      zoom={13}
-                     ref={ref => {this.marker || this.onGoogleMapLoaded(ref.map)}} 
+                     ref={ref => {
+                         this.marker || this.onGoogleMapLoaded(ref.map)
+                     }}
                      initialCenter={{lat: smallMapCenter.lat, lng: smallMapCenter.lon}}
                      center={{lat: smallMapCenter.lat, lng: smallMapCenter.lon}}
                      style={{width: '512px', height: '512px', overflow: 'hidden'}}

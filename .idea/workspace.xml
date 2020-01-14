@@ -3,8 +3,73 @@
   <component name="ChangeListManager">
     <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/About/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/About.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/About/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/About/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/Section.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Button/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Button/Button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Button/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Forms/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Forms/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Forms/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Forms/RegisterForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Forms/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Forms/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Input/input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Input/input.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Input/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Input/input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Map/InfoWindowWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/InfoWindowWrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Map/MapBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/MapBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Map/MapEmbedderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/MapEmbedderContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MapMenu/MapMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MapMenu/MapMenu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MapMenu/MapMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MapMenu/MapMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MapMenu/MapMenuContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MapMenu/MapMenuContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Menu/Menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Menu/Menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Menu/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Menu/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Message/message.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Message/message.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Message/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Message/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MessageBox/MessageBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MessageBox/MessageBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MessageBox/MessageBoxContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MessageBox/MessageBoxContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MessageBox/MessageBoxTemplateWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MessageBox/MessageBoxTemplateWrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavigationControls/NavigationControls.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavigationControls/NavigationControls.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavigationControls/NavigationControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavigationControls/NavigationControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavigationControls/NavigationControlsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavigationControls/NavigationControlsContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/OtherBoatsOverlay/OtherBoatsOverlay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/OtherBoatsOverlay/OtherBoatsOverlay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/OtherBoatsOverlay/OtherBoatsOverlayContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/OtherBoatsOverlay/OtherBoatsOverlayContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PageNotFound/PageNotFound.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PageNotFound/PageNotFound.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PageNotFound/PageNotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PageNotFound/PageNotFound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PrivateRoute/privateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PrivateRoute/privateRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Radar/Radar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Radar/Radar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Radar/RadarContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Radar/RadarContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RadarHeader/RadarHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarHeader/RadarHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RadarHeader/RadarHeaderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarHeader/RadarHeaderContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RadarMapUnderlay/RadarMapUnderlay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarMapUnderlay/RadarMapUnderlay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RadarMapUnderlay/RadarMapUnderlayContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarMapUnderlay/RadarMapUnderlayContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenuContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenuContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Shared-Styles/View-Menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Shared-Styles/View-Menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SmallMap/SmallMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SmallMap/SmallMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SmallMap/SmallMapBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SmallMap/SmallMapBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SmallMap/SmallMapContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SmallMap/SmallMapContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Views/MapView/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/MapView/MapView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Views/StartView/StartView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/StartView/StartView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Util/authenticator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util/authenticator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Util/validateInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util/validateInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/actions/messageActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/actions/messageActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/actions/otherBoatAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/actions/otherBoatAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/actions/placesActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/actions/placesActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/reducers/messagesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/reducers/messagesReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/reducers/otherBoatsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/reducers/otherBoatsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/reducers/placesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/reducers/placesReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/reducers/radarSettingsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/reducers/radarSettingsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/reducers/reducerCombiner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/reducers/reducerCombiner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/mapHelpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/mapHelpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/persistentStateHelpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/persistentStateHelpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +195,7 @@
       <workItem from="1578902493737" duration="19538000" />
       <workItem from="1578951140102" duration="1626000" />
       <workItem from="1578995118164" duration="933000" />
-      <workItem from="1578996081406" duration="485000" />
+      <workItem from="1578996081406" duration="4223000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -377,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578950826761</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fixed error on about">
+      <created>1578996608706</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1578996608707</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +505,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="styling of loginpage" />
     <MESSAGE value="cursor on map, reorganizing files" />
     <MESSAGE value="radarheader problems" />
     <MESSAGE value="radarheader fixed" />
@@ -458,13 +529,18 @@
     <MESSAGE value="minor fix on about." />
     <MESSAGE value="started working on aishub" />
     <MESSAGE value="tooltips added on radarmenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="tooltips added on radarmenu" />
+    <MESSAGE value="fixed error on about" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed error on about" />
   </component>
   <component name="WindowStateProjectService">
     <state x="80" y="277" key="#ESLint" timestamp="1576440348578">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="80" y="277" key="#ESLint/0.23.1920.1177@0.23.1920.1177" timestamp="1576440348578" />
+    <state x="552" y="244" key="#JavaScript" timestamp="1579007331464">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="552" y="244" key="#JavaScript/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579007331464" />
     <state x="734" y="389" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578951076539">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -479,10 +555,10 @@
     </state>
     <state x="380" y="100" key="#npm_start/0.0.1500.970@0.0.1500.970" timestamp="1578730537241" />
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1578950825948">
+    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1578996608003">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578950825948" />
+    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578996608003" />
     <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646428416" />
     <state x="92" y="92" width="1736" height="986" key="DiffContextDialog" timestamp="1578904158260">
       <screen x="0" y="0" width="1920" height="1170" />
@@ -512,14 +588,14 @@
     <state width="1900" height="324" key="GridCell.Tab.0.right/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578840819641" />
     <state width="1480" height="259" key="GridCell.Tab.0.right/0.0.1500.970@0.0.1500.970" timestamp="1578732032392" />
     <state width="1899" height="328" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1577472731037" />
-    <state x="188" y="112" width="1729" height="960" key="MergeDialog" timestamp="1578904108323">
+    <state x="40" y="104" width="1729" height="960" key="MergeDialog" timestamp="1579006676877">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="188" y="112" width="1729" height="960" key="MergeDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578904108323" />
-    <state x="676" y="309" key="MultipleFileMergeDialog" timestamp="1578904108354">
+    <state x="40" y="104" width="1729" height="960" key="MergeDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579006676877" />
+    <state x="676" y="309" key="MultipleFileMergeDialog" timestamp="1579006676882">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="676" y="309" key="MultipleFileMergeDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578904108354" />
+    <state x="676" y="309" key="MultipleFileMergeDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579006676882" />
     <state x="676" y="334" key="MultipleFileMergeDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1576826885444" />
     <state x="648" y="297" key="RollbackChangesDialog" timestamp="1578995993399">
       <screen x="0" y="0" width="1920" height="1170" />
@@ -530,10 +606,10 @@
     </state>
     <state x="326" y="159" key="SettingsEditor/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578739347793" />
     <state x="255" y="132" key="SettingsEditor/0.0.1500.970@0.0.1500.970" timestamp="1578731905177" />
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1578950828850">
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1578996610336">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578950828850" />
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578996610336" />
     <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646529721" />
     <state x="92" y="92" width="1736" height="986" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1578996255118">
       <screen x="0" y="0" width="1920" height="1170" />
@@ -543,10 +619,10 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1577565968373" />
-    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578995950817">
+    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579006499975">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578995950817" />
+    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579006499975" />
     <state x="598" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.970@0.0.1500.970" timestamp="1578731911246" />
     <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577645885528" />
     <state x="628" y="377" key="git4idea.merge.GitMergeDialog" timestamp="1578856002665">
