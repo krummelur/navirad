@@ -54,25 +54,24 @@ class NavigationControls extends Component {
         for (let k in this.arrowsPressed) {
             if (this.arrowsPressed[k]) {
                 allFalse = false;
-                console.log("Returns false")
             }
         }
         return allFalse;
     }
 
     setUpKeyListeners() {
-        document.onkeydown = function (e) {
-            e.preventDefault();
+        document.addEventListener("keydown", function (e) {
             let isFirstKey = this.noKeysPressed();
             if (listenKeys.includes(e.code)) {
+                e.preventDefault();
                 this.arrowsPressed[e.code] = true;
                 if (isFirstKey)
                     this.startMovingByArrows();
             }
-        }.bind(this);
+        }.bind(this));
         document.onkeyup = function (e) {
-            e.preventDefault();
             if (listenKeys.includes(e.code)) {
+                e.preventDefault();
                 this.arrowsPressed[e.code] = false;
             }
             if (this.noKeysPressed())
@@ -81,7 +80,7 @@ class NavigationControls extends Component {
     }
 
     componentDidMount() {
-        this.setUpKeyListeners();
+        //this.setUpKeyListeners();
         this.imageElem = document.getElementsByClassName("joystick-bg")[0]
     }
 
