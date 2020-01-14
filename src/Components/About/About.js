@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import "./About.css";
 import Section from "./Section";
-import {animateScroll} from "react-scroll";
 
 class About extends Component {
     render() {
@@ -14,13 +13,15 @@ class About extends Component {
                             those interested in learning
                             how a radar's view differs from reality and a chart.<p/>
 
-                            The radar view is created with a 2D raytracer and height maps from Tilezen. This method has
+                            The radar view is created with a 2D raytracer and height maps from TileZen. This method has
                             the potential to create very
-                            accurate charts, but to mimic an actual radar some limitations have been added; lobe width,
-                            constructive interference,
-                            rain clutter.<p/>
+                            accurate charts, but to mimic an actual radar some limitations have been added; beam width,
+                            constructive interference and rain clutter.<p/>
 
-                            The map view is an embedded Google Map with custom marker behaviour and infowindow.<p/>
+                            A real radar functions by sending out a radio wave (3 or 9GHz) and register when an echo returns.
+                            The radio wave has a width, the beam width, which limits it's ability to distinguish details.
+                            We have implemented the same functionality, where a ray only is transmitted at a certain angle.
+                            In between two rays, details are lost; just as on a real radar.<p/>
                         </div>
                     }
                     id="radar"
