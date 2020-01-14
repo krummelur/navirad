@@ -1,17 +1,17 @@
-import React, { Component , useContext} from "react";
-import { Route, Switch } from "react-router-dom";
+import React, {Component} from "react";
+import {Route, Switch} from "react-router-dom";
 import MessageBoxContainer from "./Components/MessageBox/MessageBoxContainer";
 import StartView from "./Components/Views/StartView/StartView";
 import AboutView from "./Components/Views/AboutView/AboutView";
 import MapView from "./Components/Views/MapView/MapView";
 import RadarView from "./Components/Views/RadarView/RadarView";
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
-import { AuthenticatorProvider } from "./Util/authenticator";
+import {AuthenticatorProvider} from "./Util/authenticator";
 import PrivateRoute from "./Components/PrivateRoute/privateRoute";
 import firebaseApp from "./Util/firebase";
 import firebase from "firebase";
 import "./App.css";
-import { saveState, restoreState } from "./helpers/persistentStateHelpers";
+import {saveState, restoreState} from "./helpers/persistentStateHelpers";
 
 class App extends Component {
     constructor(props) {
@@ -25,8 +25,8 @@ class App extends Component {
         });
     }
 
-    componentDidMount(){
-        firebaseApp.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION); 
+    componentDidMount() {
+        firebaseApp.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     }
 
     render() {
@@ -35,11 +35,11 @@ class App extends Component {
                 <MessageBoxContainer/>
                 <AuthenticatorProvider>
                     <Switch>
-                        <Route exact path="/" component={StartView} />
-                        <PrivateRoute exact path="/about" component={AboutView} />
-                        <PrivateRoute exact path="/map" component={MapView} />
-                        <PrivateRoute exact path="/radar" component={RadarView} />
-                        <Route path="*" component={PageNotFound} />
+                        <Route exact path="/" component={StartView}/>
+                        <PrivateRoute exact path="/about" component={AboutView}/>
+                        <PrivateRoute exact path="/map" component={MapView}/>
+                        <PrivateRoute exact path="/radar" component={RadarView}/>
+                        <Route path="*" component={PageNotFound}/>
                     </Switch>
                 </AuthenticatorProvider>
             </div>

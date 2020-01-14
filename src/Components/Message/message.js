@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import "./message.css";
 
 class Message extends Component {
@@ -6,6 +6,7 @@ class Message extends Component {
         super(props);
         this.state = {}
     }
+
     render() {
         return (
             <div className="usermessage" style={this.props.style}>

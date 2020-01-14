@@ -21,6 +21,7 @@
     height: 30px;
     left: 36px;
     top: 36px;
+    margin-top: -10px;
 }
 
 /* Color/shape of burger icon bars */
@@ -58,6 +59,6 @@
     background: rgba(0, 0, 0, 0.3);
 }
 
-.logout{
+.logout {
     cursor: pointer;
 }

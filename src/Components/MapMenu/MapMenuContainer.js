@@ -1,4 +1,4 @@
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import MapMenu from './MapMenu'
 import {setRadarCenter} from "../../data/actions/radarActions";
 import {fetchPlacesAction, removePlaceAction} from "../../data/actions/placesActions";

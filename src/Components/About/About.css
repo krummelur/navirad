@@ -38,6 +38,10 @@
     cursor: pointer;
 }
 
+#radar {
+    margin-top: -8%;
+}
+
 .section {
     display: flex;
     flex-direction: column;
@@ -54,6 +58,18 @@
 }
 
 .section a:hover {
+    color: skyblue;
+    cursor: pointer;
+}
+
+.section button {
+    background-color: transparent;
+    font-size: large;
+    color: #708EA4;
+    padding: 0;
+}
+
+.section button:hover {
     color: skyblue;
     cursor: pointer;
 }

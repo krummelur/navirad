@@ -1,8 +1,6 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import MapEmbedder from './MapEmbedder';
-import { setRadarCenter } from '../../data/actions/radarActions'
-import { fetchPlacesAction, addPlaceAction } from '../../data/actions/placesActions'
-import {  } from '../../data/actions/radarActions'
+import {setRadarCenter} from '../../data/actions/radarActions'
 
 const mapStateToProps = state => ({
     radarCenter: state.radarSettings.radarCenter,
@@ -10,7 +8,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
     return {
-    setRadarCenter: newCenter => dispatch(setRadarCenter(newCenter)),
+        setRadarCenter: newCenter => dispatch(setRadarCenter(newCenter)),
     }
 };
 

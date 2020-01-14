@@ -1,10 +1,10 @@
-.pagenotfound{
+.pagenotfound {
     display: grid;
-   
+
     grid-template-rows: 9vh 91vh;
 }
 
-.pagetext{
+.pagetext {
     display: inline-block;
     background-color: #123752;
     grid-row: 2;
@@ -14,7 +14,7 @@
     padding-top: 100px;
 }
 
-.headertext{
+.headertext {
     padding-bottom: 50px;
 }
 
@@ -22,7 +22,7 @@
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background:  #032136;
+    background: #032136;
     width: 150px;
     border-color: lightgray;
     border-width: 3px;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import LoginForm from "../../Forms/LoginForm";
 import RegisterForm from "../../Forms/RegisterForm";
 import Header from "../../Header/Header";
@@ -24,8 +24,9 @@ class Start extends Component {
                 <Header/>
                 <div className="login-container">
                     <div className="login-text">
-                        Welcome to NaviRad, a marine radar simulator.<p />
-                        To use this app, you must first login.<br /> If you don't have an account, you can register for free.
+                        Welcome to NaviRad, a marine radar simulator.<p/>
+                        To use this app, you must first login.<br/> If you don't have an account, you can register for
+                        free.
                     </div>
                     {this.state.toggle &&
                     <LoginForm
@@ -40,4 +41,5 @@ class Start extends Component {
         );
     }
 }
+
 export default Start;

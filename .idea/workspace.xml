@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/actions/otherBoatAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/actions/otherBoatAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/reducers/otherBoatReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/reducers/otherBoatReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/About/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/About.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Menu/Menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Menu/Menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +130,10 @@
       <workItem from="1578821895539" duration="15014000" />
       <workItem from="1578855741627" duration="4537000" />
       <workItem from="1578902222066" duration="256000" />
-      <workItem from="1578902493737" duration="14347000" />
+      <workItem from="1578902493737" duration="19538000" />
+      <workItem from="1578951140102" duration="1626000" />
+      <workItem from="1578995118164" duration="933000" />
+      <workItem from="1578996081406" duration="8710000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -360,18 +366,97 @@
       <option name="project" value="LOCAL" />
       <updated>1578922924702</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="started working on aishub">
+      <created>1578925082311</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1578925082311</updated>
+    </task>
+    <task id="LOCAL-00035" summary="tooltips added on radarmenu">
+      <created>1578950826761</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1578950826761</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fixed error on about">
+      <created>1578996608706</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1578996608707</updated>
+    </task>
+    <task id="LOCAL-00037" summary="fixed indentation">
+      <created>1579007472354</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1579007472354</updated>
+    </task>
+    <task id="LOCAL-00038" summary="code cleanup, removed scrolling w keys on radar">
+      <created>1579009676903</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1579009676903</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/adaml/Dropbox/Studier/KTH/DH2642 Interaktionsprogrammering/dh2642-proj/src/Util" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="layout work" />
-    <MESSAGE value="merge with fobe" />
-    <MESSAGE value="styling of loginpage" />
-    <MESSAGE value="cursor on map, reorganizing files" />
-    <MESSAGE value="radarheader problems" />
     <MESSAGE value="radarheader fixed" />
     <MESSAGE value="infowindow, styling" />
     <MESSAGE value="styling" />
@@ -392,26 +477,40 @@
     <MESSAGE value="layout fixes. scales well to smaller screens." />
     <MESSAGE value="minor layout fixes. considered done." />
     <MESSAGE value="minor fix on about." />
-    <option name="LAST_COMMIT_MESSAGE" value="minor fix on about." />
+    <MESSAGE value="started working on aishub" />
+    <MESSAGE value="tooltips added on radarmenu" />
+    <MESSAGE value="fixed error on about" />
+    <MESSAGE value="fixed indentation" />
+    <MESSAGE value="code cleanup, removed scrolling w keys on radar" />
+    <option name="LAST_COMMIT_MESSAGE" value="code cleanup, removed scrolling w keys on radar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="80" y="277" key="#ESLint" timestamp="1576440348578">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="80" y="277" key="#ESLint/0.23.1920.1177@0.23.1920.1177" timestamp="1576440348578" />
-    <state x="698" y="365" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577627919460">
-      <screen x="0" y="23" width="1920" height="1177" />
+    <state x="552" y="244" key="#JavaScript" timestamp="1579007331464">
+      <screen x="0" y="0" width="1920" height="1170" />
     </state>
+    <state x="552" y="244" key="#JavaScript/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579007331464" />
+    <state x="734" y="389" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578951076539">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="734" y="389" key="#com.intellij.fileTypes.FileTypeChooser/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578951076539" />
+    <state x="698" y="340" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578952014117">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="698" y="340" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578952014117" />
     <state x="698" y="365" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1577627919460" />
     <state x="380" y="100" key="#npm_start" timestamp="1578730537241">
       <screen x="0" y="0" width="1500" height="970" />
     </state>
     <state x="380" y="100" key="#npm_start/0.0.1500.970@0.0.1500.970" timestamp="1578730537241" />
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1578922923962">
+    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1579009676153">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578922923962" />
+    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579009676153" />
     <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646428416" />
     <state x="92" y="92" width="1736" height="986" key="DiffContextDialog" timestamp="1578904158260">
       <screen x="0" y="0" width="1920" height="1170" />
@@ -441,33 +540,41 @@
     <state width="1900" height="324" key="GridCell.Tab.0.right/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578840819641" />
     <state width="1480" height="259" key="GridCell.Tab.0.right/0.0.1500.970@0.0.1500.970" timestamp="1578732032392" />
     <state width="1899" height="328" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1577472731037" />
-    <state x="188" y="112" width="1729" height="960" key="MergeDialog" timestamp="1578904108323">
+    <state x="40" y="104" width="1729" height="960" key="MergeDialog" timestamp="1579006676877">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="188" y="112" width="1729" height="960" key="MergeDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578904108323" />
-    <state x="676" y="309" key="MultipleFileMergeDialog" timestamp="1578904108354">
+    <state x="40" y="104" width="1729" height="960" key="MergeDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579006676877" />
+    <state x="676" y="309" key="MultipleFileMergeDialog" timestamp="1579006676882">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="676" y="309" key="MultipleFileMergeDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578904108354" />
+    <state x="676" y="309" key="MultipleFileMergeDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579006676882" />
     <state x="676" y="334" key="MultipleFileMergeDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1576826885444" />
+    <state x="648" y="297" key="RollbackChangesDialog" timestamp="1578995993399">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="648" y="297" key="RollbackChangesDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578995993399" />
     <state x="326" y="159" key="SettingsEditor" timestamp="1578739347793">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="326" y="159" key="SettingsEditor/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578739347793" />
     <state x="255" y="132" key="SettingsEditor/0.0.1500.970@0.0.1500.970" timestamp="1578731905177" />
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1578922929214">
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1579009678805">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578922929214" />
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579009678805" />
     <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646529721" />
+    <state x="92" y="92" width="1736" height="986" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1578996255118">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="92" y="92" width="1736" height="986" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578996255118" />
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1577565968373">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1577565968373" />
-    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578913644499">
+    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579012970317">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578913644499" />
+    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579012970317" />
     <state x="598" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.970@0.0.1500.970" timestamp="1578731911246" />
     <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577645885528" />
     <state x="628" y="377" key="git4idea.merge.GitMergeDialog" timestamp="1578856002665">

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import "./input.css";
 
 class Input extends Component {
@@ -18,7 +18,7 @@ class Input extends Component {
 
     render() {
         return (
-            <input 
+            <input
                 type={this.props.type}
                 placeholder={this.props.placeholder}
                 autoComplete="on"
