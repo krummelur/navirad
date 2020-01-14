@@ -1,4 +1,4 @@
-import {GoogleApiWrapper, Map, Marker} from "google-maps-react";
+import {GoogleApiWrapper, Map} from "google-maps-react";
 import React, {Component} from "react";
 import * as Constants from "../../data/apiConfig";
 import "../Radar/Radar.css"

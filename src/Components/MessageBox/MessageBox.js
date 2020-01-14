@@ -3,7 +3,7 @@ import {useAlert} from 'react-alert'
 
 export default function MessageBox(props) {
     const [lastMessage, setMessage] = useState(null);
-    const [alert, setAlert] = useState(useAlert());
+    const [alert] = useState(useAlert());
     if (props.message && (!lastMessage || props.message.id !== lastMessage.id)) {
         if (props.message.isError)
             alert.error(props.message.text)

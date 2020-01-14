@@ -1,4 +1,4 @@
-import React, {Component, useContext} from "react";
+import React, {Component} from "react";
 import {Route, Switch} from "react-router-dom";
 import MessageBoxContainer from "./Components/MessageBox/MessageBoxContainer";
 import StartView from "./Components/Views/StartView/StartView";

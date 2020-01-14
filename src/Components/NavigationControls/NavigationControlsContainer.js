@@ -1,8 +1,6 @@
 import {connect} from 'react-redux'
 import NavigationControls from './NavigationControls'
-import {moveRadarCenter, setRadarCenter} from "../../data/actions/radarActions";
-
-const mapStateToProps = state => ({});
+import {moveRadarCenter} from "../../data/actions/radarActions";
 
 const mapDispatchToProps = dispatch => {
     return {

@@ -1,5 +1,4 @@
 import {connect} from 'react-redux';
-import {setRadarCenter} from '../../data/actions/radarActions'
 import RadarMapUnderlay from './RadarMapUnderlay';
 import {lonLatZoomToZXY} from '../../helpers/mapHelpers'
 

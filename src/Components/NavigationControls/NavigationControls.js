@@ -1,11 +1,8 @@
 import React, {Component} from "react";
-import PropTypes from "prop-types";
 import "./NavigationControls.css";
 import joystick_img from '../../media/controls-joystick.png'
 import joystick_img_dark from '../../media/controls-joystick-dark.png'
 import {radToDeg} from '../../helpers/mapHelpers'
-import {runInThisContext} from "vm";
-import {all} from "q";
 
 const listenKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"]
 
@@ -65,6 +62,7 @@ class NavigationControls extends Component {
 
     setUpKeyListeners() {
         document.onkeydown = function (e) {
+            e.preventDefault();
             let isFirstKey = this.noKeysPressed();
             if (listenKeys.includes(e.code)) {
                 this.arrowsPressed[e.code] = true;
@@ -73,6 +71,7 @@ class NavigationControls extends Component {
             }
         }.bind(this);
         document.onkeyup = function (e) {
+            e.preventDefault();
             if (listenKeys.includes(e.code)) {
                 this.arrowsPressed[e.code] = false;
             }
