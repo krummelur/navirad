@@ -7,8 +7,8 @@ import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import MessageBoxTemplateWrapper from './Components/MessageBox/MessageBoxTemplateWrapper';
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
+import {createBrowserHistory} from "history";
 import App from './App';
-import history from "./Util/history";
 import './index.css';
 
 const store = createStore(reducer, applyMiddleware(thunk));
@@ -22,7 +22,7 @@ const alertConfig = {
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={history}>
+        <Router history={createBrowserHistory()}>
             <AlertProvider template={MessageBoxTemplateWrapper} {...alertConfig}>
                 <App store={store}  />
             </AlertProvider>

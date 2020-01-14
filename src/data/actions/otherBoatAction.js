@@ -1,5 +1,5 @@
-import { AISHUB_CONFIG } from "../apiConfig";
-import { firebaseApp } from "../../Util/authenticator";
+import { AISHUB_API_KEY } from "../apiConfig";
+import firebaseApp from "../../Util/firebase";
 export const constants = {
     BOAT_FETCH_SUCCESS: "BOAT_FETCH_SUCCESS",
     BOAT_FETCH_FAILURE: "BOAT_FETCH_FAILURE",
@@ -38,7 +38,7 @@ export const fetchBoatsAction = () => {
 
 const fetchBoats = (latmin, latmax, lonmin, lonmax) => {
     return fetch(
-        `https://data.aishub.net/ws.php?username=${AISHUB_CONFIG.apiKey}`+
+        `https://data.aishub.net/ws.php?username=${AISHUB_API_KEY}`+
         `&format=1&output=json&compress=0&latmin=${latmin}&latmax=${latmax}&lonmin=${lonmin}&lonmax=${lonmax}`)
         .then(results => results.json())
 };

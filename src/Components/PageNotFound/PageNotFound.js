@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from "../Header/Header";
-import history from "../../Util/history";
+import { withRouter } from "react-router";
 import "./PageNotFound.css";
 
 class PageNotFound extends Component {
@@ -11,7 +11,7 @@ class PageNotFound extends Component {
         this.state = {
             displayMessage: false
         };
-
+        
         this.timer = setTimeout(this.enableMessage, 1000);
     }
 
@@ -24,7 +24,7 @@ class PageNotFound extends Component {
     }
 
     redirect(){
-       history.push("/");
+       this.props.history.push("/");
     }
 
     render() {
@@ -35,18 +35,18 @@ class PageNotFound extends Component {
             return null;
 
         return (
-            
+        
             <div className="pagenotfound">
                 <Header />
                 <div className="pagetext">
                     <h2>Either the page does not exist or you are not authorized to enter the site</h2>
                     <h2 className="headertext">Push the button to enter the frontpage</h2>
-                    <button className="button" onClick={this.redirect.bind(this)}>frontpage</button>
+                    <button className="notexistbutton" onClick={this.redirect.bind(this)}>frontpage</button>
                 </div>
             </div>
-            
+             
         );
     }
 }
 
-export default PageNotFound;
+export default withRouter(PageNotFound);

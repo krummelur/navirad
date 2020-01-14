@@ -18,13 +18,14 @@
     padding-bottom: 50px;
 }
 
-.button {
+.notexistbutton {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
     background:  #032136;
     width: 150px;
-    border: 0;
+    border-color: lightgray;
+    border-width: 3px;
     padding: 15px;
     color: #FFFFFF;
     font-size: 14px;
@@ -32,6 +33,6 @@
     transition: all 0.3 ease;
     cursor: pointer;
 }
-.button:hover,.button:active,.button:focus {
+.notexistbutton:hover,.notexistbutton:active,.notexistbutton:focus {
     background: #486D88;
 }
