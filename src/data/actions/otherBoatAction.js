@@ -24,7 +24,7 @@ export const fetchBoatsAction = () => {
             .ref('boats')
             .on('value', value => {
                 if (!value.val() || value.val().boats.lastFetch < Date.now() - 65000) {
-                    fetchBoats(20.5, 30.8, -15, 18.6)
+                    fetchBoats(53.27, 66.27, 4.87, 24.27)
                         .then(res => {
                             writeBoatsToFirebase(res);
                             console.log("res:");

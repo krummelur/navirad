@@ -4,7 +4,6 @@
     <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/KeyboardNavigation/KeyboardNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/KeyboardNavigation/KeyboardNavigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Menu/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Menu/Menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/actions/otherBoatAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/actions/otherBoatAction.js" afterDir="false" />
     </list>
@@ -133,7 +132,7 @@
       <workItem from="1578951140102" duration="1626000" />
       <workItem from="1578995118164" duration="933000" />
       <workItem from="1578996081406" duration="9174000" />
-      <workItem from="1579015253944" duration="11579000" />
+      <workItem from="1579015253944" duration="12381000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -415,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579029975985</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="aishub apicall finished">
+      <created>1579032051251</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1579032051251</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,15 +527,15 @@
     </state>
     <state x="380" y="100" key="#npm_start/0.0.1500.970@0.0.1500.970" timestamp="1578730537241" />
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1579029975313">
+    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1579032050623">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579029975313" />
+    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579032050623" />
     <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646428416" />
-    <state x="92" y="92" width="1736" height="986" key="DiffContextDialog" timestamp="1578904158260">
+    <state x="92" y="92" width="1736" height="986" key="DiffContextDialog" timestamp="1579032078999">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="92" y="92" width="1736" height="986" key="DiffContextDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578904158260" />
+    <state x="92" y="92" width="1736" height="986" key="DiffContextDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579032078999" />
     <state width="1900" height="324" key="GridCell.Tab.0.bottom" timestamp="1578840819641">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -572,10 +578,10 @@
     </state>
     <state x="326" y="159" key="SettingsEditor/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578739347793" />
     <state x="255" y="132" key="SettingsEditor/0.0.1500.970@0.0.1500.970" timestamp="1578731905177" />
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1579029977796">
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1579032053060">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579029977796" />
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579032053060" />
     <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646529721" />
     <state x="92" y="92" width="1736" height="986" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1578996255118">
       <screen x="0" y="0" width="1920" height="1170" />
