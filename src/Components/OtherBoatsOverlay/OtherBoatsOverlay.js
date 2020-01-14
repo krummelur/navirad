@@ -1,14 +1,15 @@
 import React, {Component} from "react";
 import { zxyToTileCorner, lonLatZoomToZXY } from "../../helpers/mapHelpers"
 import boatIndicator_img from '../../media/other-boat-indicator.png'
+import {isEqual} from 'lodash';
 
 const wh = 512;
 
 class OtherBoatsOverlay extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         console.log("I LIVE AGAIN!")
-        this.props.fetchBoats();
+        this.props.fetchBoats()
         console.log(this.tileBounds());
         this.boatIndicatorImg = new Image();
         this.boatIndicatorImg.src = boatIndicator_img;
@@ -30,7 +31,7 @@ class OtherBoatsOverlay extends Component {
     boatsInBounds() {
         let bounds = this.tileBounds();
         console.log(bounds)
-        return tempData.filter(o =>
+        return this.props.otherBoats.boats.filter(o => 
             o.LONGITUDE > bounds.lons.lower &&
             o.LONGITUDE < bounds.lons.upper &&
             o.LATITUDE > bounds.lats.lower &&
@@ -47,10 +48,12 @@ class OtherBoatsOverlay extends Component {
             return {shouldUpdate: true}
         if (prevProps.shouldDiplayBoats !== this.props.shouldDiplayBoats)
             return {shouldUpdate: true}
+        if (!isEqual(prevProps.otherBoats.boats, this.props.otherBoats.boats))
+            return {shouldUpdate: true}
         return result;
     }
 
-    clearCanvas() {
+    clearCanvas() {    
         let context = document.getElementById("boats-canvas").getContext("2d")
         context.clearRect(0, 0, wh, wh)
     }
@@ -65,7 +68,7 @@ class OtherBoatsOverlay extends Component {
             })
         }.bind(this), 10)
     }
-
+    
     componentDidUpdate(prevProps, state, snapshot) {
         if (snapshot.shouldUpdate) {
             this.clearCanvas();
@@ -73,10 +76,10 @@ class OtherBoatsOverlay extends Component {
                 this.renderIntoCanvas();
         }
     }
-
+    
     componentDidMount() {
         if(this.props.shouldDiplayBoats)
-        this.renderIntoCanvas()
+            this.renderIntoCanvas()
     }
 
     render() {
@@ -88,5 +91,3 @@ class OtherBoatsOverlay extends Component {
 }
 
 export default OtherBoatsOverlay
-
-const tempData = [];

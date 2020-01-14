@@ -2,7 +2,7 @@ import {constants} from "../actions/otherBoatAction";
 
 const defaultState = {
     lastFetch: null,
-    boats: {},
+    boats: [],
     error: null
 };
 
