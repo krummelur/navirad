@@ -76,11 +76,7 @@ class KeyboardNavigation extends Component {
 
     render() {
         return (
-        <div id="keyboardnavigation" tabIndex="0">
-            <OtherBoatsOverlayContainer/>
-            <RadarMapUnderlayContainer/>
-            <RadarContainer/>
-        </div>)
+        <div id="keyboardnavigation" tabIndex="0"/>)
     }
 
 

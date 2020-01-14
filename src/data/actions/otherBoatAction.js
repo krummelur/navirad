@@ -23,10 +23,6 @@ export const fetchBoatsAction = () => {
             .database()
             .ref('boats')
             .on('value', value => {
-                console.log("val:");
-                console.log(value.val().boats.lastFetch);
-                console.log("now:");
-                console.log(Date.now());
                 if (!value.val() || value.val().boats.lastFetch < Date.now() - 65000) {
                     fetchBoats(20.5, 30.8, -15, 18.6)
                         .then(res => {

@@ -2,7 +2,6 @@ import React from "react";
 import { slide as Menu } from "react-burger-menu";
 import "./Menu.css";
 import { Link } from "react-router-dom";
-import { withRouter } from "react-router";
 import firebaseApp from "../../Util/firebase";
 
 // Source: https://negomi.github.io/react-burger-menu/
