@@ -109,15 +109,15 @@ class NavigationControls extends Component {
     render() {
         return (
             <div className="joystick"
-                 onMouseMove={this.onMouseMove.bind(this)}
-                 onMouseDown={this.startMoving.bind(this)}
-                 onMouseLeave={() => {
-                     this.stopMoving()
-                 }}
-                 onMouseUp={() => {
-                     this.stopMoving()
-                 }}
-                 style={{background: `url(${joystick_img_dark})`, backgroundSize: "cover"}}>
+                onMouseMove={this.onMouseMove.bind(this)}
+                onMouseDown={this.startMoving.bind(this)}
+                onMouseLeave={() => {
+                    this.stopMoving()
+                }}
+                onMouseUp={() => {
+                    this.stopMoving()
+                }}
+                style={{background: `url(${joystick_img_dark})`, backgroundSize: "cover"}}>
                 <div className="joystick-bg" style={{background: `url(${joystick_img})`, backgroundSize: "cover"}}/>
             </div>
         )
