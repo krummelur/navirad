@@ -23,13 +23,8 @@ class PageNotFound extends Component {
         this.setState({displayMessage: true});
     }
 
-<<<<<<< HEAD
     redirect(){
        this.props.history.push("/");
-=======
-    redirect() {
-        history.push("/");
->>>>>>> db71b53660260742f799d37c8ea3d11a3b68a470
     }
 
     render() {
@@ -40,11 +35,7 @@ class PageNotFound extends Component {
             return null;
 
         return (
-<<<<<<< HEAD
         
-=======
-
->>>>>>> db71b53660260742f799d37c8ea3d11a3b68a470
             <div className="pagenotfound">
                 <Header/>
                 <div className="pagetext">
@@ -53,11 +44,7 @@ class PageNotFound extends Component {
                     <button className="notexistbutton" onClick={this.redirect.bind(this)}>frontpage</button>
                 </div>
             </div>
-<<<<<<< HEAD
              
-=======
-
->>>>>>> db71b53660260742f799d37c8ea3d11a3b68a470
         );
     }
 }
