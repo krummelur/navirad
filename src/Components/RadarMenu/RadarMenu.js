@@ -4,6 +4,8 @@ import "../Shared-Styles/View-Menu.css";
 import NavigationControlsContainer from "../NavigationControls/NavigationControlsContainer";
 import Tooltip from '@material-ui/core/Tooltip';
 import {withStyles} from '@material-ui/core/styles';
+import Button from "../Button/Button";
+import Input from "../Input/input";
 
 const StyledTooltip = withStyles(theme => ({
     tooltip: {
@@ -92,11 +94,11 @@ function RadarMenu(props) {
 
                     <li>
                         <p>
-                            <input type="text" placeholder="Name this location"
+                            <input className="view-input" type="text" placeholder="Name this location"
                                    onChange={evt => setStoredText(evt.target.value)}>
                             </input>
-                            <input type="submit" value="Save location"
-                                   onClick={() => {
+                            <Button title="Save location"
+                                   function={() => {
                                        props.addPlace({...props.radarCenter, name: storedText})
                                    }}/>
                         </p>
