@@ -27,3 +27,9 @@
     padding-right: 1em;
     color: #d95f5f
 }
+
+.content-selector div {
+    background-color: #174769 !important;
+    border: 0;
+    color: #FFFFFF;
+}

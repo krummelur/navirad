@@ -11,6 +11,7 @@
     z-index: 1;
     display: flex;
     width: 100%;
+    font-weight: normal;
 }
 
 .about-header ul {

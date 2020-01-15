@@ -151,7 +151,7 @@ class MapEmbedder extends Component {
                      disableDoubleClickZoom={true}
                      disableDefaultUI={true}
                      onReady={this.mapOptions}
-                     style={{width: '92%', height: '100%'}}
+                     style={{width: '90%', height: '100%'}}
                      onClick={(t, map, c) => {
                          this.setState({isLoadingWaterApi: true, displayMarkerInfo: true});
                          this.props.setRadarCenter({lon: c.latLng.lng(), lat: c.latLng.lat()})
