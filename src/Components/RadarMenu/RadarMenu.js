@@ -36,11 +36,6 @@ function RadarMenu(props) {
 
             </div>
 
-            <div className="slider-outer">
-                <p className="medium-text">Clutter dampening: <span>To be implemented</span></p>
-                <input className="slider" type="range" min="1" max="100" step="1"/>
-            </div>
-
             <div className="medium-text">Other properties:
                 <ul className="ks-cboxtags">
                     <StyledTooltip

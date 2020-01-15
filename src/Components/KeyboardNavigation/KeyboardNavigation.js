@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import OtherBoatsOverlayContainer from "../OtherBoatsOverlay/OtherBoatsOverlayContainer";
-import RadarMapUnderlayContainer from "../RadarMapUnderlay/RadarMapUnderlayContainer";
-import RadarContainer from "../Radar/RadarContainer";
+import "./KeyboardNavigation.css";
 
 const listenKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"]
 
@@ -45,8 +43,7 @@ class KeyboardNavigation extends Component {
     }
 
     setUpKeyListeners() {
-        let thiselem = document.getElementById("keyboardnavigation") 
-        
+        let thiselem = document.getElementById("keyboardnavigation")
         thiselem.addEventListener("keydown", function (e) {
             let isFirstKey = this.noKeysPressed();
             if (listenKeys.includes(e.code)) {
@@ -74,12 +71,8 @@ class KeyboardNavigation extends Component {
 
     render() {
         return (
-        <div id="keyboardnavigation" tabIndex="0">
-            <OtherBoatsOverlayContainer/>
-            <RadarMapUnderlayContainer/>
-            <RadarContainer/>
-        </div>)
-    }
+        <div id="keyboardnavigation" tabIndex="0"/>
+        )}
 
 
 }

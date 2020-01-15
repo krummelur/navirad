@@ -109,7 +109,6 @@ class MapEmbedder extends Component {
         if (!isEqual(prevProps.radarCenter, this.props.radarCenter)) {
             this.setState({isLoadingWaterApi: true, displayMarkerInfo: true});
             this.onWater(this.props.radarCenter.lat, this.props.radarCenter.lon).then((result) => {
-                //TODO CHECK AND HANDLE ANY API ERRORS!!
                 this.setState({isLoadingWaterApi: false});
             })
         }

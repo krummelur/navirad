@@ -10,12 +10,11 @@ import "./RadarView.css";
 import OtherBoatsOverlayContainer from "../../OtherBoatsOverlay/OtherBoatsOverlayContainer";
 import KeyboardNavigationContainer from "../../KeyboardNavigation/KeyboardNavigationContainer";
 
-// RadarContainer, RadarMapUnderLayContainer, OtherBoatsOverlayContainer are rendered within KeyboardNavigationContainer
 class RadarView extends Component {
     render() {
         return (
-            <div id="outer">
-                <Menu pageWrapId={"RadarView"} outerContainerId={"outer"}/>
+            <div id="radarouter">
+                <Menu pageWrapId={"RadarView"} outerContainerId={"radarouter"}/>
 
                 <div className="RadarView">
                     <Header/>
@@ -27,6 +26,10 @@ class RadarView extends Component {
                             <SmallMapBox/>
                             <div className="canvas-container">
                                 <KeyboardNavigationContainer/>
+                                <RadarContainer/>
+                                <OtherBoatsOverlayContainer/>
+                                <RadarMapUnderlayContainer/>
+
                             </div>
                         </div>
                     </div>

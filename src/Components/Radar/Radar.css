@@ -37,6 +37,7 @@
     grid-column: 3;
     grid-row: 1;
     z-index: 1;
+    grid-template-rows: 1fr;
 }
 
 #hidden-canvas {
@@ -66,7 +67,8 @@
 .loader {
     width: 512px;
     height: 512px;
-    background-color: rgba(0, 0, 0, 1)
+    background-color: rgba(0, 0, 0, 1);
+    position: absolute;
 }
 
 .loading-text {

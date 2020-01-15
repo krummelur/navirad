@@ -8,10 +8,6 @@
     position: fixed;
 }
 
-#outer div div .bm-burger-button {
+#aboutouter div div .bm-burger-button {
     position: fixed;
-}
-
-body {
-    overflow-y: hidden !important;
 }

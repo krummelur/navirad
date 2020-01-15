@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
+    <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="fixed">
+      <change afterPath="$PROJECT_DIR$/src/Components/KeyboardNavigation/KeyboardNavigation.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/KeyboardNavigation/KeyboardNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/KeyboardNavigation/KeyboardNavigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Radar/Radar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Radar/Radar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/AboutView/AboutView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/actions/otherBoatAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/actions/otherBoatAction.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -132,7 +138,9 @@
       <workItem from="1578951140102" duration="1626000" />
       <workItem from="1578995118164" duration="933000" />
       <workItem from="1578996081406" duration="9174000" />
-      <workItem from="1579015253944" duration="12381000" />
+      <workItem from="1579015253944" duration="13855000" />
+      <workItem from="1579095458492" duration="3161000" />
+      <workItem from="1579115397546" duration="1189000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -421,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579032051251</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="aishub now fetches large area">
+      <created>1579032889305</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1579032889305</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="styling" />
     <MESSAGE value="got rid of warnings" />
     <MESSAGE value="smallmap changed to google map" />
     <MESSAGE value="minor styling" />
@@ -502,7 +516,8 @@
     <MESSAGE value="code cleanup, removed scrolling w keys on radar" />
     <MESSAGE value="fixed header on about, removed to top-buttons" />
     <MESSAGE value="aishub apicall finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="aishub apicall finished" />
+    <MESSAGE value="aishub now fetches large area" />
+    <option name="LAST_COMMIT_MESSAGE" value="aishub now fetches large area" />
   </component>
   <component name="WindowStateProjectService">
     <state x="80" y="277" key="#ESLint" timestamp="1576440348578">
@@ -527,15 +542,16 @@
     </state>
     <state x="380" y="100" key="#npm_start/0.0.1500.970@0.0.1500.970" timestamp="1578730537241" />
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1579032050623">
+    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1579116582887">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579032050623" />
+    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579116582887" />
     <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646428416" />
-    <state x="92" y="92" width="1736" height="986" key="DiffContextDialog" timestamp="1579032078999">
+    <state x="92" y="92" width="1736" height="986" key="DiffContextDialog" timestamp="1579115615962">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="92" y="92" width="1736" height="986" key="DiffContextDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579032078999" />
+    <state x="92" y="92" width="1736" height="986" key="DiffContextDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579115615962" />
+    <state x="72" y="76" width="1357" height="818" key="DiffContextDialog/0.0.1500.970@0.0.1500.970" timestamp="1579098890380" />
     <state width="1900" height="324" key="GridCell.Tab.0.bottom" timestamp="1578840819641">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -578,10 +594,10 @@
     </state>
     <state x="326" y="159" key="SettingsEditor/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578739347793" />
     <state x="255" y="132" key="SettingsEditor/0.0.1500.970@0.0.1500.970" timestamp="1578731905177" />
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1579032053060">
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1579032891165">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579032053060" />
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579032891165" />
     <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646529721" />
     <state x="92" y="92" width="1736" height="986" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1578996255118">
       <screen x="0" y="0" width="1920" height="1170" />
@@ -591,11 +607,11 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="100" y="123" width="1720" height="977" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1577565968373" />
-    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579029890857">
+    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579116557636">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579029890857" />
-    <state x="598" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.970@0.0.1500.970" timestamp="1578731911246" />
+    <state x="765" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579116557636" />
+    <state x="598" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.970@0.0.1500.970" timestamp="1579095528266" />
     <state x="765" y="535" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577645885528" />
     <state x="628" y="377" key="git4idea.merge.GitMergeDialog" timestamp="1578856002665">
       <screen x="0" y="0" width="1920" height="1170" />

@@ -22,8 +22,8 @@ class AboutView extends Component {
 
     render() {
         return (
-            <div id="outer">
-                <Menu pageWrapId={"AboutView"} outerContainerId={"outer"}/>
+            <div id="aboutouter">
+                <Menu pageWrapId={"AboutView"} outerContainerId={"aboutouter"}/>
 
                 <div className="AboutView" ref={view => this.view = view}>
                     <Header>
