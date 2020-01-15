@@ -1,10 +1,17 @@
 .view-menu-container {
+    min-width: 300px;
     grid-row: 2 / span 3;
     grid-column: 3;
     background: rgb(18, 55, 82);
     background: linear-gradient(0deg, rgba(18, 55, 82, 1) 26%, rgba(3, 33, 54, 1) 100%);
     z-index: 2;
 }
+@media (max-width: 1440px) {
+    .view-menu {
+        padding-right:1em;
+    }
+}
+
 
 .large-text {
     font-size: large;
