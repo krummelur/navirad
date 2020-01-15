@@ -4,6 +4,12 @@
     grid-template-rows: 9vh 6vh 85vh;
 }
 
+@media (max-width: 1440px) {
+    .RadarView {
+        grid-template-rows: 9vh 6vh 120vh;
+    }
+}
+
 #radarouter div div .bm-burger-button {
     position: absolute;
 }
@@ -23,6 +29,7 @@
     z-index: 2;
     background-color: #123752;
     color: lightgray;
-    padding-left: 125px;
+    padding-left: 5%;
     padding-top: 1%;
+    padding-bottom: 1%;
 }

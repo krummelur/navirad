@@ -20,7 +20,12 @@
     .smallmap-container {
         grid-row: 2;
         grid-column: 1;
-        margin-top: 5%;
+        margin-top: 550px;
+        position: absolute;
+    }
+
+    .smallmap-container div div {
+        height: 512px !important;
     }
 
     .canvas-container {
