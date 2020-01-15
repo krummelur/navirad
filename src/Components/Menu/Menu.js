@@ -3,6 +3,7 @@ import { slide as Menu } from "react-burger-menu";
 import "./Menu.css";
 import { Link } from "react-router-dom";
 import firebaseApp from "../../Util/firebase";
+import { withRouter } from "react-router";
 
 // Source: https://negomi.github.io/react-burger-menu/
 
@@ -10,7 +11,9 @@ const SideMenu = (props) => {
 
     const onSubmit = () => {
         firebaseApp.auth().signOut();
-        window.location = "/";
+        setTimeout(()=> {
+          props.history.push("/");
+        }, 100)
     }
     
     return (
@@ -30,4 +33,4 @@ const SideMenu = (props) => {
     );
 };
 
-export default SideMenu;
+export default withRouter(SideMenu);
