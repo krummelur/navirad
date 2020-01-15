@@ -5,6 +5,7 @@ import radarIndicator_Img from '../../media/radar-indicator.png'
 import loading_Img from '../../media/radar-loading.png'
 import "./Radar.css";
 
+
 //const assert = require('assert');
 const pixels = require('image-pixels');
 const output = require('image-output');
@@ -41,11 +42,19 @@ class Radar extends Component {
             return {repositionMap: false}
     }
 
+    handleTilezenHTTPError(e) {
+        if(e.message == "Bad image URL/path"){
+            this.props.showError("Could not download height data. (This is almost definitely because the tilezen API is overloaded) Try again soon.")
+        }
+    }
+
     componentDidMount() {
         this.prepareForDrawing().then((heightmap) => {
             this.setState({currentHeightmap: heightmap})
             this.startContinousOutput();
-        }).catch()
+        }).catch(e => {
+            this.handleTilezenHTTPError(e);
+        })
     }
 
     prepareForDrawing() {
@@ -64,7 +73,11 @@ class Radar extends Component {
                 })
                 this.setState({isPreparingHeightmap: false});
                 resolve({data: newData, width: obj.width, height: obj.height});
-            }).catch(e => reject(e))
+            }).catch(e => {
+                console.log("The tilezen servers sometimes are overloaded, and respond with a 503, this error is unfortunately hidden by the image library");
+                console.error(e);
+                reject(e)
+            })
         }.bind(this));
     }
 
@@ -76,7 +89,7 @@ class Radar extends Component {
                 this.startContinousOutput();
                 this.setState({currentHeightmap: heightmap});
             }).catch(function (e) {
-                this.props.showError("Could not download height data")
+                this.handleTilezenHTTPError(e);
             }.bind(this))
         }
     }

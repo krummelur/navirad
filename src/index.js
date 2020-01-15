@@ -14,7 +14,7 @@ import './index.css';
 const store = createStore(reducer, applyMiddleware(thunk));
 const alertConfig = {
     position: positions.BOTTOM_CENTER,
-    timeout: 3000,
+    timeout: 5000,
     offset: '30px',
     transition: transitions.FADE
 }
