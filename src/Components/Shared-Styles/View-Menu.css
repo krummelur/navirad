@@ -7,7 +7,8 @@
     z-index: 2;
 }
 @media (max-width: 1440px) {
-    .view-menu {
+    .view-menu-container {
+        min-width: 100px;
         padding-right:1em;
     }
 }
