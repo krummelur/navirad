@@ -1,7 +1,7 @@
 .App-header {
     background-color: #032136;
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 9vh;
     z-index: 1;
     display: flex;
@@ -10,8 +10,6 @@
     font-size: calc(20px + 2vmin);
     justify-content: center;
     color: #708EA4;
-    padding-left: 125px;
-    padding-right: 125px;
 
 }
 
@@ -20,4 +18,5 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-left: 125px;
 }
