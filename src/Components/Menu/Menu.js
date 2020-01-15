@@ -11,11 +11,12 @@ const SideMenu = (props) => {
 
     const onSubmit = () => {
         firebaseApp.auth().signOut();
-        setTimeout(()=> {
-          props.history.push("/");
+        setTimeout(() => {
+            localStorage.clear();
+            props.history.push("/");
         }, 100)
     }
-    
+
     return (
         <Menu {...props}>
 
