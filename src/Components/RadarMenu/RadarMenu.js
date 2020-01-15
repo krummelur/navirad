@@ -93,6 +93,7 @@ function RadarMenu(props) {
                     </StyledTooltip>
 
                     <li>
+                            <div style={{paddingRight:"1em"}}>
                         <p>
                             <input className="view-input" type="text" placeholder="Name this location"
                                    onChange={evt => setStoredText(evt.target.value)}>
@@ -102,6 +103,7 @@ function RadarMenu(props) {
                                        props.addPlace({...props.radarCenter, name: storedText})
                                    }}/>
                         </p>
+                        </div>
                     </li>
                 </ul>
             </div>
