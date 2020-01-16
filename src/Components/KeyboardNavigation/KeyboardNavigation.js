@@ -9,9 +9,13 @@ class KeyboardNavigation extends Component {
         this.maxMoveDist = 0.0006;
         this.arrowsPressed = {};
         this.isMovingByArrows = false;
+        //Bound functions are not identical save the bound version, so event listeners can be removed
+        this.handleKeyUpCallback = this.handleKeyUp.bind(this);
+        this.handleKeyDownCallback = this.handleKeyDown.bind(this);
     }
 
     componentWillUnmount() {
+        this.removeListeners();
         this.stopMovingByArrows();
     }
 
@@ -43,27 +47,35 @@ class KeyboardNavigation extends Component {
         this.arrowsTimeoutRef = undefined;
     }
 
+    handleKeyDown (e) {
+        let isFirstKey = this.noKeysPressed();
+        if (listenKeys.includes(e.code)) {
+            e.preventDefault();
+            this.arrowsPressed[e.code] = true;
+            if (isFirstKey)
+                this.startMovingByArrows();
+        }
+    }
+
+    handleKeyUp(e) {
+        if (listenKeys.includes(e.code)) {
+            e.preventDefault(); 
+            this.arrowsPressed[e.code] = false;
+        }
+        if (this.noKeysPressed())
+            this.stopMovingByArrows();
+    }
+
+    removeListeners() {
+        let thiselem = document.getElementById("keyboardnavigation")
+        thiselem.removeEventListener("keydown", this.handleKeyDownCallback);    
+        thiselem.removeEventListener("keyup", this.handleKeyUpCallback);
+    }
+
     setUpKeyListeners() {
         let thiselem = document.getElementById("keyboardnavigation")
-        thiselem.addEventListener("keydown", function (e) {
-            let isFirstKey = this.noKeysPressed();
-            if (listenKeys.includes(e.code)) {
-                e.preventDefault();
-                this.arrowsPressed[e.code] = true;
-                if (isFirstKey)
-                    this.startMovingByArrows();
-            }
-        }.bind(this));
-        
-        thiselem.addEventListener("keyup", function (e) {
-            if (listenKeys.includes(e.code)) {
-                e.preventDefault(); 
-                this.arrowsPressed[e.code] = false;
-            }
-            if (this.noKeysPressed())
-                this.stopMovingByArrows();
-        }.bind(this));
-        
+        thiselem.addEventListener("keydown", this.handleKeyDownCallback);    
+        thiselem.addEventListener("keyup", this.handleKeyUpCallback);
     }
     
     componentDidMount() {
