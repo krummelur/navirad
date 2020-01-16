@@ -25,13 +25,16 @@ The About view gives a short description of the app as well as the participating
 
 ## Plans
 
-The login/register function will be implemented through firebase authorization service and the group is aiming at using firebase database to store user created content.
+- [x] The login/register function will be implemented through firebase authorization service and the group is aiming at using firebase database to store user created content.
 
-A radar/map overlay will be implemented on the radar to more clearly se what and where the radar is rendering a simulation of.
+- [x] A radar/map overlay will be implemented on the radar to more clearly se what and where the radar is rendering a simulation of.
 
-Other boats will be visualized on the map through an automatic identification system(AIS) and will be rendered live.
+- [x] Other boats will be visualized on the map through an automatic identification system(AIS) and will be rendered live.
 
-This as well as some design updates is what the group has in for the project’s final submission.
+- [x] This as well as some design updates is what the group has in for the project’s final submission.
+
+
+all done! yay. 
 
 ## File Structure
 
