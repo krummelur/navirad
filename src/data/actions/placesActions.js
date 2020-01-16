@@ -15,7 +15,7 @@ export const fetchPlacesAction = () => {
         let fbRef = firebaseApp.database().ref(`places/${currentUser.uid}`)
 
         fbRef.on('value', snapshot => {
-            fbRef.off();
+            console.log("Got the news")
             snapshot.val() && dispatch({ type: constants.PLACES_FETCH_SUCCESS, payload: snapshot.val() });
         });
     };
@@ -32,18 +32,24 @@ export const addPlaceAction = (place) => {
         if (place.name === "")
             dispatch(showErrorAction("Enter a name for the location first!"))
         else {
-            firebaseApp
-                .database()
-                .ref(`places/${currentUser.uid}`)
-                .update(childObject, function (error) {
-                    if (error) {
-                        dispatch(showErrorAction(`could not save location ${place.name}!`))
-                        dispatch(addPlaceFailureAction(place));
-                    } else {
-                        dispatch(showMessageAction(`Location ${place.name} saved!`))
-                        dispatch(addPlaceSuccessAction(place));
-                    }
+            let fbDB = firebaseApp.database();
+            fbDB
+                .ref(`places/${currentUser.uid}/${place.name}`)
+                .once("value", prevSnap => {
+                    fbDB
+                        .ref(`places/${currentUser.uid}`)
+                        .update(childObject, function (error) {
+                            if (error) {
+                                dispatch(showErrorAction(`could not save location ${place.name}!`))
+                                dispatch(addPlaceFailureAction(place));
+                            } else {
+                                let didExist = prevSnap.exists();
+                                dispatch(showMessageAction(`Location ${place.name}  ${didExist ? "updated" : "saved"}!`))
+                                dispatch(addPlaceSuccessAction(place));
+                            }
+                        })
                 })
+
         }
     }
 }
