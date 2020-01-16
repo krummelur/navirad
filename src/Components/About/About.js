@@ -48,7 +48,7 @@ class About extends Component {
 
                             <a href="https://www.aishub.net">AISHub</a> is used to fetch other, real, boats. The boats
                             transmit their position (and metadata) over VHF via AIS, and AISHub provides these feeds on
-                            the internet.<br/>
+                            the internet.<p/>
                             A special thanks to <a href="https://www.vassaro.se">Vässarö</a> for providing us with a raw
                             AIS feed, which was needed to gain access to the AISHub API.<p/>
                         </div>
