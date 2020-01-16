@@ -31,10 +31,6 @@ function MapMenu(props) {
         );
     }
 
-    useEffect(() => {
-        props.fetchPlaces();
-    }, []);
-
     return (
         <div className="view-menu-container">
             <div className="large-text">Options</div>

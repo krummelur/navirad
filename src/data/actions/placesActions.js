@@ -13,7 +13,7 @@ export const fetchPlacesAction = () => {
     const { currentUser } = firebaseApp.auth();
     return dispatch => {
         let fbRef = firebaseApp.database().ref(`places/${currentUser.uid}`)
-        fbRef.once('value', snapshot => {
+        fbRef.on('value', snapshot => {
             snapshot.val() && dispatch({ type: constants.PLACES_FETCH_SUCCESS, payload: snapshot.val() });
         });
     };

@@ -12,6 +12,8 @@ import firebaseApp from "./Util/firebase";
 import firebase from "firebase";
 import "./App.css";
 import {saveState, restoreState} from "./helpers/persistentStateHelpers";
+import { fetchBoatsAction } from "./data/actions/otherBoatAction";
+import { fetchPlacesAction } from "./data/actions/placesActions";
 
 class App extends Component {
     constructor(props) {
@@ -26,6 +28,11 @@ class App extends Component {
     }
 
     componentDidMount() {
+        firebaseApp.auth().onAuthStateChanged(obj => {
+            //Start subscribing to our firebase databases.
+            obj && this.props.store.dispatch(fetchBoatsAction())
+            obj && this.props.store.dispatch(fetchPlacesAction())
+        })
         firebaseApp.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     }
 

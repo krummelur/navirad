@@ -8,7 +8,6 @@ const wh = 512;
 class OtherBoatsOverlay extends Component {
     constructor(props) {
         super(props)
-        this.props.fetchBoats()
         this.boatIndicatorImg = new Image();
     }
 
