@@ -18,7 +18,7 @@ export function placesReducer(state = {result: [], error: null}, action) {
             };
         case constants.ADD_PLACE_SUCCESS:
             return {
-                result: [...state.result, action.payload],
+                result: [...state.result],
                 error: null
             };
         case constants.ADD_PLACE_FAILURE:
