@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/OtherBoatsOverlay/OtherBoatsOverlay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/OtherBoatsOverlay/OtherBoatsOverlay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/OtherBoatsOverlay/OtherBoatsOverlayContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/OtherBoatsOverlay/OtherBoatsOverlayContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/SmallMap/SmallMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SmallMap/SmallMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Views/RadarView/RadarView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/reducers/radarSettingsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/reducers/radarSettingsReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +133,7 @@
       <workItem from="1579015253944" duration="13855000" />
       <workItem from="1579095458492" duration="3161000" />
       <workItem from="1579115397546" duration="6383000" />
-      <workItem from="1579165939369" duration="17168000" />
+      <workItem from="1579165939369" duration="17473000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -461,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579121758614</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="now shows other boats on smallmap too">
+      <created>1579191547253</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1579191547253</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +520,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="loginform styling" />
     <MESSAGE value="aboutview remodeling" />
     <MESSAGE value="aboutview navbar remodeled" />
     <MESSAGE value="fixed scrolling issue going from about to map" />
@@ -542,7 +544,8 @@
     <MESSAGE value="radarview layout fixes" />
     <MESSAGE value="styling of dropdown menu etc" />
     <MESSAGE value="more styling of dropdown" />
-    <option name="LAST_COMMIT_MESSAGE" value="more styling of dropdown" />
+    <MESSAGE value="now shows other boats on smallmap too" />
+    <option name="LAST_COMMIT_MESSAGE" value="now shows other boats on smallmap too" />
   </component>
   <component name="WindowStateProjectService">
     <state x="80" y="277" key="#ESLint" timestamp="1576440348578">
@@ -557,20 +560,22 @@
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="734" y="389" key="#com.intellij.fileTypes.FileTypeChooser/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578951076539" />
-    <state x="698" y="340" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579168952484">
-      <screen x="0" y="0" width="1920" height="1170" />
+    <state x="545" y="282" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579191832174">
+      <screen x="0" y="0" width="1500" height="970" />
     </state>
     <state x="698" y="340" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579168952484" />
+    <state x="545" y="282" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1500.970@0.0.1500.970" timestamp="1579191832174" />
     <state x="698" y="365" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1577627919460" />
     <state x="380" y="100" key="#npm_start" timestamp="1578730537241">
       <screen x="0" y="0" width="1500" height="970" />
     </state>
     <state x="380" y="100" key="#npm_start/0.0.1500.970@0.0.1500.970" timestamp="1578730537241" />
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1579121758127">
-      <screen x="0" y="0" width="1920" height="1170" />
+    <state x="373" y="158" key="CommitChangelistDialog2" timestamp="1579191546590">
+      <screen x="0" y="0" width="1500" height="970" />
     </state>
     <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579121758127" />
+    <state x="373" y="158" key="CommitChangelistDialog2/0.0.1500.970@0.0.1500.970" timestamp="1579191546590" />
     <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646428416" />
     <state x="72" y="76" width="1357" height="818" key="DiffContextDialog" timestamp="1579191527592">
       <screen x="0" y="0" width="1500" height="970" />
@@ -620,10 +625,11 @@
     </state>
     <state x="326" y="159" key="SettingsEditor/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578739347793" />
     <state x="255" y="132" key="SettingsEditor/0.0.1500.970@0.0.1500.970" timestamp="1578731905177" />
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1579121760235">
-      <screen x="0" y="0" width="1920" height="1170" />
+    <state x="438" y="270" key="Vcs.Push.Dialog.v2" timestamp="1579191549297">
+      <screen x="0" y="0" width="1500" height="970" />
     </state>
     <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579121760235" />
+    <state x="438" y="270" key="Vcs.Push.Dialog.v2/0.0.1500.970@0.0.1500.970" timestamp="1579191549297" />
     <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646529721" />
     <state x="92" y="92" width="1736" height="986" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1578996255118">
       <screen x="0" y="0" width="1920" height="1170" />
