@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { zxyToTileCorner, lonLatZoomToZXY } from "../../helpers/mapHelpers"
-import boatIndicator_img from '../../media/other-boat-indicator.png'
+import boatIndicator_img from '../../media/boat.png'
 import { isEqual } from 'lodash';
 
 const wh = 512;
@@ -44,7 +44,7 @@ class OtherBoatsOverlay extends Component {
         let curTile = lonLatZoomToZXY(this.props.radarCenter);
         if (prevTile.x !== curTile.x || prevTile.y !== curTile.y)
             return { shouldUpdate: true }
-        if (prevProps.shouldDiplayBoats !== this.props.shouldDiplayBoats)
+        if (prevProps.shouldDisplayBoats !== this.props.shouldDisplayBoats)
             return { shouldUpdate: true }
         if (!isEqual(prevProps.otherBoats.boats, this.props.otherBoats.boats))
             return { shouldUpdate: true }
@@ -52,13 +52,13 @@ class OtherBoatsOverlay extends Component {
     }
 
     clearCanvas() {
-        let context = document.getElementById("boats-canvas").getContext("2d")
+        let context = document.getElementById(this.props.id).getContext("2d")
         context.clearRect(0, 0, wh, wh)
     }
 
     renderIntoCanvas() {
         let img = this.boatIndicatorImg;
-        let context = document.getElementById("boats-canvas").getContext("2d")
+        let context = document.getElementById(this.props.id).getContext("2d")
         this.boatsInBounds().map((b, i) => {
             let zxy = lonLatZoomToZXY({ lat: b.LATITUDE, lon: b.LONGITUDE });
             context.drawImage(img, zxy.xRem * wh, zxy.yRem * wh)
@@ -68,14 +68,14 @@ class OtherBoatsOverlay extends Component {
     componentDidUpdate(prevProps, state, snapshot) {
         if (snapshot.shouldUpdate) {
             this.clearCanvas();
-            if (this.props.shouldDiplayBoats)
+            if (this.props.shouldDisplayBoats)
                 this.renderIntoCanvas();
         }
     }
 
     componentDidMount() {
         this.boatIndicatorImg.onload = function () {
-            if (this.props.shouldDiplayBoats)
+            if (this.props.shouldDisplayBoats)
                 this.renderIntoCanvas()
         }.bind(this)
         this.boatIndicatorImg.src = boatIndicator_img;
@@ -84,7 +84,7 @@ class OtherBoatsOverlay extends Component {
     render() {
         return (
             <div className="boatsoverlay-canvas-container" id="boatcnvcont" style={{ position: "absolute", zIndex: "9" }}>
-                <canvas id="boats-canvas" height={wh} width={wh} />
+                <canvas id={this.props.id} height={wh} width={wh} />
             </div>)
     }
 }

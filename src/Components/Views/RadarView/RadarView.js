@@ -27,7 +27,7 @@ class RadarView extends Component {
                             <div className="canvas-container">
                                 <KeyboardNavigationContainer/>
                                 <RadarContainer/>
-                                <OtherBoatsOverlayContainer/>
+                                <OtherBoatsOverlayContainer id="radar-boatoverlay"/>
                                 <RadarMapUnderlayContainer/>
 
                             </div>

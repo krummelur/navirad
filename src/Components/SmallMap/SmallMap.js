@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import * as Constants from "../../data/apiConfig";
 import "../Radar/Radar.css"
 import {lonLatZoomToZXY, zxyToTileCenter} from '../../helpers/mapHelpers'
+import OtherBoatsOverlayContainer from "../OtherBoatsOverlay/OtherBoatsOverlayContainer";
 
 const radarCenterToTileCenter = (c) => {
     let center = lonLatZoomToZXY(c);
@@ -36,17 +37,21 @@ class SmallMap extends Component {
     render() {
         let smallMapCenter = radarCenterToTileCenter(this.props.radarCenter);
         return (
-            <Map google={this.props.google}
-                zoom={13}
-                ref={ref => {
-                    this.marker || this.onGoogleMapLoaded(ref.map)
-                }}
-                initialCenter={{lat: smallMapCenter.lat, lng: smallMapCenter.lon}}
-                center={{lat: smallMapCenter.lat, lng: smallMapCenter.lon}}
-                style={{width: '512px', height: '512px', overflow: 'hidden'}}
-                disableDefaultUI={true}
-                gestureHandling={'none'}>
-            </Map>
+            <React.Fragment>
+                <OtherBoatsOverlayContainer id="smallmapboat-overlay"/>
+                <Map google={this.props.google}
+                     zoom={13}
+                     ref={ref => {
+                         this.marker || this.onGoogleMapLoaded(ref.map)
+                     }}
+                     initialCenter={{lat: smallMapCenter.lat, lng: smallMapCenter.lon}}
+                     center={{lat: smallMapCenter.lat, lng: smallMapCenter.lon}}
+                     style={{width: '512px', height: '512px', overflow: 'hidden'}}
+                     disableDefaultUI={true}
+                     gestureHandling={'none'}>
+                </Map>
+            </React.Fragment>
+
         )
     }
 }

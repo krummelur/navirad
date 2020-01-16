@@ -6,6 +6,7 @@ const defaultState = {
     rainInterference: false,
     radarInterference: false,
     showMapUnderlay: false,
+    otherBoats: false,
 }
 
 export function radarSettingsReducer(state = defaultState, action) {

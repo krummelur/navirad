@@ -4,10 +4,11 @@ import {showErrorAction} from '../../data/actions/messageActions';
 import {fetchBoatsAction} from '../../data/actions/otherBoatAction';
 
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
     otherBoats: state.otherBoats,
     radarCenter: state.radarSettings.radarCenter,
-    shouldDiplayBoats: state.radarSettings.otherBoats
+    shouldDisplayBoats: state.radarSettings.otherBoats,
+    canvasid: ownProps.id,
 });
 
 const mapDispatchToProps = dispatch => {
