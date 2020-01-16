@@ -1,14 +1,12 @@
 .list-option {
     padding-left: 1em;
-}
-
-.list-option {
-    padding-left: 1em;
+    padding-top: 0.2em;
+    color: white !important
 }
 
 .disabled-option {
     padding-left: 1em;
-    color: grey;
+    color: grey !important;
 }
 
 .list-option-container {
@@ -25,12 +23,12 @@
 
 .option-remover {
     padding-right: 1em;
-    color: #d95f5f
+    color: #d95f5f !important
 }
 
 .content-selector div {
     background-color: #174769 !important;
     border: 0;
-    color: #FFFFFF;
     border-radius: 0;
+    color: white;
 }
