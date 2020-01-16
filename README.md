@@ -2,7 +2,7 @@
 
 This project is being developed as a part of the course DH2642 – “Interactive Programming and the dynamic web” which is run as part of the activities of the Royal Institute of Technology in Stockholm, Sweden.
 
-This deployment serves as a submission for the mid-project review which is needed for the course examination and the project should be considered as a work in progress.
+This deployment serves as a submission for the final submission.
 
 The project developers are:
 
@@ -16,7 +16,7 @@ The project developers are:
 The project NaviRad is an interactive radar simulator intended for introductory radar training and is aimed at people interested in learning how the view of a radar differs from the reality and a chart.
 
 So far in, the project has four views been added to the application of the project: start(the initial view), map, radar and about. 
-To get the intended functionalities the application uses the API “Tilezen” as well as “Google Maps”. Which makes it possible to get the properties of the radar component.
+To get the functionalities the application uses the APIs Tilezen, Google Maps, Firebase, OnWater, AISHub and CartoDB. Which makes it possible to get the properties of the radar component.
 
 The start view of the application has a foundation for a register and login service which grants the user access to the map view. On the map view has an interactive map been developed. The map works by letting the user pick a point of the map and after the choice has been made it sends the user to the radar view.
 
