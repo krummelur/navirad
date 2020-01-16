@@ -39,6 +39,7 @@ class KeyboardNavigation extends Component {
 
     stopMovingByArrows() {
         clearTimeout(this.arrowsTimeoutRef);
+        this.arrowsPressed = {};
         this.arrowsTimeoutRef = undefined;
     }
 
@@ -71,7 +72,7 @@ class KeyboardNavigation extends Component {
 
     render() {
         return (
-        <div id="keyboardnavigation" tabIndex="0"/>
+        <div id="keyboardnavigation" tabIndex="0" onBlur={this.stopMovingByArrows.bind(this)}/>
         )}
 
 
