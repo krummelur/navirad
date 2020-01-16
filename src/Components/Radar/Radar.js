@@ -43,7 +43,7 @@ class Radar extends Component {
     }
 
     handleTilezenHTTPError(e) {
-        if(e.message == "Bad image URL/path"){
+        if(e.message === "Bad image URL/path"){
             this.props.showError("Could not retrieve height map from external source! The height map is used to create the radar image. Try again soon.")
         }
     }

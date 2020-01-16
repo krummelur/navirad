@@ -57,7 +57,8 @@ class OtherBoatsOverlay extends Component {
 
     renderIntoCanvas() {
         let img = this.boatIndicatorImg;
-        let context = document.getElementById(this.props.id).getContext("2d")
+        let context = document.getElementById(this.props.id).getContext("2d");
+        // eslint-disable-next-line
         this.boatsInBounds().map((b, i) => {
             let zxy = lonLatZoomToZXY({ lat: b.LATITUDE, lon: b.LONGITUDE });
             context.drawImage(img, zxy.xRem * wh, zxy.yRem * wh)

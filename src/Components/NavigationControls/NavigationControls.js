@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import "./NavigationControls.css";
 import joystick_img from '../../media/controls-joystick.png'
 import joystick_img_dark from '../../media/controls-joystick-dark.png'
