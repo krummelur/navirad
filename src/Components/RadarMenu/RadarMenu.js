@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../Shared-Styles/View-Menu.css";
 import NavigationControlsContainer from "../NavigationControls/NavigationControlsContainer";
 import Tooltip from '@material-ui/core/Tooltip';
-import {withStyles} from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Button from "../Button/Button";
 import Input from "../Input/input";
 
@@ -23,6 +23,8 @@ RadarMenu.propTypes = {
 
 function RadarMenu(props) {
     const [storedText, setStoredText] = useState("");
+    //Simple debouncer
+    const [allowedToDispatchPlace, setAllowedToDispatchPlace] = useState(true);
     return (
         <div className="view-menu-container">
             <div className="large-text">Radar Controls</div>
@@ -32,8 +34,8 @@ function RadarMenu(props) {
                     title="Beam width changes the width of the radio wave. Real radars have a limited width, usually 2-6°. Details are lost within a beam, as a beam only returns one echo."
                     placement="left">
                     <input className="slider" type="range" min="0.5" max="15" step="0.5"
-                           value={props.beamWidth}
-                           onChange={evt => props.setBeamWidth(parseFloat(evt.target.value))}/>
+                        value={props.beamWidth}
+                        onChange={evt => props.setBeamWidth(parseFloat(evt.target.value))} />
                 </StyledTooltip>
 
             </div>
@@ -45,10 +47,10 @@ function RadarMenu(props) {
                         placement="left">
                         <li>
                             <input type="checkbox" id="checkboxOne"
-                                   defaultChecked={props.rainInterference}
-                                   onChange={evt => {
-                                       props.setRainInterference(evt.target.checked)
-                                   }}/>
+                                defaultChecked={props.rainInterference}
+                                onChange={evt => {
+                                    props.setRainInterference(evt.target.checked)
+                                }} />
                             <label htmlFor="checkboxOne">Rain clutter</label>
                         </li>
                     </StyledTooltip>
@@ -58,10 +60,10 @@ function RadarMenu(props) {
                         placement="left">
                         <li>
                             <input type="checkbox" id="checkboxTwo"
-                                   defaultChecked={props.radarInterference}
-                                   onChange={evt => {
-                                       props.setRadarInterference(evt.target.checked)
-                                   }}/>
+                                defaultChecked={props.radarInterference}
+                                onChange={evt => {
+                                    props.setRadarInterference(evt.target.checked)
+                                }} />
                             <label htmlFor="checkboxTwo">Radio interference</label>
                         </li>
                     </StyledTooltip>
@@ -71,10 +73,10 @@ function RadarMenu(props) {
                         placement="left">
                         <li>
                             <input type="checkbox" id="checkboxThree"
-                                   defaultChecked={props.mapUnderlay}
-                                   onChange={evt => {
-                                       props.setUnderlay(evt.target.checked)
-                                   }}/>
+                                defaultChecked={props.mapUnderlay}
+                                onChange={evt => {
+                                    props.setUnderlay(evt.target.checked)
+                                }} />
                             <label htmlFor="checkboxThree">Radar/map overlay</label>
                         </li>
                     </StyledTooltip>
@@ -84,33 +86,40 @@ function RadarMenu(props) {
                         placement="left">
                         <li>
                             <input type="checkbox" id="checkboxFour"
-                            defaultChecked={props.otherBoats}
-                            onChange={evt => {
-                                props.setOtherBoats(evt.target.checked)}}
+                                defaultChecked={props.otherBoats}
+                                onChange={evt => {
+                                    props.setOtherBoats(evt.target.checked)
+                                }}
                             />
                             <label htmlFor="checkboxFour">Other boats</label>
                         </li>
                     </StyledTooltip>
 
                     <li>
-                            <div style={{paddingRight:"1em"}}>
-                        <p>
-                            <input className="view-input" type="text" placeholder="Name this location"
-                                   onChange={evt => setStoredText(evt.target.value)}>
-                            </input>
-                            <Button title="Save location"
-                                   function={() => {
-                                       props.addPlace({...props.radarCenter, name: storedText})
-                                   }}/>
-                        </p>
+                        <div style={{ paddingRight: "1em" }}>
+                            <p>
+                                <input className="view-input" type="text" placeholder="Name this location"
+                                    onChange={evt => setStoredText(evt.target.value)}>
+                                </input>
+                                <Button title="Save location"
+                                    function={() => {
+                                        if(allowedToDispatchPlace) {
+                                            setAllowedToDispatchPlace(false)
+                                            setTimeout(() =>{
+                                                setAllowedToDispatchPlace(true);
+                                            }, 2000)
+                                            props.addPlace({ ...props.radarCenter, name: storedText })
+                                        }
+                                    }} />
+                            </p>
                         </div>
                     </li>
                 </ul>
             </div>
 
             <div className="joystick-area">
-                <div>Use the joystick or click on the<br/>radar preview to move<br/>around using the arrow keys.</div>
-                <NavigationControlsContainer/>
+                <div>Use the joystick or click on the<br />radar preview to move<br />around using the arrow keys.</div>
+                <NavigationControlsContainer />
             </div>
 
         </div>

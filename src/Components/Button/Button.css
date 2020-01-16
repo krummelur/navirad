@@ -13,6 +13,10 @@
     cursor: pointer;
 }
 
-.button:hover, .button:active, .button:focus {
+.button:hover {
     background: #486D88;
+}
+
+.button:active {
+    background: #174769;
 }
