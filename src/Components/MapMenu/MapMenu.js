@@ -29,7 +29,7 @@ function MapMenu(props) {
                 </div>
             </div>
         );
-    }
+    };
 
     return (
         <div className="view-menu-container">

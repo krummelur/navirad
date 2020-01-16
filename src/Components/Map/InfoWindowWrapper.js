@@ -23,7 +23,7 @@ export default function InfoWindowWrapper(props) {
             );
             infoWindowRef.current.infowindow.setContent(contentElement);
         }
-    })
+    });
 
     useEffect(() => {
         prevChildrenRef.current = props.children;

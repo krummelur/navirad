@@ -23,13 +23,13 @@ const LoginForm = (props) => {
                     setMessage(error.message);
                 });
         }
-    }
+    };
 
     const isValid = () => {
         const {message, isValid} = validateLoginInput({eMail, password});
         setMessage(message);
         return isValid;
-    }
+    };
 
     const {currentUser} = useContext(AuthenticatorContext);
 
@@ -71,6 +71,6 @@ const LoginForm = (props) => {
         </div>
     );
 
-}
+};
 
 export default LoginForm;

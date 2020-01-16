@@ -103,10 +103,10 @@ function RadarMenu(props) {
                                 <Button title="Save location"
                                     function={() => {
                                         if(allowedToDispatchPlace) {
-                                            setAllowedToDispatchPlace(false)
+                                            setAllowedToDispatchPlace(false);
                                             setTimeout(() =>{
                                                 setAllowedToDispatchPlace(true);
-                                            }, 2000)
+                                            }, 2000);
                                             props.addPlace({ ...props.radarCenter, name: storedText })
                                         }
                                     }} />

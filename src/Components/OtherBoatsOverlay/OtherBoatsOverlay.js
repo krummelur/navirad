@@ -7,7 +7,7 @@ const wh = 512;
 
 class OtherBoatsOverlay extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.boatIndicatorImg = new Image();
     }
 
@@ -18,11 +18,11 @@ class OtherBoatsOverlay extends Component {
         let lats = {
             lower: Math.min(upperLeft.lat, lowerRight.lat),
             upper: Math.max(upperLeft.lat, lowerRight.lat)
-        }
+        };
         let lons = {
             lower: Math.min(upperLeft.lon, lowerRight.lon),
             upper: Math.max(upperLeft.lon, lowerRight.lon)
-        }
+        };
         return { 'lats': lats, 'lons': lons }
     }
 
@@ -38,20 +38,20 @@ class OtherBoatsOverlay extends Component {
 
     //Dont redraw completely unless we changed tile
     getSnapshotBeforeUpdate(prevProps) {
-        let result = { shouldUpdate: false }
+        let result = { shouldUpdate: false };
         let prevTile = lonLatZoomToZXY(prevProps.radarCenter);
         let curTile = lonLatZoomToZXY(this.props.radarCenter);
         if (prevTile.x !== curTile.x || prevTile.y !== curTile.y)
-            return { shouldUpdate: true }
+            return { shouldUpdate: true };
         if (prevProps.shouldDisplayBoats !== this.props.shouldDisplayBoats)
-            return { shouldUpdate: true }
+            return { shouldUpdate: true };
         if (!isEqual(prevProps.otherBoats.boats, this.props.otherBoats.boats))
-            return { shouldUpdate: true }
+            return { shouldUpdate: true };
         return result;
     }
 
     clearCanvas() {
-        let context = document.getElementById(this.props.id).getContext("2d")
+        let context = document.getElementById(this.props.id).getContext("2d");
         context.clearRect(0, 0, wh, wh)
     }
 
@@ -77,7 +77,7 @@ class OtherBoatsOverlay extends Component {
         this.boatIndicatorImg.onload = function () {
             if (this.props.shouldDisplayBoats)
                 this.renderIntoCanvas()
-        }.bind(this)
+        }.bind(this);
         this.boatIndicatorImg.src = boatIndicator_img;
     }
 

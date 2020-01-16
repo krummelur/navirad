@@ -11,8 +11,8 @@ export const restoreState = (store) => {
         storedRadarSettings.showMapUnderlay && store.dispatch(setUnderlay(storedRadarSettings.showMapUnderlay));
         storedRadarSettings.otherBoats && store.dispatch(setOtherBoats(storedRadarSettings.otherBoats));
     }
-}
+};
 
 export const saveState = (currentState) => {
     localStorage.setItem("radarSettings", JSON.stringify(currentState.radarSettings));
-}
+};

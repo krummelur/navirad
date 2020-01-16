@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="33fb79da-aace-4cf7-8963-1b00e71fd9f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/MapMenu/MapMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MapMenu/MapMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavigationControls/NavigationControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavigationControls/NavigationControls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/OtherBoatsOverlay/OtherBoatsOverlay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/OtherBoatsOverlay/OtherBoatsOverlay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/KeyboardNavigation/KeyboardNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/KeyboardNavigation/KeyboardNavigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Map/MapBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/MapBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map/MapEmbedder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Menu/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Menu/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PrivateRoute/privateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PrivateRoute/privateRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Radar/Radar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Radar/Radar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/RadarMapUnderlay/RadarMapUnderlay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarMapUnderlay/RadarMapUnderlay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RadarMenu/RadarMenu.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +51,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -138,7 +139,7 @@
       <workItem from="1579015253944" duration="13855000" />
       <workItem from="1579095458492" duration="3161000" />
       <workItem from="1579115397546" duration="6383000" />
-      <workItem from="1579165939369" duration="18071000" />
+      <workItem from="1579165939369" duration="18984000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1576575716135</created>
@@ -476,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579191867849</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="code cleanup">
+      <created>1579201263214</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1579201263214</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +540,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="aboutview remodeling" />
     <MESSAGE value="aboutview navbar remodeled" />
     <MESSAGE value="fixed scrolling issue going from about to map" />
     <MESSAGE value="fixed layout issue on radar" />
@@ -557,7 +564,8 @@
     <MESSAGE value="styling of dropdown menu etc" />
     <MESSAGE value="more styling of dropdown" />
     <MESSAGE value="now shows other boats on smallmap too" />
-    <option name="LAST_COMMIT_MESSAGE" value="now shows other boats on smallmap too" />
+    <MESSAGE value="code cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="code cleanup" />
   </component>
   <component name="WindowStateProjectService">
     <state x="80" y="277" key="#ESLint" timestamp="1576440348578">
@@ -583,10 +591,14 @@
     </state>
     <state x="380" y="100" key="#npm_start/0.0.1500.970@0.0.1500.970" timestamp="1578730537241" />
     <state x="346" y="100" key="#npm_start/0.23.1366.745@0.23.1366.745" timestamp="1576492110518" />
-    <state x="373" y="158" key="CommitChangelistDialog2" timestamp="1579191866861">
-      <screen x="0" y="0" width="1500" height="970" />
+    <state x="707" y="442" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1579202082415">
+      <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579121758127" />
+    <state x="707" y="442" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579202082415" />
+    <state x="478" y="190" key="CommitChangelistDialog2" timestamp="1579201262601">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="478" y="190" key="CommitChangelistDialog2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579201262601" />
     <state x="373" y="158" key="CommitChangelistDialog2/0.0.1500.970@0.0.1500.970" timestamp="1579191866861" />
     <state x="478" y="214" key="CommitChangelistDialog2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646428416" />
     <state x="92" y="92" width="1736" height="986" key="DiffContextDialog" timestamp="1579200737757">
@@ -637,10 +649,10 @@
     </state>
     <state x="326" y="159" key="SettingsEditor/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1578739347793" />
     <state x="255" y="132" key="SettingsEditor/0.0.1500.970@0.0.1500.970" timestamp="1578731905177" />
-    <state x="438" y="270" key="Vcs.Push.Dialog.v2" timestamp="1579191870086">
-      <screen x="0" y="0" width="1500" height="970" />
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2" timestamp="1579201265055">
+      <screen x="0" y="0" width="1920" height="1170" />
     </state>
-    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579121760235" />
+    <state x="560" y="326" key="Vcs.Push.Dialog.v2/-3000.0.1500.985/0.0.1920.1170@0.0.1920.1170" timestamp="1579201265055" />
     <state x="438" y="270" key="Vcs.Push.Dialog.v2/0.0.1500.970@0.0.1500.970" timestamp="1579191870086" />
     <state x="560" y="351" key="Vcs.Push.Dialog.v2/0.23.1920.1177@0.23.1920.1177" timestamp="1577646529721" />
     <state x="92" y="92" width="1736" height="986" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1578996255118">

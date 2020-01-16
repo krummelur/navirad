@@ -6,7 +6,7 @@ export function placesReducer(state = {result: [], error: null}, action) {
         case constants.PLACES_FETCH_SUCCESS:
             let result = [];
             for (let k in action.payload)
-                result.push({name: k, ...action.payload[k]})
+                result.push({name: k, ...action.payload[k]});
             return {
                 result: result,
                 error: null

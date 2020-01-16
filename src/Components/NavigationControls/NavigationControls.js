@@ -10,14 +10,14 @@ class NavigationControls extends Component {
         this.state = {
             relMousePos: {x: 0, y:0},
             bounds: {x: 200, y: 200}
-        }
+        };
         this.timeoutRef = null;
         this.maxMoveDist = 0.0006;
         this.imageElem = null;
     }
 
     stopMoving() {
-        this.imageElem.style.setProperty('--grad-end', 512) 
+        this.imageElem.style.setProperty('--grad-end', 512);
         clearTimeout(this.timeoutRef)
     }
 
@@ -27,16 +27,16 @@ class NavigationControls extends Component {
     
     onMouseMove(evt) {
         let rect = evt.target.getBoundingClientRect();
-        let relPos = {x: evt.clientX - rect.left, y: evt.clientY - rect.top}
-        this.setState({relMousePos: relPos})
+        let relPos = {x: evt.clientX - rect.left, y: evt.clientY - rect.top};
+        this.setState({relMousePos: relPos});
         this.imageElem.style.setProperty('--grad-rot', 
           radToDeg(Math.atan2(relPos.x-this.state.bounds.x/2, -relPos.y+this.state.bounds.y/2)));
     }
 
     startMoving() {
-        this.imageElem.style.setProperty('--grad-end', 70) 
+        this.imageElem.style.setProperty('--grad-end', 70);
         let direction = this.offsetToDirection(this.state.relMousePos); 
-        this.props.moveRadarCenter({lon: direction.x*this.maxMoveDist, lat: direction.y*this.maxMoveDist/2})
+        this.props.moveRadarCenter({lon: direction.x*this.maxMoveDist, lat: direction.y*this.maxMoveDist/2});
         this.timeoutRef = setTimeout(() => this.startMoving(), 35);
     }
 

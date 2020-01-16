@@ -10,7 +10,7 @@ class MapBox extends Component {
                 <div className="map-title">
                     Click on water to drop a marker.
                     <br/>
-                    Click and hold to pan the map.
+                    Click and hold to pan the map, scroll to zoom.
                 </div>
                 <div className="mapbox">
                     <MapEmbedderContainer/>
