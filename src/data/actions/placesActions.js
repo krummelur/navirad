@@ -13,9 +13,7 @@ export const fetchPlacesAction = () => {
     const { currentUser } = firebaseApp.auth();
     return dispatch => {
         let fbRef = firebaseApp.database().ref(`places/${currentUser.uid}`)
-
-        fbRef.on('value', snapshot => {
-            console.log("Got the news")
+        fbRef.once('value', snapshot => {
             snapshot.val() && dispatch({ type: constants.PLACES_FETCH_SUCCESS, payload: snapshot.val() });
         });
     };
@@ -24,7 +22,6 @@ export const fetchPlacesAction = () => {
 export const addPlaceAction = (place) => {
     if (typeof place.name !== 'string')
         throw new Error("name must be string!");
-
     const { currentUser } = firebaseApp.auth();
     const childObject = {};
     childObject[place.name] = { lat: place.lat, lon: place.lon }
