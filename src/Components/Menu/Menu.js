@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import firebaseApp from "../../Util/firebase";
 import { withRouter } from "react-router";
 
-// Source: https://negomi.github.io/react-burger-menu/
+// Source for menu: https://negomi.github.io/react-burger-menu/
 
 const SideMenu = (props) => {
 
@@ -15,7 +15,7 @@ const SideMenu = (props) => {
             localStorage.clear();
             props.history.push("/");
         }, 100)
-    }
+    };
 
     return (
         <Menu {...props}>

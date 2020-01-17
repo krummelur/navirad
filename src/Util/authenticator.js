@@ -16,4 +16,4 @@ export const AuthenticatorProvider = ({children}) => {
             {children}
         </AuthenticatorContext.Provider>
     )
-}
+};

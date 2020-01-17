@@ -127,7 +127,7 @@ class MapEmbedder extends Component {
      *
      * @param lat the latitude of the position to check
      * @param lon the longitude of the position to check
-     * @returns boolean, true if the api returns an error
+     * @returns boolean, true if on water or if the api returns an error
      */
     onWater = (lat, lon) => {
         this.setState({isLoadingWaterApi: true});
@@ -154,7 +154,7 @@ class MapEmbedder extends Component {
                      style={{width: '90%', height: '100%'}}
                      onClick={(t, map, c) => {
                          this.setState({isLoadingWaterApi: true, displayMarkerInfo: true});
-                         this.props.setRadarCenter({lon: c.latLng.lng(), lat: c.latLng.lat()})
+                         this.props.setRadarCenter({lon: c.latLng.lng(), lat: c.latLng.lat()});
                          this.onWater(c.latLng.lat(), c.latLng.lng()).then((result) => {
                              this.setState({isLoadingWaterApi: false});
                          })

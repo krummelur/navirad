@@ -7,7 +7,7 @@ const defaultState = {
     radarInterference: false,
     showMapUnderlay: false,
     otherBoats: false,
-}
+};
 
 export function radarSettingsReducer(state = defaultState, action) {
     switch (action.type) {
@@ -25,7 +25,7 @@ export function radarSettingsReducer(state = defaultState, action) {
             let newCenter = {};
             Object.keys(action.payload).forEach(k => {
                 newCenter[k] = action.payload[k] + state.radarCenter[k]
-            })
+            });
             return {...state, radarCenter: {...newCenter, initialCenter: false}};
         case constants.SET_MAP_UNDERLAY:
             return {...state, showMapUnderlay: action.payload};

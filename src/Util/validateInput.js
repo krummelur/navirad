@@ -24,7 +24,7 @@ export function validateRegisterInput(data) {
         messages.password = "Password is required!";
 
     if (!Validator.isEmail(data.eMail))
-        messages.eMail = "Input is not an E-Mail!"
+        messages.eMail = "Input is not an E-Mail!";
 
     if (Validator.isEmpty(data.eMail))
         messages.eMail = "E-Mail is required!";

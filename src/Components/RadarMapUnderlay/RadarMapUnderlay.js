@@ -5,12 +5,14 @@ const referenceMapUrl = (zxy) => `https://cartodb-basemaps-a.global.ssl.fastly.n
 
 function RadarMapUnderlay(props) {
     //React memorization should allow us to skip renders when props unchanged by reusing the same precalculated element.
+
     const img = useMemo(() => <img
             key="map help"
             alt=""
             id="map-underlay"
             src={referenceMapUrl(props.currentTile)}
             style={{display: props.shouldDisplayMap ? "" : "none"}}/>,
+        // eslint-disable-next-line
         [props.currentTile.x, props.currentTile.y, props.shouldDisplayMap]);
     return img
 }

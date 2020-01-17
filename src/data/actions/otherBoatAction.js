@@ -19,7 +19,7 @@ const writeBoatsToFirebase = (boats) => {
 
 export const fetchBoatsAction = () => {
     return dispatch => {
-        let fbRef = firebaseApp.database().ref('boats')
+        let fbRef = firebaseApp.database().ref('boats');
         //subScribe to the boats from the database.
         fbRef.on('value', value => {
             if (!value.val() || value.val().boats.lastFetch < Date.now() - 80000) {

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "../Shared-Styles/View-Menu.css";
 import "./MapMenu.css";
@@ -29,7 +29,7 @@ function MapMenu(props) {
                 </div>
             </div>
         );
-    }
+    };
 
     return (
         <div className="view-menu-container">

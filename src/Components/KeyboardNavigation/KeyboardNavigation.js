@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./KeyboardNavigation.css";
 
-const listenKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"]
+const listenKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
 
 class KeyboardNavigation extends Component {
     constructor(props) {
@@ -31,13 +31,13 @@ class KeyboardNavigation extends Component {
 
     startMovingByArrows() {
         let arrowMaxMoveDist = this.maxMoveDist / 1.6;
-        let movement = {lat: 0, lon: 0}
+        let movement = {lat: 0, lon: 0};
         if (this.arrowsPressed[listenKeys[0]]) movement.lat += arrowMaxMoveDist / 2;
         if (this.arrowsPressed[listenKeys[1]]) movement.lat -= arrowMaxMoveDist / 2;
         if (this.arrowsPressed[listenKeys[2]]) movement.lon -= arrowMaxMoveDist;
         if (this.arrowsPressed[listenKeys[3]]) movement.lon += arrowMaxMoveDist;
 
-        this.props.moveRadarCenter(movement)
+        this.props.moveRadarCenter(movement);
         this.arrowsTimeoutRef = setTimeout(() => this.startMovingByArrows(), 35);
     }
 
@@ -67,13 +67,13 @@ class KeyboardNavigation extends Component {
     }
 
     removeListeners() {
-        let thiselem = document.getElementById("keyboardnavigation")
+        let thiselem = document.getElementById("keyboardnavigation");
         thiselem.removeEventListener("keydown", this.handleKeyDownCallback);    
         thiselem.removeEventListener("keyup", this.handleKeyUpCallback);
     }
 
     setUpKeyListeners() {
-        let thiselem = document.getElementById("keyboardnavigation")
+        let thiselem = document.getElementById("keyboardnavigation");
         thiselem.addEventListener("keydown", this.handleKeyDownCallback);    
         thiselem.addEventListener("keyup", this.handleKeyUpCallback);
     }
@@ -86,8 +86,6 @@ class KeyboardNavigation extends Component {
         return (
         <div id="keyboardnavigation" tabIndex="0" onBlur={this.stopMovingByArrows.bind(this)}/>
         )}
-
-
 }
 
 export default KeyboardNavigation;

@@ -7,12 +7,12 @@ export const constants = {
     ADD_PLACE_SUCCESS: "ADD_PLACE_SUCCESS",
     ADD_PLACE_FAILURE: "ADD_PLACE_FAILURE",
     REMOVE_PLACE_SUCCESS: "REMOVE_PLACE_SUCCESS"
-}
+};
 
 export const fetchPlacesAction = () => {
     const { currentUser } = firebaseApp.auth();
     return dispatch => {
-        let fbRef = firebaseApp.database().ref(`places/${currentUser.uid}`)
+        let fbRef = firebaseApp.database().ref(`places/${currentUser.uid}`);
         fbRef.on('value', snapshot => {
             snapshot.val() && dispatch({ type: constants.PLACES_FETCH_SUCCESS, payload: snapshot.val() });
         });
@@ -24,10 +24,10 @@ export const addPlaceAction = (place) => {
         throw new Error("name must be string!");
     const { currentUser } = firebaseApp.auth();
     const childObject = {};
-    childObject[place.name] = { lat: place.lat, lon: place.lon }
+    childObject[place.name] = { lat: place.lat, lon: place.lon };
     return dispatch => {
         if (place.name === "")
-            dispatch(showErrorAction("Enter a name for the location first!"))
+            dispatch(showErrorAction("Enter a name for the location first!"));
         else {
             let fbDB = firebaseApp.database();
             fbDB
@@ -37,11 +37,11 @@ export const addPlaceAction = (place) => {
                         .ref(`places/${currentUser.uid}`)
                         .update(childObject, function (error) {
                             if (error) {
-                                dispatch(showErrorAction(`could not save location ${place.name}!`))
+                                dispatch(showErrorAction(`could not save location ${place.name}!`));
                                 dispatch(addPlaceFailureAction(place));
                             } else {
                                 let didExist = prevSnap.exists();
-                                dispatch(showMessageAction(`Location ${place.name}  ${didExist ? "updated" : "saved"}!`))
+                                dispatch(showMessageAction(`Location ${place.name}  ${didExist ? "updated" : "saved"}!`));
                                 dispatch(addPlaceSuccessAction(place));
                             }
                         })
@@ -49,7 +49,7 @@ export const addPlaceAction = (place) => {
 
         }
     }
-}
+};
 
 export const removePlaceAction = (place) => {
     if (typeof place.name !== 'string')
@@ -61,15 +61,15 @@ export const removePlaceAction = (place) => {
             .ref(`places/${currentUser.uid}/${place.name}`)
             .remove()
             .then(function () {
-                dispatch(showMessageAction(`Location ${place.name} removed!`))
+                dispatch(showMessageAction(`Location ${place.name} removed!`));
                 dispatch(removePlaceSuccessAction(place));
             })
             .catch(function (error) {
-                dispatch(showErrorAction(`could not delete location ${place.name}!`))
+                dispatch(showErrorAction(`could not delete location ${place.name}!`));
                 console.log("Remove failed: " + error.message)
             });
     }
-}
+};
 
 const addPlaceSuccessAction = (newPlace) => {
     return { type: constants.ADD_PLACE_SUCCESS, payload: newPlace }

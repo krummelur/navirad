@@ -5,12 +5,10 @@ import radarIndicator_Img from '../../media/radar-indicator.png'
 import loading_Img from '../../media/radar-loading.png'
 import "./Radar.css";
 
-
-//const assert = require('assert');
 const pixels = require('image-pixels');
 const output = require('image-output');
 
-const imageDimensions = {width: 512, height: 512}
+const imageDimensions = {width: 512, height: 512};
 
 class Radar extends Component {
     constructor(props) {
@@ -39,13 +37,13 @@ class Radar extends Component {
         let prevTile = lonLatZoomToZXY(prevProps.radarCenter);
         let curTile = lonLatZoomToZXY(this.props.radarCenter);
         if (prevTile.x !== curTile.x || prevTile.y !== curTile.y)
-            return {repositionMap: true}
+            return {repositionMap: true};
         else
             return {repositionMap: false}
     }
 
     handleTilezenHTTPError(e) {
-        if(e.message == "Bad image URL/path"){
+        if(e.message === "Bad image URL/path"){
             this.props.showError("Could not retrieve height map from external source! The height map is used to create the radar image. Try again soon.")
         }
     }
@@ -57,23 +55,23 @@ class Radar extends Component {
             this.startContinousOutput();
         }).catch(e => {
             this.handleTilezenHTTPError(e);
-        })
+        });
     }
 
     prepareForDrawing() {
         this.setState({...this.state, isPreparingHeightmap: true});
         let cnv = document.getElementById("canvas");
-        cnv.getContext("2d").drawImage(this.loadingImg, 0, 0)
-        let zxy = lonLatZoomToZXY(this.props.radarCenter)
+        cnv.getContext("2d").drawImage(this.loadingImg, 0, 0);
+        let zxy = lonLatZoomToZXY(this.props.radarCenter);
         let imageUrl = this.zxyToImageUrl(zxy);
         return new Promise(function (resolve, reject) {
             pixels(imageUrl).then((obj) => {
                 let newData = obj.data.map((c, i) => {
                     if ((i + 1) % 4 === 0) return c;
                     let cRedIndex = Math.floor(i / 4) * 4;
-                    let height = Math.max(this.pixelDataToHeight(obj.data[cRedIndex++], obj.data[cRedIndex++], obj.data[cRedIndex++]), 0)
+                    let height = Math.max(this.pixelDataToHeight(obj.data[cRedIndex++], obj.data[cRedIndex++], obj.data[cRedIndex++]), 0);
                     return height > 8 ? height * 10 : 0
-                })
+                });
                 this._isMounted && this.setState({isPreparingHeightmap: false});
                 resolve({data: newData, width: obj.width, height: obj.height});
             }).catch(e => {
@@ -118,12 +116,12 @@ class Radar extends Component {
     processImage({data, width, height}) {
         let newPixelData = data.map((c, i) => {
             return (i + 3) % 4 === 0 ? 255 : 0
-        })
+        });
 
         let angle = 0.0;
         let beamwidthRad = degToRad(this.props.radarSettings.beamwidth);
         while (angle < Math.PI * 2) {
-            this.castRayInNormDirection({newPixelData, data, width, height}, {x: Math.sin(angle), y: Math.cos(angle)})
+            this.castRayInNormDirection({newPixelData, data, width, height}, {x: Math.sin(angle), y: Math.cos(angle)});
             //Angle is decided from the beamwidth
             angle += beamwidthRad;
         }
@@ -134,7 +132,6 @@ class Radar extends Component {
     }
 
     rainify(image, width, height) {
-        //TODO: make this into a map()
         let x = 0;
         let y = 0;
         while (y < height) {
@@ -161,7 +158,7 @@ class Radar extends Component {
         while (nextPos.x > 0 && nextPos.y > 0 && nextPos.x < image.width && nextPos.y < image.height) {
             let pixelAtPos = this.pixelDataAt(Math.floor(nextPos.x), Math.floor(nextPos.y), image.width, image.data).g;
             min = pixelAtPos >= min ? pixelAtPos : min;
-            nextPos = {x: nextPos.x + dir.x, y: nextPos.y + dir.y}
+            nextPos = {x: nextPos.x + dir.x, y: nextPos.y + dir.y};
             let bpdeltax = nextPos.x - bp.x;
             let bpdeltay = nextPos.y - bp.y;
             let distanceFromOriginSquared = bpdeltax * bpdeltax + bpdeltay * bpdeltay;
@@ -174,12 +171,12 @@ class Radar extends Component {
                 let distanceFromOrigin = Math.sqrt(distanceFromOriginSquared);
                 image.newPixelData[this.indexFromPos(nextPos.x, nextPos.y, image.width) + 3] = pixelAtPos;
                 //Approximation of errors due to beamwidth
-                let errorLength = distanceFromOrigin * degToRad(this.props.radarSettings.beamwidth)
+                let errorLength = distanceFromOrigin * degToRad(this.props.radarSettings.beamwidth);
                 let mat = [0, -1, 1, 0];
                 let errorDir = {
                     x: dir.x * mat[0] + dir.y * mat[2],
                     y: (dir.x * mat[1] + dir.y * mat[3])
-                }
+                };
                 let nextErrLocation = {...nextPos};
                 let errTraced = 0;
                 while (errTraced < errorLength) {
@@ -200,13 +197,10 @@ class Radar extends Component {
             this.intervalReference = setInterval(() => {
                 let zxy = lonLatZoomToZXY(this.props.radarCenter);
                 this.relBoatPos = {x: zxy.xRem * imageDimensions.width, y: zxy.yRem * imageDimensions.height};
-                let cnv = document.getElementById("canvas")
-                //let startTime = Date.now()
-                let newPixelData = this.processImage(this.state.currentHeightmap)
-                output(newPixelData, cnv)
+                let cnv = document.getElementById("canvas");
+                let newPixelData = this.processImage(this.state.currentHeightmap);
+                output(newPixelData, cnv);
                 cnv.getContext("2d").drawImage(this.radarIndicatorImg, this.relBoatPos.x - 4, this.relBoatPos.y - 4)
-                //let totalTime = Date.now() - startTime
-                //console.log("Render Time: " + totalTime)
             }, 40)
     }
 

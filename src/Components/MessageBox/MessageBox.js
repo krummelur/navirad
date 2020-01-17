@@ -6,9 +6,9 @@ export default function MessageBox(props) {
     const [alert] = useState(useAlert());
     if (props.message && (!lastMessage || props.message.id !== lastMessage.id)) {
         if (props.message.isError)
-            alert.error(props.message.text)
+            alert.error(props.message.text);
         else
-            alert.success(props.message.text)
+            alert.success(props.message.text);
         setMessage(props.message);
     }
     return <div className="errorBox"/>

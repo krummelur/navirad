@@ -30,9 +30,9 @@ class App extends Component {
     componentDidMount() {
         firebaseApp.auth().onAuthStateChanged(obj => {
             //Start subscribing to our firebase databases.
-            obj && this.props.store.dispatch(fetchBoatsAction())
+            obj && this.props.store.dispatch(fetchBoatsAction());
             obj && this.props.store.dispatch(fetchPlacesAction())
-        })
+        });
         firebaseApp.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     }
 

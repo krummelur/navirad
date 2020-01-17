@@ -2,7 +2,7 @@
 
 This project is being developed as a part of the course DH2642 – “Interactive Programming and the dynamic web” which is run as part of the activities of the Royal Institute of Technology in Stockholm, Sweden.
 
-This deployment serves as a submission for the mid-project review which is needed for the course examination and the project should be considered as a work in progress.
+This deployment serves as a submission for the final submission.
 
 The project developers are:
 
@@ -15,8 +15,8 @@ The project developers are:
 
 The project NaviRad is an interactive radar simulator intended for introductory radar training and is aimed at people interested in learning how the view of a radar differs from the reality and a chart.
 
-So far in, the project has four views been added to the application of the project: start(the initial view), map, radar and about. 
-To get the intended functionalities the application uses the API “Tilezen” as well as “Google Maps”. Which makes it possible to get the properties of the radar component.
+The project has four views: start (the initial view), map, radar and about. 
+To get the functionalities the application uses the APIs Tilezen, Google Maps, Firebase, OnWater, AISHub and CartoDB. Which makes it possible to get the properties of the radar component.
 
 The start view of the application has a foundation for a register and login service which grants the user access to the map view. On the map view has an interactive map been developed. The map works by letting the user pick a point of the map and after the choice has been made it sends the user to the radar view.
 
@@ -25,13 +25,16 @@ The About view gives a short description of the app as well as the participating
 
 ## Plans
 
-The login/register function will be implemented through firebase authorization service and the group is aiming at using firebase database to store user created content.
+- [x] The login/register function will be implemented through firebase authorization service and the group is aiming at using firebase database to store user created content.
 
-A radar/map overlay will be implemented on the radar to more clearly se what and where the radar is rendering a simulation of.
+- [x] A radar/map overlay will be implemented on the radar to more clearly se what and where the radar is rendering a simulation of.
 
-Other boats will be visualized on the map through an automatic identification system(AIS) and will be rendered live.
+- [x] Other boats will be visualized on the map through an automatic identification system(AIS) and will be rendered live.
 
-This as well as some design updates is what the group has in for the project’s final submission.
+- [x] This as well as some design updates is what the group has in for the project’s final submission.
+
+
+all done! yay. 
 
 ## File Structure
 

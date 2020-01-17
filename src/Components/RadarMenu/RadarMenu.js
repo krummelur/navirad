@@ -5,7 +5,6 @@ import NavigationControlsContainer from "../NavigationControls/NavigationControl
 import Tooltip from '@material-ui/core/Tooltip';
 import { withStyles } from '@material-ui/core/styles';
 import Button from "../Button/Button";
-import Input from "../Input/input";
 
 const StyledTooltip = withStyles(theme => ({
     tooltip: {
@@ -104,7 +103,7 @@ function RadarMenu(props) {
                                 <Button title="Save location"
                                     function={() => {
                                         if(allowedToDispatchPlace) {
-                                            setAllowedToDispatchPlace(false)
+                                            setAllowedToDispatchPlace(false);
                                             setTimeout(() =>{
                                                 setAllowedToDispatchPlace(true);
                                             }, 1500)

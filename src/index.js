@@ -17,7 +17,7 @@ const alertConfig = {
     timeout: 5000,
     offset: '30px',
     transition: transitions.FADE
-}
+};
 
 
 ReactDOM.render(
