@@ -17,6 +17,13 @@ const writeBoatsToFirebase = (boats) => {
         })
 };
 
+export const stopListeningForBoatsAction = () => {
+    return dispatch => {
+        firebaseApp.database().ref('boats').off();
+        dispatch(fetchSuccessAction([]))
+    }
+}
+
 export const fetchBoatsAction = () => {
     return dispatch => {
         let fbRef = firebaseApp.database().ref('boats');

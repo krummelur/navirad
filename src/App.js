@@ -12,7 +12,7 @@ import firebaseApp from "./Util/firebase";
 import firebase from "firebase";
 import "./App.css";
 import {saveState, restoreState} from "./helpers/persistentStateHelpers";
-import { fetchBoatsAction } from "./data/actions/otherBoatAction";
+import { fetchBoatsAction, stopListeningForBoatsAction } from "./data/actions/otherBoatAction";
 import { fetchPlacesAction } from "./data/actions/placesActions";
 
 class App extends Component {
@@ -28,10 +28,14 @@ class App extends Component {
     }
 
     componentDidMount() {
-        firebaseApp.auth().onAuthStateChanged(obj => {
-            //Start subscribing to our firebase databases.
-            obj && this.props.store.dispatch(fetchBoatsAction());
-            obj && this.props.store.dispatch(fetchPlacesAction())
+        firebaseApp.auth().onAuthStateChanged(user => {
+            //Start subscribing to database when user signs in, stop when they sign out.
+            if(user) {
+                this.props.store.dispatch(fetchBoatsAction());
+                this.props.store.dispatch(fetchPlacesAction());
+            } else {
+                this.props.store.dispatch(stopListeningForBoatsAction());
+            }
         });
         firebaseApp.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     }
