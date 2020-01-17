@@ -107,7 +107,7 @@ function RadarMenu(props) {
                                             setAllowedToDispatchPlace(false)
                                             setTimeout(() =>{
                                                 setAllowedToDispatchPlace(true);
-                                            }, 2000)
+                                            }, 1500)
                                             props.addPlace({ ...props.radarCenter, name: storedText })
                                         }
                                     }} />

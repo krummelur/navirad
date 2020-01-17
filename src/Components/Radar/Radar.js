@@ -25,6 +25,8 @@ class Radar extends Component {
         this.radarIndicatorImg.src = radarIndicator_Img;
         this.loadingImg = new Image();
         this.loadingImg.src = loading_Img;
+        //It would be better to use cancellable callbacks...
+        this._isMounted = false;
     }
 
     pixelDataToHeight = (r, g, b) => ((r * 256 + g + b / 256) - 32768);
@@ -49,8 +51,9 @@ class Radar extends Component {
     }
 
     componentDidMount() {
+        this._isMounted = true;
         this.prepareForDrawing().then((heightmap) => {
-            this.setState({currentHeightmap: heightmap})
+            this._isMounted && this.setState({currentHeightmap: heightmap})
             this.startContinousOutput();
         }).catch(e => {
             this.handleTilezenHTTPError(e);
@@ -71,7 +74,7 @@ class Radar extends Component {
                     let height = Math.max(this.pixelDataToHeight(obj.data[cRedIndex++], obj.data[cRedIndex++], obj.data[cRedIndex++]), 0)
                     return height > 8 ? height * 10 : 0
                 })
-                this.setState({isPreparingHeightmap: false});
+                this._isMounted && this.setState({isPreparingHeightmap: false});
                 resolve({data: newData, width: obj.width, height: obj.height});
             }).catch(e => {
                 console.log("The tilezen servers sometimes are overloaded, and respond with a 503, this error is unfortunately hidden by the image library");
@@ -81,13 +84,15 @@ class Radar extends Component {
         }.bind(this));
     }
 
+
+
     componentDidUpdate(prevProps, state, snapshot) {
         if (snapshot.repositionMap) {
             this.setState({isPreparingHeightmap: true});
             this.stopContinuousOutput();
             this.prepareForDrawing().then((heightmap) => {
+                this._isMounted && this.setState({currentHeightmap: heightmap});
                 this.startContinousOutput();
-                this.setState({currentHeightmap: heightmap});
             }).catch(function (e) {
                 this.handleTilezenHTTPError(e);
             }.bind(this))
@@ -191,7 +196,7 @@ class Radar extends Component {
     }
 
     startContinousOutput() {
-        if (this.intervalReference === undefined)
+        if (this.intervalReference === undefined && this._isMounted)
             this.intervalReference = setInterval(() => {
                 let zxy = lonLatZoomToZXY(this.props.radarCenter);
                 this.relBoatPos = {x: zxy.xRem * imageDimensions.width, y: zxy.yRem * imageDimensions.height};
@@ -206,12 +211,13 @@ class Radar extends Component {
     }
 
     stopContinuousOutput() {
-        clearInterval(this.intervalReference);
+        this.intervalReference !== undefined && clearInterval(this.intervalReference);
         this.intervalReference = undefined;
     }
 
     componentWillUnmount() {
         this.stopContinuousOutput();
+        this._isMounted = false;
     }
 
     render() {
