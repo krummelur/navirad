@@ -10,6 +10,10 @@ Locations of real boats can be displayed on the map using data from aishub vesse
 
 A version of the app is found here https://navirad-d74c7.firebaseapp.com/
 
+or if that is no longer available, this is what the app looks like
+
+<img src="https://krummelur.github.io/navirad/images/navirad_1.png" height="130px">  <img src="https://krummelur.github.io/navirad/images/navirad_2.png" height="130px">	
+
 This deployment serves as the final submission.
 
 The project developers are:
@@ -35,9 +39,11 @@ Main frameworks and API's used:
 
 - React 
 - Redux
-- Firebase realtime database and authentication
+- Firebase database and authentication
 - Mapzen elevation tiles
-- aishub vessel tracking API
+- Aishub vessel tracking API
+- Google maps
+- CartoDB
 
 ## File Structure
 
