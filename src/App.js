@@ -14,7 +14,6 @@ import "./App.css";
 import {saveState, restoreState} from "./helpers/persistentStateHelpers";
 import { fetchBoatsAction, stopListeningForBoatsAction } from "./data/actions/otherBoatAction";
 import { fetchPlacesAction } from "./data/actions/placesActions";
-
 class App extends Component {
     constructor(props) {
         super(props);
@@ -37,8 +36,9 @@ class App extends Component {
                 this.props.store.dispatch(stopListeningForBoatsAction());
             }
         });
-        firebaseApp.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
+        firebaseApp.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
     }
+
 
     render() {
         return (

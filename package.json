@@ -1,5 +1,5 @@
 {
-  "name": "proj",
+  "name": "navirad",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,11 +7,10 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "firebase": "^7.6.1",
-    "firebase-admin": "^8.9.0",
     "google-maps-react": "^2.0.2",
-    "image-output": "^2.4.1",
     "image-pixels": "^2.2.2",
     "lodash": "^4.17.15",
+    "navirad_wasm": "file:./navirad_wasm/pkg",
     "prop-types": "latest",
     "react": "^16.12.0",
     "react-alert": "^6.0.0",
@@ -28,9 +27,12 @@
     "yarn": "^1.21.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "build-wasm": "(cd navirad_wasm && cargo build && wasm-pack build)",
+    "prebuild": "npm run build-wasm",
+    "prestart": "npm run build-wasm",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -50,7 +52,9 @@
   },
   "devDependencies": {
     "@material-ui/core": "^4.8.3",
+    "react-app-rewired": "^2.1.8",
     "react-redux": "^7.1.3",
-    "react-router-dom": "^5.1.2"
+    "react-router-dom": "^5.1.2",
+    "wasm-loader": "^1.3.0"
   }
 }

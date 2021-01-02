@@ -61,6 +61,10 @@ Lastly the data is being handled in the “Data” folder located in “src”. 
 ### `npm install` 
 Installs all project dependencies
 
+### `npm run build-wasm`
+manually rebuild the wasm dependency (requires rust compiler and wasm-pack)
+
+
 ### `npm start`
 compiles and launches the project development server
 
