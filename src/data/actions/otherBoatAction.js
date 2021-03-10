@@ -52,7 +52,8 @@ export const fetchBoatsAction = () => {
 
 const fetchBoats = (latmin, latmax, lonmin, lonmax) => {
     return fetch(
-        `https://cors-anywhere.herokuapp.com/https://data.aishub.net/ws.php?username=${AISHUB_API_KEY}` +
+        
+        `https://aishub-proxy.herokuapp.com/https://data.aishub.net/ws.php?username=${AISHUB_API_KEY}` +
         `&format=1&output=json&compress=0&latmin=${latmin}&latmax=${latmax}&lonmin=${lonmin}&lonmax=${lonmax}`, {
             origin: 'GET'
         })
