@@ -37,7 +37,7 @@ class App extends Component {
                 this.props.store.dispatch(stopListeningForBoatsAction());
             }
         });
-        firebaseApp.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
+        firebaseApp.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
     }
 
     render() {
