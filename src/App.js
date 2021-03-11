@@ -9,7 +9,9 @@ import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import {AuthenticatorProvider} from "./Util/authenticator";
 import PrivateRoute from "./Components/PrivateRoute/privateRoute";
 import firebaseApp from "./Util/firebase";
-import firebase from "firebase";
+import firebase from "firebase/app"
+import "firebase/auth";
+import "firebase/database"
 import "./App.css";
 import {saveState, restoreState} from "./helpers/persistentStateHelpers";
 import { fetchBoatsAction, stopListeningForBoatsAction } from "./data/actions/otherBoatAction";
