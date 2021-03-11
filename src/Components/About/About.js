@@ -65,7 +65,7 @@ class About extends Component {
                             It is written in JavaScript (ES6) and React.<p/>
 
                             The complete source code for this project can be found at our <a
-                                href="https://gits-15.sys.kth.se/adamlil/dh2642-proj">git repository</a><p/>
+                                href="https://github.com/krummelur/navirad" target="blank">git repository</a><p/>
 
                             The project's two releases, mid project and final, can be found under the releases tab.<p/>
                         </div>
