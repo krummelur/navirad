@@ -21,7 +21,10 @@ class About extends Component {
                             A real radar functions by sending out a radio wave (3 or 9GHz) and register when an echo returns.
                             The radio wave has a width, the beam width, which limits it's ability to distinguish details.
                             We have implemented the same functionality, where a ray only is transmitted at a certain angle.
-                            In between two rays, details are lost; just as on a real radar.<p/>
+                            In between two rays, details are lost; just as on a real radar.
+                            <p/>
+                            Navirad was made as a project at KTH for interaction programming. The project serves as an example of aggregating different data sources to create something unique. In this project several different type of map and heightmap data is combined with AIS data, as well as google data storage, and custom rendering to create an interactive, customizable and educational experience.
+                            <p/>
                         </div>
                     }
                     id="radar"

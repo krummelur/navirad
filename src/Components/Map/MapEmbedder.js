@@ -27,14 +27,16 @@ class MapEmbedder extends Component {
             <React.Fragment>
                 <div>
                     <p>Open radar view at this position?</p>
-                    <p>Longitude: {this.props.radarCenter.lon.toFixed(4)}</p>
-                    <p>Latitude: {this.props.radarCenter.lat.toFixed(4)}</p>
+                    <b>
+                        <p>Longitude: {this.props.radarCenter.lon.toFixed(4)}</p>
+                        <p>Latitude: {this.props.radarCenter.lat.toFixed(4)}</p>
+                    </b>
                 </div>
                 <div className="center-aligned-element">
                     <button type="button"
                         //There seems to be an issue with using Links inside Map, and especially InfoWindow components.
                         //This works, but could be made nicer. navigation by dispatch (redux-router) could probably solve it.
-                            onClick={() => {
+                        onClick={() => {
                                 document.getElementById("radarLink").click()
                             }}>
                         Go to radar view
@@ -54,9 +56,8 @@ class MapEmbedder extends Component {
         let apiFault =
             <React.Fragment>
                 <div>
-                    <p>There was a fault when checking your position.</p>
-                    <p>If your position is on land, the radar will not</p>
-                    <p>function properly.</p>
+                    <p>There was a error when checking your position.</p>
+                    <p>If your position is on land, the radar will not work.</p>
                     {onWaterBody}
                 </div>
             </React.Fragment>;
@@ -114,13 +115,7 @@ class MapEmbedder extends Component {
         }
     }
 
-    handleOnWaterError = (response) => {
-        if (!response.ok) {
-            console.log(response.status);
-            this.setState({onWaterApiFault: true})
-        }
-        return response;
-    };
+    handleOnWaterError = () => this.setState({onWaterApiFault: true})
 
     /**
      * onWater makes a call to the onWater API to check if the selected position is on water or land.
@@ -135,6 +130,7 @@ class MapEmbedder extends Component {
             .then(this.handleOnWaterError)
             .then(response => response.json())
             .then(response => this.setState({onWater: response.water}))
+            .catch(this.handleOnWaterError)
     };
 
 
