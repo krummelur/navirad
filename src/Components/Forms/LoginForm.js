@@ -2,10 +2,10 @@ import React, {useContext, useState} from 'react';
 import Input from "../Input/input";
 import Message from "../Message/message";
 import Button from "../Button/Button";
-import {validateLoginInput} from "../../Util/validateInput";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {Redirect} from "react-router";
 import {AuthenticatorContext} from "../../Util/authenticator";
-import firebaseApp from "../../Util/firebase";
+import {validateLoginInput} from "../../Util/validateInput";
 import "./form.css";
 
 const LoginForm = (props) => {
@@ -18,7 +18,7 @@ const LoginForm = (props) => {
         event.preventDefault();
 
         if (isValid()) {
-            firebaseApp.auth().signInWithEmailAndPassword(eMail.value, password.value)
+            signInWithEmailAndPassword(getAuth(), eMail.value, password.value)
                 .catch(error => {
                     setMessage(error.message);
                 });

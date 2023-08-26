@@ -1,6 +1,6 @@
 import {firebaseConfig} from "../data/apiConfig";
+import { initializeApp } from 'firebase/app';
 
-const firebase = require("firebase/app");
-const firebaseApp = firebase.default.initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
 
 export default firebaseApp;

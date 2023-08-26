@@ -1,5 +1,7 @@
 import firebaseApp from "../../Util/firebase";
+import { getAuth } from "firebase/auth";
 import { showErrorAction, showMessageAction } from './messageActions'
+import { getDatabase, ref, onValue, update, remove } from "firebase/database";
 
 export const constants = {
     PLACES_FETCH_SUCCESS: "PLACES_FETCH_SUCCESS",
@@ -10,10 +12,10 @@ export const constants = {
 };
 
 export const fetchPlacesAction = () => {
-    const { currentUser } = firebaseApp.auth();
+    const { currentUser } = getAuth()
     return dispatch => {
-        let fbRef = firebaseApp.database().ref(`places/${currentUser.uid}`);
-        fbRef.on('value', snapshot => {
+        const db = getDatabase();
+        onValue(ref(db, `places/${currentUser.uid}`), snapshot => {
             dispatch({ type: constants.PLACES_FETCH_SUCCESS, payload: snapshot.val() || [] });
         });
     };
@@ -22,31 +24,28 @@ export const fetchPlacesAction = () => {
 export const addPlaceAction = (place) => {
     if (typeof place.name !== 'string')
         throw new Error("name must be string!");
-    const { currentUser } = firebaseApp.auth();
+    const { currentUser } = getAuth()
     const childObject = {};
     childObject[place.name] = { lat: place.lat, lon: place.lon };
     return dispatch => {
         if (place.name === "")
             dispatch(showErrorAction("Enter a name for the location first!"));
         else {
-            let fbDB = firebaseApp.database();
-            fbDB
-                .ref(`places/${currentUser.uid}/${place.name}`)
-                .once("value", prevSnap => {
-                    fbDB
-                        .ref(`places/${currentUser.uid}`)
-                        .update(childObject, function (error) {
-                            if (error) {
-                                dispatch(showErrorAction(`could not save location ${place.name}!`));
-                                dispatch(addPlaceFailureAction(place));
-                            } else {
-                                let didExist = prevSnap.exists();
-                                dispatch(showMessageAction(`Location ${place.name}  ${didExist ? "updated" : "saved"}!`));
-                                dispatch(addPlaceSuccessAction(place));
-                            }
-                        })
-                })
-
+            //get state once to see if it exists, then add / update
+            const db = getDatabase();
+            onValue(ref(db, `places/${currentUser.uid}/${place.name}`), prevSnap => {    
+                const userLocationsRef = ref(db, `places/${currentUser.uid}`);
+                 update(userLocationsRef, childObject)
+                 .then(() => {
+                    let didExist = prevSnap.exists();
+                    dispatch(showMessageAction(`Location ${place.name}  ${didExist ? "updated" : "saved"}!`));
+                    dispatch(addPlaceSuccessAction(place));
+                 })
+                 .catch(e => {
+                     dispatch(showErrorAction(`could not save location ${place.name}!`));
+                    dispatch(addPlaceFailureAction(place));
+                 })
+            }, {onlyOnce: true})
         }
     }
 };
@@ -54,20 +53,18 @@ export const addPlaceAction = (place) => {
 export const removePlaceAction = (place) => {
     if (typeof place.name !== 'string')
         throw new Error("name must be string!");
-    const { currentUser } = firebaseApp.auth();
+    const { currentUser } = getAuth()
     return dispatch => {
-        firebaseApp
-            .database()
-            .ref(`places/${currentUser.uid}/${place.name}`)
-            .remove()
-            .then(function () {
-                dispatch(showMessageAction(`Location ${place.name} removed!`));
-                dispatch(removePlaceSuccessAction(place));
-            })
-            .catch(function (error) {
-                dispatch(showErrorAction(`could not delete location ${place.name}!`));
-                console.log("Remove failed: " + error.message)
-            });
+        const db = getDatabase();
+        remove(ref(db, `places/${currentUser.uid}/${place.name}`))
+        .then(function () {
+            dispatch(showMessageAction(`Location ${place.name} removed!`));
+            dispatch(removePlaceSuccessAction(place));
+        })
+        .catch(function (error) {
+            dispatch(showErrorAction(`could not delete location ${place.name}!`));
+            console.log("Remove failed: " + error.message)
+        });
     }
 };
 

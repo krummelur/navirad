@@ -1,50 +1,28 @@
 import { AISHUB_API_KEY } from "../apiConfig";
 import firebaseApp from "../../Util/firebase";
-
+import { getDatabase, off, onValue, ref, update} from "firebase/database";
 export const constants = {
     BOAT_FETCH_SUCCESS: "BOAT_FETCH_SUCCESS",
     BOAT_FETCH_FAILURE: "BOAT_FETCH_FAILURE",
 };
 
 const writeBoatsToFirebase = (boats) => {
-    firebaseApp
-        .database()
-        .ref('boats')
-        .update({ "boats": { ...boats, lastFetch: Date.now() } }, function (error) {
-            if (error) {
-                console.log(error)
-            }
-        })
+        const db = getDatabase()
+        const data = { "boats": { ...boats, lastFetch: Date.now() } }
+        update(ref(db), boats, data)
+            .catch(console.error)
 };
 
 export const stopListeningForBoatsAction = () => {
     return dispatch => {
-        firebaseApp.database().ref('boats').off();
+        off(ref(getDatabase(), 'boats'))
         dispatch(fetchSuccessAction([]))
     }
 }
 
 export const fetchBoatsAction = () => {
     return dispatch => {
-        let fbRef = firebaseApp.database().ref('boats');
-        //subScribe to the boats from the database.
-        fbRef.on('value', value => {
-            if (!value.val() || value.val().boats.lastFetch < Date.now() - 80000) {
-                fetchBoats(53.27, 66.27, 4.87, 24.27)
-                    .then(res => {
-                        if (res[0].ERROR === false) {
-                            writeBoatsToFirebase(res);
-                            dispatch(fetchSuccessAction(res[1]));
-                        }
-                    })
-                    .catch(function (error) {
-                        dispatch(fetchFailureAction(error));
-                        console.log(error);
-                    })
-            } else {
-                dispatch(fetchSuccessAction(value.val().boats[1]));
-            }
-        });
+        // Do nothing, AIS API not available
     }
 };
 

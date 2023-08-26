@@ -4,7 +4,9 @@ import Input from "../Input/input";
 import Message from "../Message/message";
 import Button from "../Button/Button";
 import firebaseApp from "../../Util/firebase";
+import { getAuth, createUserWithEmailAndPassword} from "firebase/auth";
 import "./form.css";
+import { getDatabase, ref, set } from 'firebase/database';
 
 class RegisterForm extends Component {
     constructor(props) {
@@ -22,7 +24,8 @@ class RegisterForm extends Component {
     onSubmit(event) {
         event.preventDefault();
         if (this.isValid()) {
-            firebaseApp.auth().createUserWithEmailAndPassword(this.state.eMail, this.state.password)
+
+            createUserWithEmailAndPassword(getAuth(), this.state.eMail, this.state.password)
                 .catch(error => {
                     this.setState({
                         error: error.message,
@@ -30,10 +33,12 @@ class RegisterForm extends Component {
                     })
                 }).then((object) => {
                 if (this.state.isValid) {
-                    firebaseApp.database().ref("/users/" + object.user.uid).set({
+                    const db = getDatabase();
+                    set(ref(db, "/users/" + object.user.uid), {
                         userID: this.state.userID,
                         eMail: this.state.eMail
-                    }).then(this.props.toggleFunction());
+                    }).then(this.props.toggleFunction())
+                        .catch(console.error);
                 }
             });
         }

@@ -8,9 +8,7 @@ import RadarView from "./Components/Views/RadarView/RadarView";
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import {AuthenticatorProvider} from "./Util/authenticator";
 import PrivateRoute from "./Components/PrivateRoute/privateRoute";
-import firebaseApp from "./Util/firebase";
-import firebase from "firebase/app"
-import "firebase/auth";
+import { getAuth, setPersistence, browserLocalPersistence, onAuthStateChanged } from "firebase/auth";
 import "firebase/database"
 import "./App.css";
 import {saveState, restoreState} from "./helpers/persistentStateHelpers";
@@ -21,16 +19,14 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {};
-
         restoreState(this.props.store);
-
         this.props.store.subscribe(() => {
             saveState(this.props.store.getState())
         });
     }
 
     componentDidMount() {
-        firebaseApp.auth().onAuthStateChanged(user => {
+        onAuthStateChanged(getAuth(), user => {
             //Start subscribing to database when user signs in, stop when they sign out.
             if(user) {
                 this.props.store.dispatch(fetchBoatsAction());
@@ -39,7 +35,7 @@ class App extends Component {
                 this.props.store.dispatch(stopListeningForBoatsAction());
             }
         });
-        firebaseApp.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+        setPersistence(getAuth(), browserLocalPersistence);
     }
 
     render() {

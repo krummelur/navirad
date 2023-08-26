@@ -2,15 +2,15 @@ import React from "react";
 import { slide as Menu } from "react-burger-menu";
 import "./Menu.css";
 import { Link } from "react-router-dom";
-import firebaseApp from "../../Util/firebase";
 import { withRouter } from "react-router";
+import { getAuth } from "firebase/auth";
 
 // Source for menu: https://negomi.github.io/react-burger-menu/
 
 const SideMenu = (props) => {
 
     const onSubmit = () => {
-        firebaseApp.auth().signOut();
+        getAuth().signOut();
         setTimeout(() => {
             localStorage.clear();
             props.history.push("/");
