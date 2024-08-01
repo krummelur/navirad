@@ -109,13 +109,14 @@ class MapEmbedder extends Component {
         //If another component updates the center, we should move there and display info
         if (!isEqual(prevProps.radarCenter, this.props.radarCenter)) {
             this.setState({isLoadingWaterApi: true, displayMarkerInfo: true});
-            this.onWater(this.props.radarCenter.lat, this.props.radarCenter.lon).then((result) => {
-                this.setState({isLoadingWaterApi: false});
-            })
+            this.onWater(this.props.radarCenter.lat, this.props.radarCenter.lon);
         }
     }
 
-    handleOnWaterError = () => this.setState({onWaterApiFault: true})
+    handleOnWaterError = (error) => {
+        console.log("error fetching water status", error);
+        this.setState({onWaterApiFault: true})
+    }
 
     /**
      * onWater makes a call to the onWater API to check if the selected position is on water or land.
@@ -126,13 +127,12 @@ class MapEmbedder extends Component {
      */
     onWater = (lat, lon) => {
         this.setState({isLoadingWaterApi: true});
-        return fetch("https://api.onwater.io/api/v1/results/" + lat + "," + lon + "?access_token=" + Constants.ONWATER_API_KEY)
-            .then(this.handleOnWaterError)
+        return fetch(`https://isitwater-com.p.rapidapi.com/?latitude=${lat}&longitude=${lon}&rapidapi-key=${Constants.ONWATER_API_KEY}`)
             .then(response => response.json())
             .then(response => this.setState({onWater: response.water}))
             .catch(this.handleOnWaterError)
+            .finally(() => this.setState({ isLoadingWaterApi: false}))
     };
-
 
     render() {
         if (!this.props.loaded) {
@@ -149,11 +149,8 @@ class MapEmbedder extends Component {
                      onReady={this.mapOptions}
                      style={{width: '90%', height: '100%'}}
                      onClick={(t, map, c) => {
-                         this.setState({isLoadingWaterApi: true, displayMarkerInfo: true});
+                         this.setState({displayMarkerInfo: true});
                          this.props.setRadarCenter({lon: c.latLng.lng(), lat: c.latLng.lat()});
-                         this.onWater(c.latLng.lat(), c.latLng.lng()).then((result) => {
-                             this.setState({isLoadingWaterApi: false});
-                         })
                      }}>
                     {this.state.displayMarkerInfo && this.centerMarker()}
                     {this.infoBox()}
